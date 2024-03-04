@@ -1,0 +1,2010 @@
+@charset 'utf-8';
+@import './abstracts/mixins';
+// ------- common ------- //
+html,
+body {
+  font-size: 10px;
+  letter-spacing: -1px;
+}
+body {
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+a {
+  color: inherit;
+}
+.hidden {
+  display: none !important;
+}
+.bold {
+  font-weight: bold !important;
+}
+.imgWrap {
+  display: inline-block;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// color 
+.colorPrimary {
+  color: $primary !important;
+}
+.colorRed {
+  color: $color-red-01 !important;
+}
+.colorYellow {
+  color: $color-yellow-01 !important;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+/* line 16, scss/common.scss */
+::-webkit-scrollbar-track {
+	background-color: #fff;
+}
+
+/* line 20, scss/common.scss */
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+	background-color: #919191;
+}
+
+.ir {
+  position: absolute;
+  text-indent: -9999px;
+}
+
+// links
+.linkUnderline {
+  @include font(1.4rem, normal, $color-gray-04, 1.4);
+  border-bottom: 1px solid $color-gray-04;
+  &:hover {
+    font-weight: bold;
+  }
+  //arrow
+  &.iconArrow {
+    padding-right: 1rem;
+    border-bottom: 1px solid $color-gray-04;
+    background: image('common/arrow_link_r.svg') no-repeat right center / 6px auto;
+    transition: all .5s;
+    &:hover, &:focus {
+      padding-right: 3rem;
+    }
+  }
+  //narmal
+  &.colorPrimary {
+    border-bottom: 1px solid $primary;
+  }
+  &.colorCyan01 {
+    color: $color-cyan-02;
+    &.iconArrow {
+      border-bottom: 1px solid $color-cyan-02;
+      background-image: image('common/arrow_link_r_cyan.svg');
+    }
+  }
+}
+
+.skip {
+  a {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 2rem;
+    background-color: $black;
+    @include font(1.6rem, bold, $white, 2rem);
+    text-align: center;
+    &:focus {
+      top: 0;
+    }
+  }
+}
+
+// ------- layout ------- //
+.wrap {
+  position: relative;
+  overflow: hidden; //
+  max-width: 192rem;
+  min-width: 28rem;
+  margin: 0 auto;
+  &.active {
+    .headerContainer {
+      position: fixed;
+      top: 0;
+    }
+  }
+}
+.moType {
+  display: none;
+}
+
+// ------- header ------- //
+.headerContainer {
+  position: absolute;
+  top: 0;
+  max-width: 192rem;
+  margin: 0 auto;
+  z-index: 100;
+  width: 100%;
+  transition: all .5s;
+  &.hover, &.focus {
+    .subMenu {
+      display: block;
+    }
+    .gnbBottom {
+      display: flex;
+    }
+  }
+  &.opendMenu {
+    .gnbContainer {
+      display: block;
+    }
+  }
+}
+.headerBanner {
+  @include flex(row, space-between, center);
+}
+.eventBanner {
+  height: 5.6rem;
+  padding: 0 4rem 0 5rem;
+  background-color: $black;
+  &.show {
+    display: flex;
+  }
+  &.popup {
+    position: static;
+    z-index: 100;
+    @include flex(row, space-between, center);
+    display: none;
+    width: 100%;
+  }
+  .eventLink {
+    @include flex(row, flex-start, center);
+    @include font(1.4rem, normal, $white);
+    .iconArrow {
+      @include flex(row, flex-start, center);
+      display: inline-flex;
+      margin-left: 0.5rem;
+      font-weight: bold;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 2.1rem;
+        height: 2.1rem;
+        background: image('common/navigate_next.svg') no-repeat center;
+      }
+    }
+  }
+  .popupClose {
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 1rem;
+    background: image('common/close.svg') no-repeat center;
+    & > span {
+      @include ir;
+    }
+  }
+}
+
+.header {
+  @include flex(row, space-between, center);
+  position: relative;
+  z-index: 200;
+  height: $headerHeight;
+  padding: 0 5rem 0 5.4rem;
+  background-color: $white;
+  border-bottom: 1px solid $color-gray-02;
+  .logo {
+    position: relative;
+    z-index: 10;
+    width: 10.8rem;
+    height: 3.8rem;
+    background: image('common/logo_black.svg') no-repeat center;
+    background-size: contain;
+    span {
+      @include ir;
+    }
+  }
+}
+.userMenu {
+  position: relative;
+  z-index: 10;
+  @include flex(row, flex-end, center);
+  margin-left: auto;
+}
+.mobileHeader {
+  display: none;
+  margin-left: 1.4rem;
+  [class*=btn] {
+    width: 5rem;
+    height: 5rem;
+    & > span {
+      @include ir;
+    }
+  }
+}
+.btnMenuOpen {
+  background: image('common/toggle_menu_open.svg') no-repeat center;
+}
+.btnMenuClose {
+  display: none;
+  background: image('common/toggle_menu_close.svg') no-repeat center;
+}
+.gnbContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  .gnb {
+    @include flex(row, flex-start, flex-start);
+    width: 100%;
+    max-width: 94.4rem;
+    margin: 0 auto;
+    & > li {
+      @include flex(row, center, center);
+      position: relative;
+      width: 25%;
+      height: $headerHeight;
+    }
+    .depth01 {
+      @include font(1.6rem, bold, $black, 1);
+      white-space: nowrap;
+      text-align: center;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover, &:focus {
+        color: $primary;
+      }
+    }
+  }
+  a {
+    @include font(1.6rem, normal, $black);
+    white-space: nowrap;
+  }
+}
+.subMenu {
+  position: absolute;
+  display: none;
+  z-index: 10;
+  top: $headerHeight;
+  left: 0;
+  width: 100%;
+  margin-top: 1.8rem;
+  & > li {
+    padding: 0.8rem 0;
+    text-align: center;
+  }
+  .depth02 {
+    position: relative;
+    line-height: 1.4;
+    &:hover, &:focus {
+      font-weight: bold;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -.3rem;
+        width: 100%;
+        border-bottom: 2px solid $accent;
+      }
+    }
+    &:active {
+      color: $color-gray-06;
+    }
+  }
+}
+.gnbBottom {
+  @include flex(row, flex-start, flex-end);
+  align-content: stretch;
+  flex-wrap: nowrap;
+  display: none;
+  position: absolute;
+  top: $headerHeight;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  height: $headerBttomH;
+  background-color: $bgcolor-gray-03;
+  border-bottom: 1px solid $border-color-02;
+}
+.gnbBtmMenu {
+  @include flex(row, center, center);
+  width: 100%;
+  height: 7.5rem;
+  background-color: $bgcolor-gray-04;
+  .gnbBtmMenuTitle {
+    @include flex(row, center, center);
+    @include font(1.6rem, bold, $black);
+    .iconBgSetting {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      margin-left: .6rem;
+    }
+  }
+  .bottomMenu {
+    @include flex(row, flex-start, center);
+    margin-left: 5rem;
+    & > li {
+      margin-right: 1.4rem;
+    }
+    .btnMenu {
+      display: block;
+      min-width: 7.4rem;
+      padding: 0 1.1rem;
+      border: 1px solid rgba($black, 0.2);
+      background-color: rgba($white, 0.8);
+      border-radius: .4rem;
+      @include font(1.4rem, normal, $black, 3.3rem);
+    }
+  }
+}
+/* header user Data */
+.myInfoSummary {
+  position: absolute;
+  top: $headerHeight;
+  left: 0;
+  width: 100%;
+  // 첫 진입(로그인 전) // 로그인 후 알뜰폰 회선이 없음
+  &.beforeLogin, &.noPhoneLine {
+    .infoSummaryBottom {
+      .summaryData {
+        .data {
+          margin-top: 0.2rem;
+          & > span {
+            @include ir;
+          }
+        }
+        .imgWrap {
+          display: inline-block;
+          .pcType {
+            display: block;
+          }
+          .moType {
+            display: none;
+          }
+        }
+      }
+    }
+    .summaryBottom {
+      .noPhoneLineShow {
+        display: block;
+      }
+      .informationItem {
+        display: none;
+      }
+    }
+  }
+  //infoSummary
+  .infoSummaryTop {
+    background-color: $white;
+  }
+  .infoSummaryBottom {
+    background-color: rgba($white, 0.7);
+  }
+  .summaryField {
+    width: 143rem;
+    margin: 0 auto;
+  }
+  //subTitleContainer
+  .subTitleContainer {
+    @include flex(row, space-between, center);
+    padding: 3.2rem 0;
+    .btn {
+      height: 5rem;
+      padding: 0 5.7rem 0 2rem;
+      line-height: 5rem;
+      white-space: normal;
+      .underline {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      &.iconBgLink {
+        background-position: right 2rem center;
+      }
+      &.iconBgSetting {
+        background-position: right 2rem center;
+      }
+    }
+    .strongText {
+      @include font(2.4rem, bold, $black, 1.4);
+      &.iconBgLink {
+        padding-right: 2.6rem;;
+        font-weight: normal;
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  // 회선 드롭다운
+  .phoneLineSummaryDrop {
+    .imgWrap {
+      width: 7rem;
+      height: 1.6rem;
+      margin-right: 1.5rem;
+    }
+    .dropdownTitle {
+      background-position: right 2rem center;
+      .titleLabel {
+        height: 7rem;
+        padding-right: 10rem;
+      }
+    }
+    .dropdownList {
+      top: 7rem;
+      .phoneLine {
+        height: 7rem;
+        padding: 0 2rem;
+      }
+      .imgWrap {
+        margin-right: 1rem;
+      }
+    }
+    .labelGroup {
+      display: block;
+      margin-right: 1rem;
+      .product {
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+        color: $black;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.mobileContainer {
+  .myInfoSummary {
+    display: none;
+  }
+}
+// ie 대응
+@media screen and (min-width:0\0){
+  /* header user Data */
+  .myInfoSummary {
+    // 로그인 전 상태
+    &.beforeLogin {
+      .blurCover {
+        display: none;
+      }
+    }
+  }
+}
+//infoSummaryBottom
+.infoSummaryBottom {
+  &.active {
+    .summaryTop {
+      background-color: $bgcolor-gray-03;
+    }
+    .summaryBottom {
+      position: static;
+    }
+  }
+  .summaryBottom {
+    position: absolute;
+    top: -100rem;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    padding: 4rem;
+    background-color: $bgcolor-gray-05;
+  }
+
+  //summaryBtnTitle
+  .summaryBtnTitle {
+    @include flex(row, flex-start, center);
+    padding: 1.4rem 0;
+  }
+  .summaryItem {
+    @include flex(row, space-between, center);
+    width: 28rem;
+    height: 4.7rem;
+    padding: 0 1.7rem 0 1.9rem;
+    margin-right: 1rem;
+    background-color: $white;
+    border: 1px solid $border-color-02;
+    border-radius: 0.8rem;
+    background-position: left 2rem center;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .summaryTitle {
+    @include font(1.4rem, bold, $black, 4.7rem);
+    &[class*=iconBg] {
+      padding-left: 2.5rem;
+      & > span {
+        @include no-ir;
+      }
+    }
+  }
+  .summaryData {
+    @include flex(row, flex-start, center);
+    @include font(1.4rem, bold, $black, 1);
+    & > span {
+      padding-left: 0.4rem;
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+    .data {
+      margin-top: -0.2rem;
+      font-weight: normal;
+      font-size: 2.4rem;
+      color: $primary;
+    }
+    .imgWrap {
+      display: none;
+    }
+  }
+  .summaryBtn {
+    display: block;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-left: auto;
+    background: image('common/btn_navi_down_bk.svg') no-repeat center / 2.6rem;
+    & > span {
+      @include ir;
+    }
+    &[aria-expanded=true] {
+      transform: rotate(180deg)
+    }
+  }
+
+  //summaryInfoArea
+  .summaryInfoArea {
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+    .swiper-slide {
+      overflow: hidden;
+      background-color: $white;
+      border: 1px solid $border-color-02;
+      border-radius: 1.2rem;
+    }
+    .summaryPagination {
+      display: none;
+      text-align: center;
+      .swiper-pagination-bullet {
+        opacity: 1;
+        width: 0.4rem;
+        height: 0.4rem;
+        margin: 0 0.3rem;
+        background-color: $border-color-03;
+        border-radius: 4rem;
+        & > span {
+          @include ir;
+        }
+        &.swiper-pagination-bullet-active {
+          width: 3.4rem;
+          background-color: $black;
+        }
+      }
+    }
+  }
+  .summaryInfoTitle {
+    @include flex(column, center, flex-start);
+    height: 5.5rem;
+    padding: 0 2rem;
+    border-bottom: 1px solid $border-color-02;
+    @include font(1.6rem, bold, $black, 1.4);
+    &.iconBgLink {
+      background-position: right 2rem center;
+    }
+  }
+  .summaryInfoContent {
+    position: relative;
+    @include font(1.6rem, normal, $color-gray-06, 1.4);
+    [class*=iconBg] {
+      width: 2.8rem;
+      height: 2.8rem;
+      margin-right: 1.2rem;
+      background-position: center;
+    }
+    .iconBgRefesh {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-left: .9rem;
+    }
+  }
+  //summary common
+  .flex {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    &.center {
+      @include flex(row, center, flex-start);
+    }
+  }
+  .grayBox {
+    padding: 2rem;
+    background-color: $bgcolor-gray-03;
+    border-radius: 1rem;
+    &.hyphen {
+      dt {
+        margin-bottom: 1.2rem;
+      }
+      dd {
+        margin-bottom: 0.8rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:before {
+          content: '-';
+          display: inline-block;
+          margin-right: 0.5rem;
+        }
+        @include font(1.6rem, normal, $color-gray-06, 1.4);
+      }
+    }
+    .flexRow {
+      dt {
+        font-weight: normal;
+      }
+      dd {
+        font-weight: bold;
+      }
+    }
+  }
+  .noPhoneLineShow {
+    display: none;
+    font-size: 0;
+    .floating {
+      @include flex(column, center, center);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .imgWrap {
+      width: 100%;
+      img {
+        max-height: 30rem;
+      }
+    }
+    .btn {
+      width: 35.1rem;
+      height: 6.3rem;
+      margin-right: 0;
+      padding: 0 3rem 0 6rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-align: left;
+      letter-spacing: -1.2px;
+      line-height: 1.4;
+      &.iconBgLock {
+        background-position: left 3rem center;
+      }
+      & > span {
+        @include no-ir;
+      }
+    }
+  }
+  dt {
+    font-weight: bold;
+  }
+  strong {
+    font-weight: bold;
+  }
+  .colorPrimary {
+    padding-right: 0.5rem;
+  }
+  .flexRow {
+    @include flex(row, flex-start, flex-start);
+  }
+  .itemHalf {
+    @include flex(row, center, center);
+    &:after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 1.8rem;
+      margin: 0 3.4rem;
+      background-color: $color-gray-06;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .informationItem {
+    padding: 3rem;
+    .itemTop {
+      margin-bottom: 2.6rem;
+      .bigTitle {
+        display: block;
+        @include font(2.8rem, bold, $black, 1.4);
+      }
+      .unitDate {
+        @include font(1.6rem, normal, $color-gray-05, 1.4);
+        white-space: nowrap;
+      }
+    }
+    .itemBottom {
+      .title {
+        @include font(1.8rem, bold, $black, 1.4);
+      }
+      .text {
+        margin-left: auto;
+        @include font(3.2rem, bold, $black, 1.1);
+      }
+      .smallText {
+        @include font(1.3rem, normal, $color-gray-05, 1.4);
+      }
+    }
+    .itemData {
+      width: 100%;
+      margin-bottom: 3rem;
+      .flexRow {
+        margin-bottom: 1.5rem;
+      }
+      .text {
+        order: 1;
+        margin-left: auto;
+      }
+    }
+    .gageBar {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 1.3rem;
+      border-radius: 2rem;
+      background-color: $white;
+      box-shadow: inset 1px 1px 4px rgba($black, 0.2);
+      .bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: $accent;
+        border-radius: 2rem;
+      }
+    }
+  }
+  //사용량 조회
+  .usageSummary {
+    .itemTop {
+      padding-bottom: 4.2rem;
+    }
+  }
+  //요금제 정보
+  .costSummary {
+    .itemTop {
+      margin-bottom: 3.4rem;
+    }
+    .itemBottom {
+      &.grayBox {
+        padding: 2.5rem;
+      }
+    }
+  }
+  //요금 명세서
+  .specsSummary {
+    .itemTop {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      .bigTitle {
+        width: 21rem;
+      }
+      .unitDate {
+        width: 12.6rem;
+      }
+    }
+    .itemBottom {
+      &.grayBox {
+        padding: 2.5rem 2.4rem;
+      }
+      .flexRow {
+        justify-content: space-between;
+        margin-bottom: 1.1rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.welcomeArea {
+  @include font(1.6rem, normal, $color-gray-04, 1.4);
+  p {
+    margin-bottom: 0.4rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ------- header - search ------- //
+
+/* mobile menu */
+.mobileNav {
+  display: none;
+  .menuList {
+    overflow-x: auto;
+    @include flex(row, flex-start, center);
+    margin: 0 -0.35rem;
+    background-color: $black;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    & > li {
+      margin: 0 2.25rem;
+    }
+  }
+  .menu {
+    position: relative;
+    display: block;
+    height: 4.8rem;
+    @include font(1.5rem, bold, $color-gray-05, 4.8rem);
+    white-space: nowrap;
+    &.active {
+      color: $white;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $accent;
+      }
+    }
+  }
+}
+
+// ------- contents ------- //
+// sub title
+.pageTitleContainer {
+  background-color: $black;
+  .pageTitleContent {
+    @include flex(row, space-between, center);
+    width: 143.6rem;
+    height: 6.4rem;
+    margin: 0 auto;
+  }
+  .title {
+    @include flex(row, flex-start, center);
+    padding: 1rem 0;
+    & > * {
+      @include font(1.8rem, bold, $white, 1.3);
+    }
+  }
+  .titleArrow {
+    width: 2.4rem;
+    height: 4rem;
+    margin-right: 0.6rem;
+    background: image('common/icon_navi_prev.svg') no-repeat left center;
+  }
+  .breadcrumbContainer {
+    @include flex(row, flex-end, center);
+    .breadcrumb {
+      position: relative;
+      @include flex(row, flex-start, center);
+      margin-right: 3rem;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -1.8rem;
+        width: 0.7rem;
+        height: 1rem;
+        margin-top: -0.5rem;
+        background: image('common/icon_navi_next.svg') no-repeat center;
+        pointer-events: none;
+      }
+      &.iconBgHome {
+        overflow: initial;
+        display: block;
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+      &:last-child {
+        margin-right: 0;
+        &:after {
+          display: none;
+        }
+      }
+      .breadcrumbTitle {
+        @include font(1.4rem, normal, $white, 1.4);
+      }
+    }
+  }
+
+  // navi 하위 메뉴
+  .breadcrumbDrop {
+    &.active {
+      .breadcrumbDropList {
+        display: block;
+      }
+    }
+    .breadcrumbBtn {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-left: 0.6rem;
+      background: image('common/btn_navi_down.svg') no-repeat center;
+      & > span {
+        @include ir;
+      }
+    }
+    .breadcrumbDropList {
+      position: absolute;
+      display: none;
+      top: 2.5rem;
+      left: 0;
+      z-index: 10;
+      min-width: 14.5rem;
+      padding: 1.4rem 0;
+      border: 2px solid $black;
+      background-color: $white;
+      border-radius: 12px;
+      box-shadow: 3px 3px 5px 0px #00000026;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0 1.4rem;
+        @include font(1.4rem, normal, $black, 3.4rem);
+        &:hover, &:focus {
+          outline: 0;
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+        &:active {
+          position: relative;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2px;
+            right: -2px;
+            bottom: 0;
+            z-index: 1;
+            border: 2px solid $primary;
+          }
+        }
+      }
+    }
+  }
+}
+.fieldTitle01 {
+  @include flex(row, flex-start, center);
+  @include font(1.6rem, bold, $black, 1.4);
+  a {
+    display: block;
+    width: 100%;
+    color: inherit;
+  }
+  .iconBgLink {
+    background-position: right center;
+    background-size: 0.6rem auto;
+  }
+}
+// .contentContainer {}
+.contentArea {
+  position: relative;
+  z-index: 2;
+  padding-top: 7rem;
+  background-color: $bgcolor-gray-05;
+}
+.contentInner {
+  max-width: 147.6rem;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.titleContent {
+  background-color: $white;
+  border: 2px solid $primary;
+  border-radius: 1.2rem;
+}
+//약관 동의 영역
+.typeAgreementCheck {
+  .field {
+    &.fieldCheckbox {
+      @include flex(row, space-between, center);
+      margin-bottom: 0.8rem;
+      .fieldLabel {
+        margin-bottom: 0;
+        @include font(1.4rem, 500, $black, 2rem);
+      }
+    }
+  }
+  .fieldData {
+    .fieldArea {
+      overflow-y: auto;
+      display: block;
+      height: auto;
+      max-height: 12.5rem;
+      margin-bottom: 0;
+      padding: 2rem;
+      border-color: $black;
+      .fieldValue {
+        font-size: 1.2rem;
+        color: $black;
+        line-height: 1.6;
+        span {
+          display: block;
+          margin: 1.5rem 0;
+        }
+      }
+    }
+  }
+}
+// 본인인증 방법 선택 버튼
+.typeCertification {
+  .certificationWrap {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    margin: -0.6rem;
+    [class*=btnCertify] {
+      position: relative;
+      @include flex(column, center, center);
+      width: 13rem;
+      height: 14rem;
+      margin: 0.6rem;
+      @include font(1.4rem, normal, $color-gray-06, 1.5);
+      letter-spacing: -1px;
+      background-color: $white;
+      border-radius: 0.4rem;
+      .icon {
+        width: 10.4rem;
+        height: 6.5rem;
+        margin-bottom: 1.5rem;
+      }
+      &.btnCertifyPass {
+        .icon {
+          background: image('common/img_certify_pass.png') no-repeat center/9.8rem 3.5rem;
+        }
+      }
+      &.btnCertifyToss {
+        .icon {
+          background: image('common/img_certify_toss.png') no-repeat center/10.1rem 2.6rem;
+        }
+      }
+      &.btnCertifyCard {
+        .icon {
+          background: image('common/img_certify_card.png') no-repeat center/6.4rem 4.9rem;
+        }
+      }
+      &.btnCertifyNaver {
+        .icon {
+          background: image('common/img_certify_naver.png') no-repeat center/9.3rem 6.5rem;
+        }
+      }
+      &.btnCertifyKakao {
+        .icon {
+          background: image('common/img_certify_kakao.png') no-repeat center/10.4rem 5rem;
+        }
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        border: 2px solid $primary;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      &:hover, &:focus {
+        &::after {
+          display: block;
+        }
+      }
+      &:active {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &.disabled {
+    .dataTitleArea {
+      border-color: $secondary;
+    }
+    .dataTitle {
+      color: $secondary;
+    }
+    .certificationWrap {
+      [class*=btnCertify] {
+        background-color: rgba(255, 255, 255, .7);
+        opacity: 0.7;
+        cursor: default;
+        &:hover, &:focus {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+//하단 주의사항
+.typeCaution {
+  .fieldArea {
+    display: block;
+    height: auto;
+    padding: 4rem 3rem;
+    border: none;
+    background-color: #E5E8EB;
+    .fieldValue {
+      @include flex(row, flex-start, center);
+      margin-bottom: 1.8rem;
+      @include font(1.4rem, normal, $color-gray-04, 1.5);
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      &::before {
+        content: '';
+        flex-shrink: 0;
+        align-self: flex-start;
+        display: block;
+        width: 0.3rem;
+        height: 0.3rem;
+        margin: 1rem 1rem 0;
+        background-color: $color-gray-04;
+        border-radius: 50%;
+        transform: skew(-0.03deg);
+      }
+    }
+  }
+}
+//인풋 하단 추가설명
+.addExplain {
+  @include font(1.4rem, normal, $primary, 1.5);
+  &:first-of-type {
+    margin-bottom: 1rem;
+  }
+}
+// ------- footer ------- //
+.footer {
+  padding: 7rem 13rem 0;
+  background-color: $bgcolor-gray-03;
+  .footerTop {
+    @include flex(row, space-between, flex-start);
+  }
+  .footerBottom {
+    @include flex(row, space-between, flex-start);
+    padding: 2.5rem 0 3rem;
+    margin-top: 7rem;
+    border-top: 1px solid $border-color-02;
+  }
+  .footerLogo {
+    display: block;
+    width: 15.9rem;
+    height: 8.6rem;
+    background: image('common/logo_gray.svg') no-repeat center;
+    background-size: contain;
+    & > span {
+      @include ir;
+    }
+  }
+  .footerAdress {
+    @include font(1.4rem, normal, rgba($black, 0.5), 1.5);
+    span {
+      display: block;
+    }
+  }
+  .siteMap {
+    @include flex(row, flex-end, flex-start);
+    & > li {
+      margin-left: 6.5rem;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    .title {
+      @include font(1.4rem, bold, rgba($black, 0.5), 1.4);
+    }
+    .list {
+      margin-top: 1.2rem;
+      a {
+        @include font(1.2rem, bold, rgba($black, 0.4), 2);
+      }
+    }
+  }
+  .footerMenu {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    & > li {
+      font-size: 0;
+      margin-right: 1rem;
+      &:last-child {
+        margin-right: 0;
+        &:after {
+          display: none;
+        }
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        padding-right:1rem;
+        height: 1rem;
+        border-right: 1px solid rgba($black, 0.4);
+      }
+    }
+    a {
+      @include font(1.4rem, normal, rgba($black, 0.4), 1.1);
+    }
+  }
+  .copyright {
+    @include font(1.2rem, normal, rgba($black, 0.3), 1.2);
+    white-space: nowrap;
+  }
+}
+/////////////////////////////////// 이 하 Responsive ////////////////////////////////////
+@media (#{$pc-middle}) {
+  // ------- header ------- //
+  .header {
+    padding: 0 0 0 2.8rem;
+    .logo {
+      width: 8.9rem;
+      height: 3.2rem;
+    }
+  }
+  .eventBanner {
+    height: 3.6rem;
+    padding: 0 1.5rem 0 2rem;
+  }
+  .gnbContainer {
+    padding: 0 15% 0 22%;
+    .gnb {
+      .depth01, .depth02 {
+        margin: 0 1rem;
+      }
+    }
+  }
+  .gnbEtcArea {
+    width: 22%;
+    .gnbEvent {
+      width: 85%;
+    }
+  }
+  // myInfoSummary
+  .myInfoSummary {
+    .summaryField {
+      width: calc(100% - 4rem);
+    }
+  }
+  .infoSummaryBottom {
+    .summaryBottom {
+      padding: 4rem 0;
+    }
+    .informationItem {
+      .itemHalf {
+        &:after {
+          margin: 0 2rem;
+        }
+      }
+    }
+  }
+  // ------- pc-middle header - search ------- //
+  // ------- contents ------- //
+  // .contentArea {
+  //   padding: 7rem 3rem;
+  // }
+  .pageTitleContainer {
+    .pageTitleContent {
+      width: 100%;
+      padding: 0 3rem;
+    }
+  }
+  // ------- footer ------- //
+  .footer {
+    padding: 3.4rem 4rem 0;
+  }
+}
+
+@media (#{$pc-small}) {
+  // ------- pc-middle -- header ------- //
+  .infoSummaryBottom {
+    .summaryBottom {
+      padding: 2rem 0;
+    }
+    .summaryInfoTitle {
+      height: 5.2rem;
+      font-size: 1.4rem;
+    }
+    .summaryItem {
+      min-width: 12.7rem;
+      margin-right: 0.8rem;
+    }
+    .summaryData {
+      .data {
+        margin-top: 0;
+        font-size: 1.6rem;
+        span {
+          padding: 0 0.5rem 0 1.6rem;
+        }
+      }
+    }
+
+    .grayBox {
+      padding: 1.6rem;
+      font-size: 1.4rem;
+      &.hyphen {
+        dt {
+          margin-bottom: 0.6rem;
+        }
+        dd {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    
+    .noPhoneLineShow {
+      .btn {
+        width: calc(100% - 2.6rem);
+        height: 5.7rem;
+        padding: 0 2rem 0 4.65rem;
+        font-size: 1.4rem;
+        &.iconBgLock {
+          background-position: left 2.3rem center;
+          background-size: 1.3rem auto;
+        }
+      }
+    }
+
+    .informationItem {
+      padding: 2rem;
+      .itemHalf {
+        &:after {
+          height: 1.4rem;
+        }
+      }
+      .itemData {
+        align-items: center;
+      }
+      .itemTop {
+        margin-bottom: 1.5rem;
+        .bigTitle {
+          width: 100%;
+          font-size: 2.4rem;
+        }
+      }
+      .itemBottom {
+        .flexRow {
+          align-items: center;
+        }
+        .title {
+          font-size: 1.4rem;
+        }
+        .text {
+          font-size: 2.8rem;
+        }
+      }
+    }
+    .summaryInfoContent {
+      .iconBgRefesh {
+        width: 1.3rem;
+        height: 1.3rem;
+        margin-left: 0.7rem;
+        background-size: cover;
+      }
+    }
+    .usageSummary {
+      .itemTop {
+        padding-bottom: 3rem;
+      }
+    }
+    .costSummary {
+      .itemBottom {
+        &.grayBox {
+          padding: 1.6rem;
+        }
+      }
+    }
+    .specsSummary {
+      .itemTop {
+        display: block;
+        .bigTitle {
+          margin-bottom: 1rem;
+          .moFull {
+            display: block;
+          }
+        }
+        .unitDate {
+          width: 100%;
+          font-size: 1.4rem;
+        }
+      }
+      .itemBottom {
+        &.grayBox {
+          padding: 1.6rem;
+        }
+      }
+    }
+  }
+  // ------- pc-middle -- search ------- //
+  // ------- pc-middle -- contents ------- //
+  // ------- pc-middle -- footer ------- //
+  .footer {
+    .footerTop {
+      display: block;
+    }
+    .siteMap {
+      justify-content: flex-start;
+      margin-top: 3rem;
+      & > li {
+        margin-left: 5%;
+      }
+    }
+  }
+}
+
+@media (#{$tablet}) {
+  .wrap {
+    // 상세 페이지에서 title 영역 중복으로 숨김
+    .pageTitleContainer {
+      .titleAreaLeft {
+        @include ir;
+      }
+    }
+    &.detail {
+      // 상세 페이지에서 header 영역 숨
+      .headerContainer {
+        display: none;
+      }
+      // 상세 페이지에서 breadcrumb 영역 숨김
+      .pageTitleContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        .titleAreaLeft {
+          @include no-ir;
+        }
+        .titleAreaRight {
+          display: none;
+        }
+      }
+    }
+    // 회원가입 페이지 nav 영역 숨김
+    &.home {
+      .mobileNav {
+        display: none;
+      }
+    }
+  }
+
+  // ------- tablet -- header ------- //
+  .headerContainer {
+    &.moMenuOpen {
+      .btnMenuOpen {
+        display: none;  
+      }
+      .btnMenuClose {
+        display: block;
+      }
+      .mobileContainer {
+        left: 0;
+      }
+    }
+  }
+  .header {
+    padding-right: 0.5rem;
+    padding-left: 2rem;
+  }
+  .mobileHeader {
+    display: block;
+    margin-left: -1rem;
+  }
+  .mobileContainer {
+    overflow-y: auto;
+    position: absolute;
+    top: $headerHeight;
+    left: -100%;
+    z-index: 10;
+    width: 100%;
+    height: calc(100vh - 8.1rem); // -($headerHeight + .headerBanner)
+    transition: all .5s;
+    background-color: $bgcolor-gray-03;
+    .gnbContainer, .myInfoSummary {
+      position: static;
+    }
+    .gnbContainer {
+      padding: 0 0 5rem;
+      .gnb {
+        display: block;
+        .depth01, .depth02 {
+          display: block;
+          width: 100%;
+          margin: 0;
+        }
+        .depth01 {
+          background: image('common/icon_menu_plus.svg') no-repeat right center;
+          font-size: 1.6rem;
+          line-height: 6rem;
+          text-align: left;
+          border-bottom: 1px solid $border-color-03;
+        }
+        & > li {
+          display: block;
+          width: 100%;
+          height: auto;
+          padding: 0 2rem;
+          &.active {
+            .depth01 {
+              background: image('common/icon_menu_minus.svg') no-repeat right center;
+            }
+            .subMenu {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .gnbBottom {
+      display: block;
+      position: static;
+      height: auto;
+      border-bottom: none;
+    }
+    .gnbBtmMenu {
+      display: block;
+      height: auto;
+      padding: 2rem 2rem 1.6rem;
+      .gnbBtmMenuTitle {
+        justify-content: flex-start;
+      }
+      .bottomMenu {
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        margin-left: 0;
+        .btnMenu {
+          margin-bottom: 1.4rem;
+        }
+      }
+    }
+    .subMenu {
+      position: static;
+      margin: 0;
+      padding: 1rem 2rem;
+      background-color: $white;
+      & > li {
+        padding: 1rem 0;
+        text-align: left;
+      }
+      
+      .depth02 {
+        &:hover, 
+        &:focus {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  /* tablet -- mobile menu */
+  .mobileNav {
+    display: block;
+  }
+  .userMenu {
+    z-index: 20;
+    margin-left: auto;
+    .btn {
+      &.iconBgLock {
+        display: none;
+      }
+    }
+  }
+  /* tablet -- myInfoSummary */
+  .mobileContainer {
+    .myInfoSummary {
+      display: block;
+    }
+  }
+  .myInfoSummary {
+    top: 12.9rem;
+  }
+  .myInfoSummary {
+    .summaryField {
+      width: 100%;
+    }
+    .subTitleContainer {
+      display: block;
+      padding: 2rem;
+      border-bottom: 1px solid $border-color-03;
+      .subTitleLeft {
+        display: none;
+      }
+    }
+  }
+  .infoSummaryBottom {
+    .summaryInfoArea {
+      .summaryPagination {
+        display: block;
+      }
+    }
+  }
+  .infoSummaryBottom {
+    background-color: $white;
+    .summaryBtnTitle {
+      padding: 0.9rem 0;
+    }
+    .summaryItem {
+      width: auto;
+      padding: 0 1.4rem;
+      margin-right: 3rem;
+      border: 0;
+    }
+    .summaryTitle {
+      &[class*=iconBg] {
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        & > span {
+          @include ir;
+        }
+      }
+    }
+    .summaryTop {
+      padding: 0 2rem;
+    }
+    .summaryBottom {
+      padding: 2rem;
+    }
+  }
+  // ------- tablet -- header - search ------- //
+  // ------- tablet -- contents ------- //
+  .pageTitleContainer {
+    background-color: $white;
+    .pageTitleContent {
+      display: block;
+      height: auto;
+      padding: 0;
+    }
+    .titleArrow {
+      width: 5rem;
+      height: 4.8rem;
+      margin-right: 0;
+      background-position: center;
+    }
+    .titleAreaRight {
+      padding: 0 2rem;
+      background-color: $bgcolor-gray-07;
+    }
+    .title {
+      background-color: $black;
+    }
+    .breadcrumbContainer {
+      justify-content: flex-start;
+      .breadcrumb {
+        height: 3.6rem;
+        &:after {
+          background-image: image('common/icon_navi_next_bk.svg');
+        }
+        &.iconBgHome {
+          display: none;
+        }
+        .breadcrumbTitle {
+          color: $black;
+        }
+      }
+    }
+    // navi 하위 메뉴
+    .breadcrumbDrop {
+      .breadcrumbBtn {
+        background-image: image('common/btn_navi_down_bk.svg');
+      }
+      &.active {
+        .breadcrumbDropList {
+          top: 3.5rem;
+        }
+      }
+    } 
+  }
+  /* tablet -- 본인인증 방법 선택 버튼 */
+  .typeCertification {
+    .certificationWrap {
+      [class*=btnCertify] {
+        flex: 1 1 30%;
+      }
+    }
+  }
+}
+
+@media (#{$foldMax}) {
+  .moType {
+    display: block;
+  }
+  .pcType {
+    display: none;
+  }
+  // ------- foldMax -- header ------- //
+  /* myInfoSummary */
+  .myInfoSummary {
+    .subTitleContainer {
+      .subTitleRight {
+        width: 100%;
+      }
+      .btn {
+        height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        line-height: 1.4;
+        font-size: 1.3rem;
+        &:only-child {
+          width: 100%;
+        }
+      }
+    }
+    .phoneLineSummaryDrop {
+      .dropdownTitle {
+        .colorLabel {
+          right: 4rem;
+          margin-top: -1.15rem;
+        }
+      }
+      .dropdownList {
+        top: 8.2rem;
+      }
+      .labelGroup {
+        .product {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    // 첫 진입(로그인 전) // 로그인 후 알뜰폰 회선이 없음
+    &.beforeLogin, &.noPhoneLine {
+      .summaryData {
+        .imgWrap {
+          .pcType {
+            display: none;
+          }
+          .moType {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .infoSummaryBottom {
+    .summaryBtnTitle {
+      padding: 1.2rem 0;
+    }
+    .summaryItem {
+      width: auto;
+      height: 4rem;
+      padding: 0 1rem;
+      border: none;
+      border-radius: 4px;
+    }
+    .summaryData {
+      & > span {
+        padding: 0;
+        text-indent: -0.4rem;
+      }
+    }
+  }
+  // ------- foldMax -- contents ------- //
+  // .contentArea {
+  //   padding: 3rem 2rem;
+  // }
+  //foldMax -- 하단 주의사항
+  .typeCaution {
+    .fieldArea {
+      padding: 2.4rem 1.6rem;
+      .fieldValue {
+        margin-bottom: 1.8rem;
+        font-size: 1.3rem;
+      }
+    }
+  }
+  //foldMax -- 인풋 하단 추가설명
+  .addExplain {
+    font-size: 1.3rem;
+  }
+  // ------- foldMax -- footer ------- //
+  .footer {
+    padding: 3rem 3rem 0;
+    .siteMap {
+      display: none;
+    }
+    .footerBottom {
+      position: static;
+      display: block;
+    }
+  }
+}
+
+@media (#{$mobile}) {
+  // ------- mobile -- common ------- //
+  .linkUnderline {
+    font-size: 1.3rem;
+  }
+  // ------- mobile -- header ------- //
+  .infoSummaryBottom {
+    .summaryItem {
+      min-width: 0;
+    }
+    .informationItem {
+      .itemHalf {
+        &:after {
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+  .myInfoSummary {
+    .phoneLineSummaryDrop {
+      .dropdownTitle {
+        .titleLabel {
+          @include flex(column, center, flex-start);
+          padding-top: 0.5rem;
+        }
+      }
+      .dropdownList {
+        .phoneLine {
+          @include flex(column, center, flex-start);
+          padding-top: 0.5rem;
+        }
+      }
+    }
+  }
+  // ------- mobile -- contents ------- //
+  .fieldTitle01 {
+    font-size: 1.4rem;
+    .iconBgLink {
+      background-size: 0.7rem auto;
+    }
+  }
+  /* mobile -- 본인인증 방법 선택 버튼 */
+  .typeCertification {
+    .certificationWrap {
+      margin: -0.2rem;
+      [class*=btnCertify] {
+        width: auto;
+        height: 9.8rem;
+        margin: 0.2rem;
+        font-size: 1.3rem;
+        .icon {
+          width: 6.4rem;
+          height: 4.5rem;
+          margin-bottom: 0.9rem;
+        }
+        &.btnCertifyPass {
+          .icon {
+            background-size: 6.2rem 2.2rem;
+          }
+        }
+        &.btnCertifyToss {
+          .icon {
+            background-size: 6.1rem 1.9rem;
+          }
+        }
+        &.btnCertifyCard {
+          .icon {
+            background-size: 3.9rem 3rem;
+          }
+        }
+        &.btnCertifyNaver {
+          .icon {
+            background-size: 6.4rem 4.5rem;
+          }
+        }
+        &.btnCertifyKakao {
+          .icon {
+            background-size: 6.4rem 3.1rem;
+          }
+        }
+      }
+    }
+  }
+  // ------- mobile -- footer ------- //
+  .footer {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    .footerBottom {
+      margin-top: 2.5rem;
+      padding: 0.8rem 0 3rem;
+      .footerLeft {
+        margin-bottom: 5.2rem;
+      }
+    }
+    .footerLogo {
+      width: auto;
+      height: auto;
+      margin-bottom: 1.8rem;
+      background-image: none;
+      & > span {
+        @include no-ir;
+        @include font(2.6rem, normal, rgba($black, 0.3), 1.4);
+      }
+      white-space: nowrap;
+    }
+    .footerAdress {
+      color: rgba($black, 0.3);
+      word-break: keep-all;
+      span {
+        display: inline;
+      }
+    }
+    .footerMenu {
+      & > li {
+        &:after {
+          border-right-color: rgba($black, 0.2);
+        }
+      }
+      a {
+        line-height: 1.7;
+        color: rgba($black, 0.3);
+      }
+    }
+  }
+}
+
+@media (#{$mobile-small}) {
+  // ------- mobile-small -- header ------- //
+  .infoSummaryBottom {
+    .summaryBtnTitle {
+      flex-wrap: wrap;
+    }
+    .summaryItem {
+      width: 85%;
+      margin-right: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    // 사용량 조회
+    .informationItem {
+      .itemData {
+        .text {
+          width: 100%;
+        }
+      }
+      .flexRow {
+        flex-wrap: wrap;
+        .itemHalf {
+          width: 100%;
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 높이 제어
+@media (max-height: 711px) {
+  .infoSummaryBottom {
+    .summaryBtnTitle {
+      padding: 0.5rem 0;
+    }
+    .summaryBottom {
+      padding: 1rem 2rem;
+    }
+    .summaryInfoTitle {
+      height: 4.2rem;
+    }
+  }
+  .myInfoSummary {
+    .subTitleContainer {
+      padding: 1rem 2rem;
+    }
+  }
+} 
