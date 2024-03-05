@@ -3914,7 +3914,7 @@ button {
     background-size: 1.4rem auto;
   }
 }
-/* 
+/*
   .iconBg 접두어, ir기법을 사용하는 규칙 적용
   그 외 .iconImg ~
 */
@@ -12682,12 +12682,12 @@ table caption {
   .dropdownArea .dropdownList a:focus-visible:before, .dropdownArea .dropdownList button:focus-visible:before {
     display: none;
   }
-  button:focus {
+  /* button:focus {
     outline: none !important;
   }
   button:focus-visible {
     outline: none !important;
-  }
+  } */
   .buttonArea .btn.moType {
     display: -webkit-box;
     display: -ms-flexbox;

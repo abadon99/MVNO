@@ -1442,54 +1442,525 @@ function decodeXssTag(value) {
 
 
 <!-- 번호이동 프로세스 개선 -->
-	<div class="contentArea">
-		<div class="contentInner">
-			<div class="formContainer">
-				<div class="usimTitleArea">
-					<div class="title">
-						유심 또는 eSIM을 통해 <br>누구나 쉽게 개통할 수 있어요!
-					</div>
-
-					<!-- 셀프개통이 가능 -->
-					<div class="buttonArea">
-						<button type="button" class="btn" onclick="goSelfProcess('N')" id="guestInfoBtn" dynamicparamattr1="셀프개통 신청하기"><span>셀프개통 신청하기</span></button>
-					</div>
-
-					<!-- 셀프개통이 불가능 한 경우 :'개통 불가능 시간 안내 / 비회원 개통 안내'팝업 열릴 시  있는 버튼 노출 -->
-
-
-					<div class="gotoSelfArea">
-						<p>유심이 필요하신가요? <a href="/fe/service/usim/dlvr/usimDlvrMain.do" class="linkUnderline colorPrimary" dynamicparamattr1="바로배송유심 바로가기">바로배송유심 바로가기</a></p>
-					</div>
-				</div>
-				<div class="dataInner">
-					<div class="dataTitleArea">
-						<strong class="dataTitle">셀프개통 가능시간</strong>
-					</div>
-					<div class="timeInfoBox">
-
-						<div class="timeRow"><strong class="title">번호이동</strong><div class="text">10:00 ~ 20:00 <span class="block">(일요일/신정/구정/추석 당일 불가)</span></div></div>
-						<div class="timeRow"><strong class="title">신규가입</strong><div class="text">시스템 점검으로 불가</div></div>
-
-					</div>
-				</div>
-				<div class="dataInner">
-					<div class="dataTitleArea">
-						<strong class="dataTitle">셀프개통 유의사항</strong>
-					</div>
-					<div class="typeCaution">
-						<ul class="fieldArea marginBtmReset">
-							<li class="fieldValue">셀프개통에 문제가 있는 경우 각 알뜰폰 사업자 고객센터를 통해 개통을 진행할 수 있습니다.</li>
-							<li class="fieldValue">셀프개통 중 전 통신사 해지로 모바일 데이터가 끊길 수 있으므로 Wi-Fi 환경에서 개통하는 것을 권장합니다.</li>
-							<li class="fieldValue">미성년자는 셀프개통 대상에서 제외됩니다.</li>
-							<li class="fieldValue">데이터 쉐어링 요금제는 셀프개통을 통한 가입이 불가하니, 각 알뜰폰 사업자 고객센터를 통해 가입해주시기 바랍니다.</li>
-							<li class="fieldValue">단기간 다수의 회선을 개통하는 경우 셀프개통 제한이 될 수 있습니다.</li>
-							<li class="fieldValue"><a href="javascript:void(0);" class="linkUnderline colorPrimary" id="esimSelfOrdrInfoBtn" dynamicparamattr1="eSIM 셀프개통 안내" onclick="togglePopup('esimSelfOrdrInfoBtn', 'esimSelfOrdrInfo')">eSIM 셀프개통 안내</a> 를 먼저 확인하시면 셀프개통 진행에 도움이 됩니다.</li>
-							<!-- [VOS2차] 결함 ID&nbsp;1122074 타이틀 수정 -->
+	<div class="contentArea selfOpening" style="padding: 0;">
+		<div class="selfOpeningContainer" style="margin-bottom:14rem; font-size: 1.4rem;">
+			/web/kmvno/js/usim/self/usimSelf.view.js 자원 필요<br>
+			form 모음 자원 필요
+			<section id="" class="">
+				<div class="selfInfoTop" style="background-color: #fff;">
+					<div class="contentInner">
+						<h3>셀프개통 절차 안내</h3>
+						<ul>
+							<li>유심을 보유하고 있다면 셀프개통이 가능합니다.</li>
+							<li>유심이 없으신 고객님은 바로배송유심을 이용하시거나, 바로유심을 편의점에서 구매 후 셀프개통을 진행해주세요.</li>
+							<li>기존에 사용하시던 유심은 대리점에서 초기화 하셔야 셀프개통이 가능합니다.</li>
+							<li>eSIM은 개통 가능한 단말조회 및 등록 절차가 필요합니다.</li>
+							<li>셀프개통은 19세 이상 내국인만 신청 가능합니다.</li>
 						</ul>
+						<div class="gotoSelfArea">
+							<p>유심이 필요하신가요? <a href="/fe/service/usim/dlvr/usimDlvrMain.do" class="linkUnderline colorPrimary" dynamicparamattr1="바로배송유심 바로가기">바로배송유심 바로가기</a></p>
+						</div>
 					</div>
 				</div>
+				<!-- //END 셀프개통 절차 안내 -->
+
+				<div class="selfInfoBlock" style="margin-top: 2rem; background-color: #fff;">
+					<div class="contentInner">
+						https://ktmyr.com/fe/mypage/ppl/pplOptsvcLoamingList.do 단락별 마진 참조
+						<div class="blockTop">
+							<h3>알뜰폰 사업자</h3>
+							<button type="button" onclick="callBizrSelPop();" id="bizSelBtn" class="btn" dynamicparamattr1="알뜰폰 사업자 선택하기">
+								<span>알뜰폰 사업자 선택하기</span>
+							</button>
+						</div>
+						<div class="">
+							<div class="dataImgWrap">
+								<img class="" src="" alt="사업자명">
+							</div>
+							<div class="dataTextWrap">
+								<p>브랜드명</p>
+								<div>
+									<a href="tel:1661-2207">1661-2207</a>
+									<span>월-금 09:00 ~ 18:00</span>
+								</div>
+								<p>
+									<a href="https://www.ktmobie.com/" target="_blank" title="새창열림">https://www.ktmobie.com/</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //END 알뜰폰 사업자 -->
+
+				<div class="selfInfoBlock" style="margin-top: 2rem; background-color: #fff;">
+					<div class="contentInner">
+						<div class="blockTop">
+							<h3>요금제 선택</h3>
+							<button type="button" onclick="callPplSelPop('1');" id="pplSelBtn" class="btn" dynamicparamattr1="요금제 다시 선택하기">
+								<span>요금제 다시 선택하기</span>
+							</button>
+						</div>
+						<div class="summaryArea">
+							<div class="swiper ">
+								<div class="swiper-wrapper" style="height: auto;">
+									<div class="swiper-slide">
+										<a href="javascript:void(0);" class="popularDataArea" dynamicparamattr1="인기요금제 - 상세보기" dynamicparamattr2="데이터무한7GB+" onclick="" aria-hidden="false">
+											<div class="summaryTitleArea" aria-hidden="false">
+												<strong class="summaryBigTitle" aria-hidden="false">
+													<span class="titleCompany" aria-hidden="false">KT엠모바일</span>
+													데이터 맘껏 15GB+ / 300분
+												</strong>
+											</div>
+											<div class="dlColorBoxArea" aria-hidden="false">
+												<div class="dlGrayBox" aria-hidden="false">
+													<dl class="dlItemFlex borderType" aria-hidden="false">
+														<dt class="iconBgData" aria-hidden="false">데이터</dt>
+														<dd class="colorPrimary" aria-hidden="false">
+															15GB+일3MB+3Mbps
+														</dd>
+													</dl>
+													<dl class="dlItemFlex borderType" aria-hidden="false">
+														<dt class="iconBgCall" aria-hidden="false">음성통화</dt>
+														<dd class="colorPrimary" aria-hidden="false">300분</dd>
+													</dl>
+													<dl class="dlItemFlex borderType" aria-hidden="false">
+														<dt class="iconBgSMS" aria-hidden="false">메세지</dt>
+														<dd class="colorPrimary" aria-hidden="false">300건</dd>
+													</dl>
+												</div>
+											</div>
+											<dl class="usageItem" aria-hidden="false">
+												<dt aria-hidden="false">월 기본요금</dt>
+												<dd aria-hidden="false"><span aria-hidden="false">29,700</span>원</dd>
+											</dl>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //END 요금제 선택 -->
+
+				<div class="selfInfoBlock" style="margin-top: 2rem; background-color: #fff;">
+					<div class="contentInner">
+						<div class="blockTop">
+							<h3>가입유형</h3>
+						</div>
+						<div class="dataInner" id="checkboxDiv">
+							<div class="checkboxLine">
+								<input type="radio" id="oderTypeCd02" name="oderTypeCd" value="02">
+								<label for="oderTypeCd02" class="checkboxLabel">
+									<span>번호이동</span>
+									<span class="checkIcon"></span>
+								</label>
+							</div>
+							<div class="checkboxLine">
+								<input type="radio" id="oderTypeCd01" name="oderTypeCd" value="01">
+								<label for="oderTypeCd01" class="checkboxLabel">
+									<span>신규가입</span>
+									<span class="checkIcon"></span>
+								</label>
+							</div>
+						</div>
+						<div class="typeCaution" id="joinTypeTxtArea">
+							<ul class="fieldArea marginBtmReset">
+								<li class="fieldValue" id="joinTypeTxt">기존 번호로 개통합니다.(이후 통신사 인증 필수).</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- //END 가입 유형 -->
+
+				<div class="selfInfoBlock" style="margin-top: 2rem; background-color: #fff;">
+					<div class="contentInner">
+						<div class="blockTop">
+							<h3>개통 심(SIM) 유형</h3>
+						</div>
+						<div class="formItemArea">
+							<!-- 유심유형 -->
+							<div class="dataInner">
+								<div class="dataTitleArea">
+									<strong class="dataTitle">셀프개통 절차 안내</strong>
+								</div>
+								<div class="typeCaution">
+									<ul class="fieldArea marginBtmReset">
+										<li class="fieldValue">유심을 보유하고 있다면 셀프개통이 가능합니다.</li>
+										<li class="fieldValue">유심이 없으신 고객님은 바로배송유심을 이용하시거나, 바로유심을 편의점에서 구매 후 셀프개통을 진행해주세요.</li>
+										<li class="fieldValue">기존에 사용하시던 유심은 대리점에서 초기화 하셔야 셀프개통이 가능합니다.</li>
+										<li class="fieldValue">셀프개통은 19세 이상 내국인만 신청 가능합니다.</li>
+									</ul>
+								</div>
+								<div class="infoBoxArea">
+									<div class="infoAreaBottom alignRight">
+										유심이 필요하신가요?
+
+
+											<a href="/fe/service/usim/dlvr/usimDlvrMain.do" class="linkUnderline colorPrimary" dynamicparamattr1="바로배송유심 바로가기">바로배송유심 바로가기</a>
+
+									</div>
+								</div>
+							</div>
+
+							<!-- 알뜰폰 사업자 -->
+							<div class="dataInner" id="bizrViewDiv" style="display:none;">
+								<div class="dataTitleArea">
+									<strong class="dataTitle">알뜰폰 사업자</strong>
+									<button type="button" onclick="callBizrSelPop();" class="linkUnderline colorPrimary" id="bizSelBtn2" dynamicparamattr1="사업자 다시 선택하기">사업자 다시 선택하기</button>
+									<!-- [VOS2차] 결함 ID 1122074 타이틀 수정 -->
+								</div>
+								<div class="centerContainer">
+									<div class="centerArea flex">
+										<div class="centerLeft imgWrap" id="bizrImgDiv">
+										</div>
+										<div class="centerRight">
+											<div class="centerTop">
+												<strong class="centerTitle" id="bizrNmTxt"></strong>
+											</div>
+											<div class="centerMiddle">
+												<div class="centerInfo">
+													<div class="text" id="cctrTelDiv">
+														<div class="iconBgCall02"><span>전화</span></div>
+														<p id="bizrCctrTelNoTxt">1899-5000</p>
+													</div>
+													<div id="oprtTimeDiv">
+														<div class="text">
+															<div class="iconBgTime"><span>운영시간</span></div>
+															<p id="bizrOprtTimeTxt">월-금 09:00~18:00</p>
+														</div>
+													</div>
+												</div>
+												<a href="https://www.ktmmobile.com" class="centerUrl" id="bizrCctrUrlAtag">https://www.ktmmobile.com</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 알뜰폰 사업자 -->
+							<div class="dataInner" id="bizrSelDiv">
+								<div class="dataTitleArea">
+									<strong class="dataTitle">알뜰폰 사업자</strong>
+								</div>
+
+								<div class="buttonArea">
+									<button type="button" onclick="callBizrSelPop();" id="bizSelBtn" class="btn" dynamicparamattr1="알뜰폰 사업자 선택하기"><span>알뜰폰 사업자 선택하기</span></button>
+									<!-- [VOS2차] 결함 ID 1122074 타이틀 수정 -->
+								</div>
+							</div>
+
+							<!-- 요금제 선택 -->
+							<div class="dataInner" id="pplViewDiv" style="display:none;">
+								<div class="dataTitleArea">
+									<strong class="dataTitle">요금제 선택</strong>
+									<button type="button" onclick="callPplSelPop('1')" class="linkUnderline colorPrimary" id="pplSelBtn2" dynamicparamattr1="요금제 다시 선택하기">요금제 다시 선택하기</button>
+									<!-- [VOS2차] 결함 ID 1122074 타이틀 수정 -->
+								</div>
+
+								<div class="popularDataArea">
+									<div class="summaryTitleArea">
+										<strong class="summaryBigTitle">
+											<span class="titleCompany">KT엠모바일</span>데이터 맘껏 15GB+ /300분
+										</strong>
+										<p>
+											데이터 무제한에 <br>
+											네이버페이 5000P 제공!
+										</p>
+									</div>
+									<div class="dlColorBoxArea">
+										<div class="dlGrayBox">
+											<dl class="dlItemFlex borderType">
+												<dt class="iconBgData">데이터</dt>
+												<dd class="colorPrimary">15GB + 3Mbps</dd>
+											</dl>
+											<dl class="dlItemFlex borderType">
+												<dt class="iconBgCall">음성통화</dt>
+												<dd class="colorPrimary">300분</dd>
+											</dl>
+											<dl class="dlItemFlex borderType">
+												<dt class="iconBgSMS">메세지</dt>
+												<dd class="colorPrimary">300건</dd>
+											</dl>
+										</div>
+									</div>
+									<span id="pplAmtArea">
+												<!-- <dl class="usageItem smaller">
+													<dt>월 기본요금</dt>
+													<dd><span class="del"></span><span><em class="ir">정상가</em>29,700</span>원</dd>
+												</dl>
+												<dl class="usageItem">
+													<dt>프로모션 요금</dt>
+													<dd><span>29,700</span>원</dd>
+												</dl> -->
+												<dl class="usageItem">
+													<dt>월 기본요금</dt>
+													<dd><span>29,700</span>원</dd>
+												</dl>
+											</span>
+								</div>
+							</div>
+							<!-- 요금제 선택 -->
+							<div class="dataInner" id="pplSelDiv">
+								<div class="dataTitleArea">
+									<strong class="dataTitle">요금제 선택</strong>
+								</div>
+
+								<div class="buttonArea">
+									<button type="button" onclick="callPplSelPop('1');" id="pplSelBtn" class="btn" dynamicparamattr1="요금제 선택하기"><span>요금제 선택하기</span></button>
+									<!-- [VOS2차] 결함 ID 1122074 타이틀 수정 -->
+								</div>
+							</div>
+
+							<!-- 가입 유형(USIM/eSIM) -->
+							<div class="dataInner">
+								<div class="dataTitleArea">
+									<strong class="dataTitle">가입 유형</strong>
+								</div>
+								<div class="dataInner" id="checkboxDiv">
+									<div class="checkboxLine">
+										<input type="radio" id="oderTypeCd02" name="oderTypeCd" value="02">
+										<label for="oderTypeCd02" class="checkboxLabel">
+											<span>번호이동</span>
+											<span class="checkIcon"></span>
+										</label>
+									</div>
+									<div class="checkboxLine" style="/* display: none; */">
+										<input type="radio" id="oderTypeCd01" name="oderTypeCd" value="01" disabled="">
+										<label for="oderTypeCd01" class="checkboxLabel">
+											<span>신규가입</span>
+											<span class="checkIcon"></span>
+										</label>
+									</div>
+								</div>
+
+								<!-- 가입유형 안내문구 -->
+								<div class="typeCaution" id="joinTypeTxtArea" style="">
+									<ul class="fieldArea marginBtmReset">
+										<li class="fieldValue" id="joinTypeTxt">기존 번호로 개통합니다.(이후 통신사 인증 필수).</li>
+									</ul>
+								</div>
+							</div>
+
+
+							<!-- 개통 심(SIM) 유형 -->
+							<div class="dataInner">
+								<div class="dataTitleArea">
+									<strong class="dataTitle">개통 심(SIM) 유형</strong>
+								</div>
+								<div class="field fieldRadio">
+									<div class="fieldForm">
+										<div class="radio">
+											<input type="radio" id="simType-1" name="simType" value="sim">
+											<label for="simType-1" class="radioLabel"><span>유심(USIM)</span></label>
+										</div>
+										<div class="radio">
+											<input type="radio" id="simType-2" name="simType" value="esim"><!-- [VOS2차] 결함 ID 1122074 타이틀 수정 -->
+											<label for="simType-2" class="radioLabel"><span>eSIM</span></label>
+										</div>
+									</div>
+								</div>
+
+								<!-- 유심 -->
+								<div class="fieldUsimInput simArea" style="">
+									<div class="field">
+										<div class="fieldLabel">유심카드번호</div>
+										<div class="fieldForm">
+											<div class="inputRow" id="inputAutoMoveWrap">
+												<div class="row">
+													<input type="text" id="usimNo01" maxlength="4" title="유심카드번호 첫번째 네자리">
+												</div>
+												<div class="row">
+													<input type="text" id="usimNo02" maxlength="4" title="유심카드번호 두번째 네자리">
+												</div>
+												<div class="row">
+													<input type="text" id="usimNo03" maxlength="4" title="유심카드번호 세번째 네자리">
+												</div>
+												<div class="row">
+													<input type="text" id="usimNo04" maxlength="4" title="유심카드번호 네번째 네자리">
+												</div>
+												<div class="row">
+													<input type="text" id="usimNo05" maxlength="3" title="유심카드번호 다섯번째 세자리">
+												</div>
+											</div>
+											<div class="buttonArea">
+												<button type="button" class="btn btnSizeMiddle" id="usimValidChk"><span>유효성 체크</span></button>
+											</div>
+										</div>
+										<div class="addExplain">유심 카드를 미리 구매하신 고객님께서는 유심번호 19자리를 입력해주세요.</div>
+									</div>
+									<!--
+									될지, 안될지 모름...
+									<div class="infoBoxArea">
+										<div class="infoAreaBottom alignRight">
+											<button type="button" class="linkUnderline colorPrimary"  disabled>유심 바코드 스캔</button>
+										</div>
+									</div>
+									 -->
+								</div>
+
+								<!-- eSIM -->
+								<div class="dataInner esimArea" style="display: none;">
+
+									<!--<div class="fieldSelfSufficiency" id="omdRegArea" style="display: none">
+										<div class="middleTitle">자급제 단말 등록</div>
+
+										<div class="field fieldInput">
+											<div class="fieldLabel">모델명</div>
+											<div class="fieldForm">
+												<div class="input">
+													<input type="text" id="modelNm"  placeholder="모델명을 입력 후 조회해주세요.">
+												</div>
+												<div class="buttonArea">
+													<button type="button" class="btn btnSizeMiddle"  id="modelSearch"><span>조회</span></button>&lt;!&ndash; popupModelDevice.html 팝업 연결 &ndash;&gt;
+													&lt;!&ndash; [VOS2차] 결함 ID 1122074 타이틀 수정 &ndash;&gt;
+												</div>
+											</div>
+										</div>
+
+										<div class="buttonArea block">
+											<button type="button" class="btn"   id="omdHndsetAdd"><span>유효성 체크</span></button>
+											&lt;!&ndash; [VOS2차] 결함 ID 1122074 타이틀 수정 &ndash;&gt;
+										</div>
+									</div>
+									<br/>-->
+
+									<div class="fieldSelfSufficiency">
+										<!-- [VOS2차] 결함ID 1122397 1122383 팝업 연결 버튼 추가 -->
+										<div id="esimOpenGuide" class="typeCaution">
+											<ul class="fieldArea marginBtmReset">
+												<li class="fieldValue"><a href="javascript:void(0);" class="linkUnderline colorPrimary" id="eSimSelfOpenGuideConfirm">eSIM 셀프개통 안내사항</a>을 확인해주세요.</li>
+												<li class="fieldValue">eSIM 개통을 위해 EID, IMEI1,2 입력이 필요합니다.</li>
+												<li class="fieldValue"><a href="javascript:void(0);" class="linkUnderline colorPrimary" id="EIDIMEIConfirmToIMGPopupBtn">EID, IMEI 확인 및 이미지 등록 방법</a>을 확인해주세요.</li>
+											</ul>
+										</div>
+										<!-- //[VOS2차] 결함ID 1122397 1122383 팝업 연결 버튼 추가 -->
+
+										<div class="middleTitle">휴대폰 정보 등록</div>
+
+										<div class="field fieldInput">
+											<div class="fieldLabel">EID 번호</div>
+											<div class="fieldForm">
+												<div class="input">
+													<input type="text" id="eidNo" name="eidNo" maxlength="32" size="32" title="EID 번호" placeholder="EID 번호를 입력해주세요.">
+												</div>
+											</div>
+										</div>
+										<div class="field fieldInput">
+											<div class="fieldLabel">IMEI1 번호</div>
+											<div class="fieldForm">
+												<div class="input">
+													<input type="text" id="mainImeiNo" name="mainImeiNo" maxlength="15" size="15" title="IMEI1 번호" placeholder="IMEI1 번호를 입력해주세요.">
+												</div>
+											</div>
+										</div>
+										<div class="field fieldInput">
+											<div class="fieldLabel">IMEI2 번호</div>
+											<div class="fieldForm">
+												<div class="input">
+													<input type="text" id="digtlSimImeiNo" name="digtlSimImeiNo" maxlength="15" size="15" title="IMEI2 번호" placeholder="IMEI2 번호를 입력해주세요.">
+												</div>
+											</div>
+										</div>
+										<div class="buttonArea block">
+											<button type="button" class="btn btnPrimary" id="imgRegForOmdHndset"><span>이미지로 등록하기</span></button>
+											<button type="button" class="btn btnPrimary" id="esimValidChk" disabled=""><span>eSIM 개통 가능여부 조회</span></button>
+											<!-- [VOS2차] 결함 ID 1122074 타이틀 수정 -->
+										</div>
+
+										<div id="esimValidGuide" class="nodataContainer sidePadding0" style="display:none;">
+											<p class="bgInfoGray alignCenter">eSIM 개통이 가능합니다.</p>
+											<p class="noticeBottom bold">*esim 프로파일 다운로드 시 2,750원의 비용이 발생합니다. </p><!-- [2차] 20221214 문구 변경 -->
+										</div>
+										<div id="esimErrorView" style="display:none;">
+											<div class="loadingBarFail"></div>
+										</div>
+									</div>
+								</div>
+								<!-- eSIM -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //END 개통 심(SIM) 유형 -->
+			</section>
+			<!-- //END 번호이동 step1 셀프개통 신청 -->
+
+			<section id="" class="">
+				<div class="selfInfoBlock" style="margin-top: 2rem; background-color: #fff;">
+					<div class="contentInner">
+						<div class="blockTop">
+							<h3>가입자 실명</h3>
+						</div>
+						<div class="formItemArea">
+							<div class="field fieldInput">
+								<label for="testCheckName" class="fieldLabel">이름</label>
+								<div class="fieldForm">
+									<div class="input">
+										<input type="text" id="testCheckName" name="" value="임태일" placeholder="이름" maxlength="">
+									</div>
+								</div>
+							</div>
+							<div class="field fieldInput">
+								<label for="testCheckJumin" class="fieldLabel">주민등록번호</label>
+								<div class="fieldForm">
+									<div class="input">
+										<input type="text" id="testCheckJumin" name="" value="890626-1******" placeholder="주민등록번호" maxlength="">
+									</div>
+								</div>
+								<div class="addExplain">
+									<p>셀프개통은 19세 이상 내국인만 신청 가능합니다.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //END 개통 심(SIM) 유형 -->
+			</section>
+			<!-- //END 번호이동 step2 인증 -->
+
+			<section id="" class=""></section>
+			<!-- //END 번호이동 step3 정보 -->
+
+			<section id="" class=""></section>
+			<!-- //END 번호이동 step4 번호이동 -->
+
+			<section id="" class=""></section>
+			<!-- //END 번호이동 step5 사전동의 -->
+
+			<section id="" class=""></section>
+			<!-- //END 번호이동 step6 납부 -->
+
+
+
+			<div class="fixedFooterContainer">
+				<div class="fixedFooterArea">
+					<div class="descArea">
+						<div class="left">
+							<p class="title">[KT M모바일]</p>
+							<p class="desc">데이터 맘껏 15GB+ / 300분</p>
+						</div>
+						<div class="right">
+							<div class="desc">
+								월
+								<p class="priceArea">
+									<span class="price">29,700</span>&nbsp;원
+								</p>
+							</div>
+						</div>
+					</div>
+					<!-- //END descArea -->
+
+					<div class="buttonArea">
+						<button type="button" class="btn btnPrimary pcType" onclick="">
+							<span>다음</span>
+						</button>
+						<button type="button" class="btn btnPrimary moType" onclick="">
+							<span>다음</span>
+						</button>
+					</div>
+				</div>
+				<!-- //END fixedFooterArea -->
 			</div>
+			<!-- //END fixedFooterContainer -->
 		</div>
 	</div>
 	<!-- //END contentArea -->
@@ -1756,6 +2227,7 @@ function decodeXssTag(value) {
 	<!-- //popupBottom -->
 </div>
 </div>
+
 
 
 
