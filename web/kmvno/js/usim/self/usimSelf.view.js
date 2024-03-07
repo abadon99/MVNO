@@ -610,6 +610,22 @@ $(document).ready(function () {
 		// 값 세팅
 		$("#npAthnCd").val(npAthnVal);
 	});
+	/** @번호이동_사용중인_통신사 */
+	$(":radio[name='selfTelecom']").on("click", function() {
+		var selfTelecomVal = $(this).val();
+		$("div[class^='selfTelecom']").hide();
+
+		// 각 영역별 노출 처리
+		if("1" == selfTelecomVal) {
+			$("div.selfTelecom01").show();
+		} else if("2" == selfTelecomVal) {
+			$("div.selfTelecom02").show();
+		} else if("3" == selfTelecomVal) {
+			$("div.selfTelecom03").show();
+		} else if("4" == selfTelecomVal) {
+			$("div.selfTelecom04").show();
+		}
+	});
 	// 디폴트 인증유형 선택
 	$(":radio[name='npAthnCdRadio']:eq(0)").trigger("click");
 
@@ -670,7 +686,7 @@ $(document).ready(function () {
 		$("#card").removeClass("active");
 		$(this).addClass("active");
 		$("#btnCertPopup").attr("authType",idVal);  //인증타입
-		if(idVal == "pass"){ //일단 패스는 기존대로 팝업창으로 //$("#authType").val("1"); 이것도 나중에 손보자 
+		if(idVal == "pass"){ //일단 패스는 기존대로 팝업창으로 //$("#authType").val("1"); 이것도 나중에 손보자
 			$("#authType").val("1");
 			$("#certCardGuideTxtArea").hide(); //카드 본인인증 확인 관련
 			$("#certCustPhoneNoArea").show(); //연락처
@@ -1189,7 +1205,7 @@ function goNextStep(input) {
 	} else if("view02" == dispView) {
 		var param = $(input).attr("dynamicParamAttr1");
 		pushEventTagging(dispView, param);
-	
+
 		if(false == controller.custAuth) {
 			alert("본인인증을 하시기 바랍니다.");
 			if(!$("#btnCertPopup").attr("disalbed")){
@@ -1199,12 +1215,12 @@ function goNextStep(input) {
 			}
 			return;
 		}
-		
+
 		// 약관동의 여부 체크
 		if(false == chkStpltValid()) {
 			return;
 		}
-		
+
 		// 2023.03.22 긴급배포건 신규가입 불가능 처리
 		// 2023.05.09 주석 처리
 		//var oderTypeCd = $(":radio[name='oderTypeCd']:checked").val();
@@ -1388,7 +1404,7 @@ function goNewJoinStep() {
 
 /** @번호이동_화면_노출 */
 function goMovePhoneStep() {
-	
+
 	if($("#loading").length > 0) {
 		$("#loading").remove(); //혹시나해서
 	}
@@ -1454,7 +1470,7 @@ function callBizrSelPop() {
 
 			// 팝업 호출
 			togglePopup('bizSelBtn', 'bizrSelectPopupView');
-			
+
 			getCretKeyRsaEncData("cretKey"); //키생성
 			loadUnBlock();
 		},errorCall:function() {
@@ -1643,10 +1659,10 @@ function pplSelCmplt() {
 		$(":radio[id='oderTypeCd02']").prop("disabled", true);
 		$(":radio[id='oderTypeCd02']").prop("checked", false);
 	}
-	
+
 	var tngrPplYn = $(":radio[name='pplListChk']:checked").attr("tngrPplYn");
 	var sbscPosblAge = $(":radio[name='pplListChk']:checked").attr("posblAge");
-	
+
 	// 연령 전용 요금제여부 && 가입 가능 나이 체크
 	var sbscPosblAgeCk = false;
 	if("S" == tngrPplYn && (null != sbscPosblAge && "0" != sbscPosblAge) ) {
@@ -1667,7 +1683,7 @@ function pplSelCmplt() {
 	if($("#pplSelectPopupView").hasClass("show")) {
 		togglePopup('pplSelBtn', 'pplSelectPopupView');
 	}
-	
+
 	// 시니어 요금제 선택 시 알림 팝업 노출
 	if(sbscPosblAgeCk) {
 		$("#popupSeniorNoticeContent").html("시니어 요금제를 선택하였습니다. <br>※ 만 "+ sbscPosblAge +"세 이상 가입 가능");
@@ -2934,7 +2950,7 @@ function fnCardVaild() {
 				$("#blpymMthdCardCompBtn").show();
 				// 납부방법 변경 불가 처리
 				$(":radio[name='blpymMthdCd']").prop("disabled", true);
-				
+
 				//신용카드사 비활성화
 				$("#selectCardBtn").prop("disabled", true);
 				//신용카드 선택 불가
@@ -2942,7 +2958,7 @@ function fnCardVaild() {
 				//월 일 비활성화
 				$("#selectCardMonthBtn").prop("disabled", true);
 				$("#selectCardYearBtn").prop("disabled", true);
-				
+
 			} else {
 				$("#commonAlertPopupTitle").text("신용/체크카드 유효성 체크");
 				$("#commonAlertPopupContent").text(validBean.rsltMsg);
@@ -3006,7 +3022,7 @@ function fnBankVaild() {
 				$("#blpymMthdBankCompBtn").show();
 				// 납부방법 변경 불가 처리
 				$(":radio[name='blpymMthdCd']").prop("disabled", true);
-				
+
 				//계좌번호
 				$("#blpymMthdIdntNoBkTemp").prop("disabled", true);
 
@@ -3014,7 +3030,7 @@ function fnBankVaild() {
 				$("#selectBankBtn").prop("disabled", true);
 				//이름 비활성화 //다시한번?
 				$("#blpymCustNmBk").prop("disabled", true);
-				
+
 			} else {
 				$("#commonAlertPopupTitle").text("신용/체크카드 유효성 체크");
 				$("#commonAlertPopupContent").text(validBean.rsltMsg);
@@ -3655,12 +3671,12 @@ $(document).on("click", "a[dynamicParamAttr1='바로배송유심 바로가기']"
 	} else if("view04" == dispView || "phoneMove02" == dispView) {
 		dynamicParam1 = (oderTypeCd == "01" && "view04" == dispView) ? "self_step_5" : ((oderTypeCd == "02" && "view04" == dispView) ? "self_step_6" : "self_step_5");
 	}
-	
+
 	var dynamicParam2 = "view01" == dispView ? "공통" : (("view01" != dispView && oderTypeCd == "01") ? "신규가입" : "번호이동");
 	var dynamicParam3 = $(this).attr("dynamicParamAttr1");
 	var dynamicParam4 = "";
 	var eventName = "";
-	
+
 	push_dataLayer_data(dynamicParam1,dynamicParam2,dynamicParam3,dynamicParam4,eventName);
 });
 
@@ -3671,7 +3687,7 @@ function pushEventTagging(dispView, param) {
 	var dynamicParam3 = "";
 	var dynamicParam4 = "";
 	var eventName = "";
-	
+
 	if(dispView == "" && param == "") {
 		dynamicParam1 = oderTypeCd == "01" ? "신규가입" : "번호이동";
 		dynamicParam2 = "";
@@ -3691,7 +3707,7 @@ function pushEventTagging(dispView, param) {
 		dynamicParam2 = "view01" == dispView ? "공통" : (("view01" != dispView && oderTypeCd == "01") ? "신규가입" : "번호이동");
 		dynamicParam3 = param;
 	}
-	
+
 	push_dataLayer_data(dynamicParam1,dynamicParam2,dynamicParam3,dynamicParam4,eventName);
 }
 /**=============GA4 통계 소스 종료=============**/

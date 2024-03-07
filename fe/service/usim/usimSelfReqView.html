@@ -2120,7 +2120,7 @@
 									<button type="button" class="linkUnderline colorPrimary"  onclick="togglePopup('npCmpnArsPopAgreeBtn', 'npCmpnArsPopAgree')">번호이동 사전동의 안내</button>
 								</div>
 								<div class="field fieldInput">
-									<label for="custAddr" class="fieldLabel">휴대폰번호</label>
+									<label for="npTlphNo" class="fieldLabel">휴대폰번호</label>
 									<div class="fieldForm">
 										<div class="input">
 											<input type="text" id="npTlphNo" class="onlyNum" maxlength="11">
@@ -2139,87 +2139,64 @@
 								</div>
 								<div class="checkboxLineFlex">
 									<div class="checkboxLine">
-										<input type="radio" id="testTelecom01" name="testTelecom" value="1">
-										<label for="testTelecom01" class="checkboxLabel">
+										<input type="radio" id="selfTelecom01" name="selfTelecom" value="1">
+										<label for="selfTelecom01" class="checkboxLabel">
 											<span>SK텔레콤</span>
 											<span class="checkIcon"></span>
 										</label>
 									</div>
 									<div class="checkboxLine">
-										<input type="radio" id="testTelecom02" name="testTelecom" value="2">
-										<label for="testTelecom02" class="checkboxLabel">
+										<input type="radio" id="selfTelecom02" name="selfTelecom" value="2">
+										<label for="selfTelecom02" class="checkboxLabel">
 											<span>LG유플러스</span>
 											<span class="checkIcon"></span>
 										</label>
 									</div>
 									<div class="checkboxLine">
-										<input type="radio" id="testTelecom03" name="testTelecom" value="3">
-										<label for="testTelecom03" class="checkboxLabel">
+										<input type="radio" id="selfTelecom03" name="selfTelecom" value="3">
+										<label for="selfTelecom03" class="checkboxLabel">
 											<span>KT</span>
 											<span class="checkIcon"></span>
 										</label>
 									</div>
 									<div class="checkboxLine">
-										<input type="radio" id="testTelecom04" name="testTelecom" value="4">
-										<label for="testTelecom04" class="checkboxLabel">
+										<input type="radio" id="selfTelecom04" name="selfTelecom" value="4">
+										<label for="selfTelecom04" class="checkboxLabel">
 											<span>알뜰폰</span>
 											<span class="checkIcon"></span>
 										</label>
 									</div>
 									<div class="checkboxLine">
-										<input type="radio" id="telecomSelectBtn" name="testTelecom" value="4" onclick="togglePopup('telecomSelectBtn', 'telecomSelectPop')">
-										<label for="testTelecom04" class="checkboxLabel">
+										<input type="radio" id="selfTelecom04" name="selfTelecom" value="4" onclick="togglePopup('selfTelecom04', 'selfTelecomSelectPop')">
+										<label for="selfTelecom04" class="checkboxLabel">
 											<span>알뜰폰</span>
 											<span class="checkIcon"></span>
 										</label>
 									</div>
 								</div>
-								<div class="testTelecom04" style="display: none;">
+								<div class="selfTelecom04" style="display: none;">
 									<div class="teleComInfo">
 										<div class="field fieldInput">
-											<label for="custAddr" class="fieldLabel">알뜰폰 통신사</label>
+											<label for="affordableAgency" class="fieldLabel">알뜰폰 통신사</label>
 											<div class="fieldForm">
 												<div class="input">
-													<input type="text" id="" class="readonly" readonly value="LGU+알뜰폰">
+													<input type="text" id="affordableAgency" class="readonly" readonly value="LGU+알뜰폰">
 												</div>
 											</div>
 										</div>
 										<div class="field fieldInput">
-											<label for="custAddr" class="fieldLabel">알뜰폰 사업자</label>
+											<label for="affordableProvider" class="fieldLabel">알뜰폰 사업자</label>
 											<div class="fieldForm">
 												<div class="input">
-													<input type="text" id="" class="readonly" readonly value="토스모바일LG">
+													<input type="text" id="affordableProvider" class="readonly" readonly value="토스모바일LG">
 												</div>
 											</div>
 										</div>
 									</div>
+									<div class="dataTitleArea" style="justify-content: end; border: none; padding-bottom: 0;">
+										<button type="button" onclick="togglePopup('selfTelecom04', 'selfTelecomSelectPop')" class="linkUnderline colorPrimary" id="" dynamicparamattr1="알뜰폰 통신사 재선택">알뜰폰 통신사 재선택</button>
+									</div>
 								</div>
-
-								<style>
-									.teleComInfo {display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: -0.5rem -0.5rem 2.5rem;}
-									.teleComInfo .field {width: calc(50% - 1rem); margin: 0.5rem;}
-								</style>
-
-								<!-- /js/usim/self/usimSelf.view.js에 아래사항 추가 -->
-								<script>
-									$(":radio[name='testTelecom']").on("click", function() {
-									var testTelecomVal = $(this).val();
-									// 인증유형 이미지 영역 전체 숨기기
-									$("div[class^='testTelecom']").hide();
-
-									// 각 영역별 노출 처리
-									if("2" == testTelecomVal) {
-										$("div.testTelecom01").show();
-									} else if("2" == testTelecomVal) {
-										$("div.testTelecom02").show();
-									} else if("3" == testTelecomVal) {
-										$("div.testTelecom03").show();
-									} else if("4" == testTelecomVal) {
-										$("div.testTelecom04").show();
-									}
-								});
-								</script>
-
 								<div class="typeCaution">
 									<ul class="fieldArea marginBtmReset">
 										<li class="fieldValue">통신사를 모르실 경우 현재 사용중인 휴대폰에서 114로 확인바랍니다.</li>
@@ -2876,7 +2853,7 @@
 							</div>
 						</div>
 						<div class="buttonArea" id="nextStepBtnArea">
-							<button type="button" class="btn btnPrimary" id="goNextStep" dynamicParamAttr1="다음" onclick="goNextStep(this);"><span id="nextStepTxt">다음</span></button>
+							<button type="button" class="btn btnPrimary" id="goNextStep" dynamicParamAttr1="사전동의 요청" onclick="goNextStep(this);"><span id="nextStepTxt">사전동의 요청</span></button>
 						</div>
 					</div>
 				</div>
@@ -2889,6 +2866,7 @@
 
 
 <!-- 번호이동 프로세스 개선 팝업 -->
+		<!-- 통신사 조회 결과 -->
 		<div class="popup hide" id="telecomInquiryPop" role="dialog" aria-labelledby="telecomInquiryTitle" aria-modal="true">
 			<div class="dim"></div>
 			<div class="popupContainer">
@@ -2917,43 +2895,93 @@
 			</div>
 		</div>
 
-		<div class="popup hide" id="telecomSelectPop" role="dialog" aria-labelledby="telecomSelectTitle" aria-modal="true">
+		<!-- 통신사 선택 -->
+		<div class="popup popupBottomFixed hide" id="selfTelecomSelectPop" role="dialog" aria-labelledby="telecomSelectTitle" aria-modal="true">
 			<div class="dim"></div>
 			<div class="popupContainer">
 				<div class="popupTop">
 					<strong class="popupTitle" id="telecomSelectTitle">알뜰폰 통신사 선택</strong>
-					<button type="button" class="btnClose" onclick="togglePopup('telecomSelectBtn', 'telecomSelectPop')">
+					<button type="button" class="btnClose" onclick="togglePopup('selfTelecom04', 'selfTelecomSelectPop')">
 						<span>Close</span>
 					</button>
 				</div>
 				<div class="popupMiddle">
-					<div class="popupContent">
-						<p class="bold">알뜰폰 통신사 선택</p>
+					<div class="agencyPopContainer">
+						<div class="dataFolderWrap active">
+							<div class="folderTitle">
+								<p class="title"><strong>알뜰폰 통신사 선택</strong></p>
+							</div>
+							<div class="fieldRadio btnStyle">
+								<div class="radio">
+									<input type="radio" id="selectSelfTelecom01" name="selectSelfTelecom" value="">
+									<label for="selectSelfTelecom01" class="radioLabel">SKT알뜰폰</label>
+								</div>
+								<div class="radio">
+									<input type="radio" id="selectSelfTelecom02" name="selectSelfTelecom" value="">
+									<label for="selectSelfTelecom02" class="radioLabel">LGU+알뜰폰</label>
+								</div>
+								<div class="radio">
+									<input type="radio" id="selectSelfTelecom03" name="selectSelfTelecom" value="">
+									<label for="selectSelfTelecom03" class="radioLabel">KT알뜰폰</label>
+								</div>
+							</div>
 
-						<p class="bold">알뜰폰 사업자 선택</p>
-						<ul class="checkList" aria-label="통신사">
-							<li>
-								<div class="radio">
-									<input type="radio" id="npCmpnRadio0" name="npCmpnRadio" cmpngrp="01" value="KTF">
-									<label for="npCmpnRadio0" class="radioLabel"><span>KT</span></label>
+							<div class="folderTitle">
+								<p class="title"><strong>알뜰폰 사업자 선택</strong></p>
+							</div>
+							<div class="searchBar">
+								<div class="searchInput">
+									<label for="searchInputID02" class="ir">검색어 입력</label>
+									<div class="input">
+										<input type="text" id="searchInputID02" value="" placeholder="알뜰폰 사업자를 검색하세요." />
+									</div>
+									<button type="button" class="btnRemove show"><span>검색어 지우기</span></button>
+									<button type="button" class="btnSearch show"><span>검색하기</span></button>
 								</div>
-							</li>
-							<li>
-								<div class="radio">
-									<input type="radio" id="npCmpnRadio1" name="npCmpnRadio" cmpngrp="01" value="K44">
-									<label for="npCmpnRadio1" class="radioLabel"><span>주식회사 친구아이앤씨</span></label>
+							</div>
+							<div class="folderContent" style="min-height: 40vh;">
+								<div class="searchNoResult" style="display: flex; justify-content: center; align-items: center; height: 40vh;">
+									알뜰폰 통신사를 선택해주세요.
 								</div>
-							</li>
-							<li>
-								<div class="radio">
-									<input type="radio" id="npCmpnRadio2" name="npCmpnRadio" cmpngrp="01" value="K43">
-									<label for="npCmpnRadio2" class="radioLabel"><span>(주)오파스넷</span></label>
-								</div>
-							</li>
-						</ul>
+								<ul class="checkList" aria-label="통신사">
+									<li>
+										<div class="radio">
+											<input type="radio" id="npCmpnRadio0" name="npCmpnRadio" cmpngrp="01" value="KTF">
+											<label for="npCmpnRadio0" class="radioLabel"><span>KT</span></label>
+										</div>
+									</li>
+									<li>
+										<div class="radio">
+											<input type="radio" id="npCmpnRadio0" name="npCmpnRadio" cmpngrp="01" value="KTF">
+											<label for="npCmpnRadio0" class="radioLabel"><span>KT</span></label>
+										</div>
+									</li>
+									<li>
+										<div class="radio">
+											<input type="radio" id="npCmpnRadio0" name="npCmpnRadio" cmpngrp="01" value="KTF">
+											<label for="npCmpnRadio0" class="radioLabel"><span>KT</span></label>
+										</div>
+									</li>
+									<li>
+										<div class="radio">
+											<input type="radio" id="npCmpnRadio0" name="npCmpnRadio" cmpngrp="01" value="KTF">
+											<label for="npCmpnRadio0" class="radioLabel"><span>KT</span></label>
+										</div>
+									</li>
+									<li>
+										<div class="radio">
+											<input type="radio" id="npCmpnRadio0" name="npCmpnRadio" cmpngrp="01" value="KTF">
+											<label for="npCmpnRadio0" class="radioLabel"><span>KT</span></label>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
+				</div>
+				<div class="popupBottom">
 					<div class="buttonArea">
-						<button type="button" class="btn btnPrimary" onclick="togglePopup('telecomSelectBtn', 'telecomSelectPop')" disabled><span>확인</span></button>
+						<button type="button" class="btn btnPrimary"><span>확인</span></button>
 					</div>
 				</div>
 			</div>
