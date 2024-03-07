@@ -29094,6 +29094,15 @@ table caption {
   height: 3.3rem;
   font-size: 1.2rem;
 }
+.agencyPopContainer .folderContent {
+  min-height: 40vh;
+}
+.agencyPopContainer .searchNoResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
 
 /* 셀프개통 신청 메인 */
 [class*=accordionIsland].active .btnOpenIsland {
