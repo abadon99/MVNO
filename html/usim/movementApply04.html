@@ -1277,22 +1277,21 @@
     $(document).ready(function() {
       commonEvent();
 
-      // 번호이동 프로세스 개선
-	$(":radio[name='selfTelecom']").on("click", function() {
-		var selfTelecomVal = $(this).val();
-		$("div[class^='selfTelecom']").hide();
+      // 4419: 번호이동 프로세스 개선 - 화면 확인용
+      $(":radio[name='selfTelecom']").on("click", function() {
+        var selfTelecomVal = $(this).val();
+        $("div[class^='selfTelecom']").hide();
 
-		// 4419: 번호이동 프로세스 개선
-		if("1" == selfTelecomVal) {
-			$("div.selfTelecom01").show();
-		} else if("2" == selfTelecomVal) {
-			$("div.selfTelecom02").show();
-		} else if("3" == selfTelecomVal) {
-			$("div.selfTelecom03").show();
-		} else if("4" == selfTelecomVal) {
-			$("div.selfTelecom04").show();
-		}
-	});
+        if("1" == selfTelecomVal) {
+          $("div.selfTelecom01").show();
+        } else if("2" == selfTelecomVal) {
+          $("div.selfTelecom02").show();
+        } else if("3" == selfTelecomVal) {
+          $("div.selfTelecom03").show();
+        } else if("4" == selfTelecomVal) {
+          $("div.selfTelecom04").show();
+        }
+      });
     });
   </script>
 </body>
