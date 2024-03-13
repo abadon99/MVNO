@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NZ4CRZ8');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+  <meta name="Author-Date(Date)" content="" />
+  <meta name="naver-site-verification" content="70a0cae19ae057fea7e4a95c12081024a872f5d3" />
+  <meta name="Keywords" content="kt, 케이티, ktmyr.com, ktmyr닷컴, 마이알뜰폰닷컴, 마이알뜰폰, 알뜰폰, 알뜰폰 가입" />
+  <meta name="Description" content="[kt] 마이알뜰폰 메인입니다. 알뜰폰 상품 정보 확인부터 가입, 개통, 변경까지 한번에 가능한 KT 알뜰폰 전용 서비스입니다. /" />
+  <!-- <meta name="Keywords" content="kt, 케이티, ktmyr.com, ktmyr닷컴, 마이알뜰폰닷컴, 마이알뜰폰, 이벤트, 진행 중인 이벤트, 알뜰폰 이벤트">
+  <meta name="Description" content="[마이알뜰폰] 이벤트 - 마이알뜰폰에서 진행하고 있는 이벤트를 확인해 보세요."> -->
+  <meta property="og:title" content="데이터쉐어링 개통 불가 안내, 유심 유효성 체크 결과 | KT 마이알뜰폰" />
+  <meta property="og:description" content="알뜰폰 상품 정보 확인부터 가입, 개통, 변경까지 한번에 가능한 KT 알뜰폰 전용 서비스" />
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:url" content="https://www.ktmyr.com/" /> -->
+  <meta property="og:image" content="../../assets/images/common/myr_ci.png" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="210" />
+  <title>데이터쉐어링 개통 불가 안내, 유심 유효성 체크 결과 | KT 마이알뜰폰</title>
+  <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
+  <!-- [운영] DR-2023-28511 -->
+  <!-- Add style -->
+  <link rel="stylesheet" href="../../assets/default/font.css" />
+  <link rel="stylesheet" href="../../assets/default/reset.css" />
+  <link rel="stylesheet" href="../../assets/default/swiper.min.css" />
+  <!-- swiper CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <!-- Script -->
+  <script type="text/javascript" src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="../../assets/js/locales/bootstrap-datepicker.ko.js"></script>
+  <script type="text/javascript" src="../../assets/js/swiper.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/masonry.pkgd.min.js"></script>
+  <!-- masonry JS -->
+  <script type="text/javascript" src="../../assets/js/bundle.js"></script>
+</head>
+
+<body>
+  <div class="buttonArea">
+    <button type="button" class="btn" id="btnID01" onclick="togglePopup('btnID01', 'popupDefault01')"><span>데이터쉐어링 개통 불가 안내</span></button>
+    <button type="button" class="btn" id="btnID02" onclick="togglePopup('btnID02', 'popupDefault02')"><span>유심 유효성 체크 결과</span></button>
+  </div>
+  <div class="popup hide" id="popupDefault01" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+    <div class="dim"></div>
+    <div class="popupContainer">
+      <div class="popupTop">
+        <strong class="popupTitle" id="popupTitle-01">데이터쉐어링 개통 불가 안내</strong>
+        <button type="button" class="btnClose" onclick="togglePopup('btnID01', 'popupDefault01')">
+          <span>Close</span>
+        </button>
+      </div>
+      <div class="popupMiddle">
+        <div class="popupContent">
+          <p class="smallText">데이터 쉐어링 개통이 불가능한 시간입니다.</p>
+          <p class="smallText">개통 가능한 시간은 09시~21시입니다.</p>
+        </div>
+        <div class="buttonArea">
+          <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>확인</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //popup End -->
+  <div class="popup hide" id="popupDefault02" role="dialog" aria-labelledby="popupTitle-02" aria-modal="true">
+    <div class="dim"></div>
+    <div class="popupContainer">
+      <div class="popupTop">
+        <strong class="popupTitle" id="popupTitle-02">유심 유효성 체크 결과</strong>
+        <button type="button" class="btnClose" onclick="togglePopup('btnID02', 'popupDefault02')">
+          <span>Close</span>
+        </button>
+      </div>
+      <div class="popupMiddle">
+        <div class="popupContent">
+          <!-- 성공 -->
+          <p class="smallText">입력하신 유심번호 사용 가능합니다.</p>
+          <!-- 리셋 -->
+          <!-- <p class="smallText">USIM 리셋 후 사용 가능합니다.</p> -->
+          <!-- 실패 -->
+          <!-- <p class="smallText">유심번호가 정확하지 않습니다.</p> -->
+        </div>
+        <div class="buttonArea">
+          <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID02', 'popupDefault02')"><span>확인</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //popup End -->
+  <!-- Start Script -->
+</body>
+
+</html>

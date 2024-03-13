@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- KT guide -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+  <meta name="Author-Date(Date)" content="" />
+  <meta name="Description" content="" />
+  <meta name="Keyword" content="" />
+  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+  <!-- <link rel="apple-touch-icon-precomposed" href="/icon-normal.png"> -->
+  <link rel="shortcut icon" href="https://www.kt.com/favicon.ico" />
+  <!-- //KT guide -->
+  <title>마스킹 해제 | 쿠폰 관리 | 통합채널 관리자</title>
+  <!-- Add style -->
+  <link rel="stylesheet" href="../../assets/default/font.css" />
+  <link rel="stylesheet" href="../../assets/default/reset.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <!-- Script -->
+  <script type="text/javascript" src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery-ui.js"></script>
+  <!-- //[2차] 순서변경 JS 추가(bootstrap-datepicker.js 보다 위에 위치하여야 합니다.) -->
+  <script type="text/javascript" src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="../../assets/js/locales/bootstrap-datepicker.ko.js"></script>
+  <script type="text/javascript" src="../../assets/js/bundle.js"></script>
+</head>
+
+<body>
+  <div class="buttonArea">
+    <button type="button" class="btn" id="btnMaskingClear" onclick="togglePopup('btnMaskingClear', 'popupMaskingClear')"><span>마스킹 해제</span></button>
+  </div>
+  <!-- 마스킹 해제 -->
+  <div class="popup hide" id="popupMaskingClear" role="dialog" aria-labelledby="popupTitle-maskingClear" aria-modal="true">
+    <div class="dim"></div>
+    <div class="popupContainer">
+      <div class="popupTop">
+        <strong class="popupTitle" id="popupTitle-maskingClear">마스킹 해제</strong>
+        <button type="button" class="btnClose" onclick="togglePopup('btnMaskingClear', 'popupMaskingClear')">
+          <span>Close</span>
+        </button>
+      </div>
+      <div class="popupMiddle">
+        <div class="popupContent">
+          <div class="input">
+            <input type="text" id="" placeholder="사유를 입력해주세요.*" />
+          </div>
+        </div>
+        <div class="popupBottom">
+          <div class="buttonArea">
+            <button type="button" class="btn btnSecondary" onclick="togglePopup('btnMaskingClear', 'popupMaskingClear')"><span>취소</span></button>
+            <!-- <button type="button" class="btn btnPrimary" onclick="togglePopup('btnMaskingClear', 'popupMaskingClear')"><span>신청</span></button> 입력 후 활설화 신청 버튼 -->
+            <button type="button" class="btn btnDim" onclick="togglePopup('btnMaskingClear', 'popupMaskingClear')"><span>신청</span></button>
+            <!-- 입력 전 비활성화 신청 버튼 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //popup End -->
+  <!-- Start Script -->
+</body>
+
+</html>

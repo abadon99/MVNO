@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- KT guide -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+  <meta name="Author-Date(Date)" content="" />
+  <meta name="Description" content="" />
+  <meta name="Keyword" content="" />
+  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+  <!-- <link rel="apple-touch-icon-precomposed" href="/icon-normal.png"> -->
+  <link rel="shortcut icon" href="https://www.kt.com/favicon.ico" />
+  <!-- //KT guide -->
+  <title>시스템 공지 목록 | 마이알뜰폰 사업자</title>
+  <!-- Add style -->
+  <link rel="stylesheet" href="../../assets/default/font.css" />
+  <link rel="stylesheet" href="../../assets/default/reset.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <!-- Script -->
+  <script type="text/javascript" src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery-ui.js"></script>
+  <!-- //[2차] 순서변경 JS 추가(bootstrap-datepicker.js 보다 위에 위치하여야 합니다.) -->
+  <script type="text/javascript" src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="../../assets/js/locales/bootstrap-datepicker.ko.js"></script>
+  <script type="text/javascript" src="../../assets/js/bundle.js"></script>
+</head>
+
+<body>
+  <div class="skip">
+    <a href="#contentWrapper ">본문 바로가기</a>
+    <a href="#lnbContainer">주메뉴 바로 가기</a>
+  </div>
+  <!-- //skip -->
+  <div class="wrap">
+    <div class="headerContainer">
+      <header class="header adminHeader">
+        <a href="javascript:void(0);" class="logo">
+          <img src="../../assets/images/common/logo_color.svg" alt="마이알뜰폰" />
+        </a>
+        <!-- [운영] DR-2023-37171 20230804 -->
+        <nav class="headerGnbContainer">
+          <!-- [운영] DR-2023-37171 20230807 -->
+          <div class="headerGnbTitle">
+            <strong>즐겨찾는 메뉴</strong>
+          </div>
+          <!-- //[운영] DR-2023-37171 20230807 -->
+          <div class="headerGnbArea">
+            <div class="topMenuContainer">
+              <a href="javascript:void(0);" class="btn-menu"><span>이벤트관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>메인베너관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>공지사항관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>1:1 문의관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>셀프개통 대시보드</span></a>
+            </div>
+            <button type="button" class="linkUnderline"><span>메뉴 편집</span></button>
+          </div>
+        </nav>
+        <!-- //[운영] DR-2023-37171 20230804 -->
+        <div class="userMenuContainer">
+          <!-- [운영] DR-2023-25744 20230510 -->
+          <div class="loginManualBox">
+            <a href="../../assets/file/KT_MYR_BIZ(BO)_manual.html" target="_blank" class="btnManual">
+              <strong>사업자 매뉴얼<span>(MVNO 사업자용)</span></strong>
+            </a>
+          </div>
+          <!-- //[운영] DR-2023-25744 20230510 -->
+          <a href="javascript:void(0);" class="btnUser"><strong class="companyName">KT엠모바일</strong><span>총괄</span></a>
+          <a href="javascript:void(0);" class="btnLogout colorPrimary"><span>로그아웃</span></a>
+          <!-- [운영] DR-2023-45930 20230822 -->
+          <a href="javascript:void(0);" class="btnNotice">
+            <!-- 새로운 알림이 있을 경우 클래스 추가 : new -->
+            <strong class="iconBgNew"><span>New</span></strong>
+            <span>업무 알림</span>
+          </a>
+          <a href="javascript:void(0);" class="btnSystemNotice">
+            <!-- 새로운 알림이 있을 경우 클래스 추가 : new -->
+            <strong class="iconBgNew"><span>New</span></strong>
+            <span>시스템 공지</span>
+          </a>
+          <!-- //[운영] DR-2023-45930 20230822 -->
+        </div>
+      </header>
+    </div>
+    <!-- //END headerContainer -->
+    <main class="contentContainer">
+      <!-- 본문 시작 -->
+      <div class="contentWrapper" id="contentWrapper">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <h1 class="title">
+                <span>시스템 공지 목록</span>
+              </h1>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                <div class="breadcrumb">
+                  <a href="javascript:void(0);" class="breadcrumbTitle"><span>시스템 공지 목록</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+        <div class="contentArea">
+          <div class="resultContainer">
+            <div class="contents">
+              <div class="contentTopSearch">
+                <div class="searchInput">
+                  <label for="searchInputID" class="ir">검색어 입력</label>
+                  <div class="input">
+                    <input type="text" id="searchInputID" value="" placeholder="검색어를 입력해주세요" />
+                  </div>
+                  <button type="button" class="btnSearch show"><span>검색하기</span></button>
+                  <button type="button" class="btnRemove"><span>검색어 지우기</span></button>
+                </div>
+                <h2 class="topTitle">총 123개</h2>
+              </div>
+              <div class="contentMiddle">
+                <div class="tableContainer alignCenter">
+                  <table>
+                    <caption>
+                      시스템 공지 목록 - 번호, 제목, 등록일
+                    </caption>
+                    <colgroup>
+                      <col style="width: 70px" />
+                      <col />
+                      <col style="width: 200px" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">번호</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">등록일</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span>[고정]</span>
+                        </td>
+                        <td>
+                          <a href="#" class="linkBlack">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a>
+                        </td>
+                        <td>2021.11.06</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>[고정]</span>
+                        </td>
+                        <td>
+                          <a href="#" class="linkBlack">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a>
+                        </td>
+                        <td>2021.11.06</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>[고정]</span>
+                        </td>
+                        <td>
+                          <a href="#" class="linkBlack">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a>
+                        </td>
+                        <td>2021.11.06</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>173</span>
+                          <strong class="iconBgNew"><span>New</span></strong>
+                        </td>
+                        <td>
+                          <a href="#" class="linkBlack">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a>
+                        </td>
+                        <td>2021.11.06</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>172</span>
+                        </td>
+                        <td>
+                          <a href="#" class="linkBlack">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a>
+                        </td>
+                        <td>2021.11.06</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>171</span>
+                        </td>
+                        <td>
+                          <a href="#" class="linkBlack">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a>
+                        </td>
+                        <td>2021.11.06</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>170</span>
+                        </td>
+                        <td>
+                          <a href="#" class="linkBlack">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a>
+                        </td>
+                        <td>2021.11.06</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>169</span>
+                        </td>
+                        <td>
+                          <a href="#" class="linkBlack">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a>
+                        </td>
+                        <td>2021.11.06</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>168</span>
+                        </td>
+                        <td>
+                          <a href="#" class="linkBlack">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a>
+                        </td>
+                        <td>2021.11.06</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>167</span>
+                        </td>
+                        <td>
+                          <a href="#" class="linkBlack">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a>
+                        </td>
+                        <td>2021.11.06</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="contentBottom">
+                <div class="pagenation">
+                  <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                  <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                  <button type="button" class="numPageBtn"><span>2</span></button>
+                  <button type="button" class="numPageBtn"><span>3</span></button>
+                  <button type="button" class="numPageBtn"><span>4</span></button>
+                  <button type="button" class="nextPageBtn" title="다음"></button>
+                </div>
+              </div>
+            </div>
+            <!-- // Contents -->
+          </div>
+          <!-- //END resultContainer -->
+        </div>
+        <!-- //END contentArea -->
+      </div>
+      <!-- //END contentWrapper -->
+    </main>
+    <!-- //END contentContainer -->
+  </div>
+  <!-- //END wrap -->
+  <div class="popup alertPopup hide" id="popup-wrong-start-date" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+    <div class="dim"></div>
+    <div class="popupContainer">
+      <div class="popupTop">
+        <button type="button" class="btnClose" onclick="togglePopup('datepicker-start-data', 'popup-wrong-start-date')"><span>Close</span></button>
+      </div>
+      <div class="popupMiddle">
+        <div class="popupContent">
+          <p>시작일은 종료일 보다 이전 날짜를 입력해야 합니다.</p>
+        </div>
+      </div>
+      <div class="popupBottom">
+        <div class="buttonArea">
+          <button type="button" class="btn btnPrimary" onclick="togglePopup('datepicker-start-data', 'popup-wrong-start-date')"><span>확인</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup alertPopup hide" id="popup-wrong-end-date" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+    <div class="dim"></div>
+    <div class="popupContainer">
+      <div class="popupTop">
+        <button type="button" class="btnClose" onclick="togglePopup('datepicker-end-data', 'popup-wrong-end-date')"><span>Close</span></button>
+      </div>
+      <div class="popupMiddle">
+        <div class="popupContent">
+          <p>종료일은 시작일 보다 이후 날짜를 입력해야 합니다.</p>
+        </div>
+      </div>
+      <div class="popupBottom">
+        <div class="buttonArea">
+          <button type="button" class="btn btnPrimary" onclick="togglePopup('datepicker-end-data', 'popup-wrong-end-date')"><span>확인</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Start Script -->
+  <script></script>
+</body>
+
+</html>

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- KT guide -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+  <meta name="Author-Date(Date)" content="" />
+  <meta name="Description" content="" />
+  <meta name="Keyword" content="" />
+  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+  <!-- <link rel="apple-touch-icon-precomposed" href="/icon-normal.png"> -->
+  <link rel="shortcut icon" href="https://www.kt.com/favicon.ico" />
+  <!-- //KT guide -->
+  <title>사업자 정보 관리 | 기본 정보 | 마이알뜰폰 사업자</title>
+  <!-- Add style -->
+  <link rel="stylesheet" href="../../assets/default/font.css" />
+  <link rel="stylesheet" href="../../assets/default/reset.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <!-- Script -->
+  <script type="text/javascript" src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery-ui.js"></script>
+  <!-- //[2차] 순서변경 JS 추가(bootstrap-datepicker.js 보다 위에 위치하여야 합니다.) -->
+  <script type="text/javascript" src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="../../assets/js/locales/bootstrap-datepicker.ko.js"></script>
+  <script type="text/javascript" src="../../assets/js/bundle.js"></script>
+</head>
+
+<body>
+  <div class="skip">
+    <a href="#contentWrapper ">본문 바로가기</a>
+    <a href="#lnbContainer">주메뉴 바로 가기</a>
+  </div>
+  <!-- //skip -->
+  <!-- 페이지 고유 클래스 : basicListBiz -->
+  <div class="wrap basicListBiz">
+    <div class="headerContainer">
+      <header class="header adminHeader">
+        <a href="javascript:void(0);" class="logo">
+          <img src="../../assets/images/common/logo_color.svg" alt="마이알뜰폰" />
+        </a>
+        <!-- [운영] DR-2023-37171 20230804 -->
+        <nav class="headerGnbContainer">
+          <!-- [운영] DR-2023-37171 20230807 -->
+          <div class="headerGnbTitle">
+            <strong>즐겨찾는 메뉴</strong>
+          </div>
+          <!-- //[운영] DR-2023-37171 20230807 -->
+          <div class="headerGnbArea">
+            <div class="topMenuContainer">
+              <a href="javascript:void(0);" class="btn-menu"><span>이벤트관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>메인베너관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>공지사항관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>1:1 문의관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>셀프개통 대시보드</span></a>
+            </div>
+            <button type="button" class="linkUnderline"><span>메뉴 편집</span></button>
+          </div>
+        </nav>
+        <!-- //[운영] DR-2023-37171 20230804 -->
+        <div class="userMenuContainer">
+          <!-- [운영] DR-2023-25744 20230510 -->
+          <div class="loginManualBox">
+            <a href="../../assets/file/KT_MYR_BIZ(BO)_manual.html" target="_blank" class="btnManual">
+              <strong>사업자 매뉴얼<span>(MVNO 사업자용)</span></strong>
+            </a>
+          </div>
+          <!-- //[운영] DR-2023-25744 20230510 -->
+          <a href="javascript:void(0);" class="btnUser"><strong class="companyName">KT엠모바일</strong><span>총괄</span></a>
+          <a href="javascript:void(0);" class="btnLogout colorPrimary"><span>로그아웃</span></a>
+          <!-- [운영] DR-2023-45930 20230822 -->
+          <a href="javascript:void(0);" class="btnNotice">
+            <!-- 새로운 알림이 있을 경우 클래스 추가 : new -->
+            <strong class="iconBgNew"><span>New</span></strong>
+            <span>업무 알림</span>
+          </a>
+          <a href="javascript:void(0);" class="btnSystemNotice">
+            <!-- 새로운 알림이 있을 경우 클래스 추가 : new -->
+            <strong class="iconBgNew"><span>New</span></strong>
+            <span>시스템 공지</span>
+          </a>
+          <!-- //[운영] DR-2023-45930 20230822 -->
+        </div>
+      </header>
+    </div>
+    <!-- //END headerContainer -->
+    <main class="contentContainer">
+      <div class="lnbWrapper">
+        <nav class="lnbContainer">
+          <!-- [운영] DR-2023-37171 20230807 -->
+          <div class="navTopArea">
+            <button type="button" class="btnMenuAll"><span>전체메뉴 펼치기</span></button>
+            <!-- <button type="button" class="btnMenuAll active"><span>전체메뉴 닫기</span></button> -->
+          </div>
+          <!-- //[운영] DR-2023-37171 20230807 -->
+          <ul class="navList" aria-label="메뉴">
+            <li class="active">
+              <a href="javascript:void(0);" class="menuBtn depth01">계정 관리</a>
+              <ul class="subMenu" aria-label="계정 관리">
+                <li><a href="javascript:void(0);" class="depth02 active">사업자(일반) 계정 신청 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">기본정보</a>
+              <ul class="subMenu" aria-label="기본정보">
+                <li><a href="javascript:void(0);" class="depth02">사업자 정보 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">약관 정보 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">상품 관리</a>
+              <ul class="subMenu" aria-label="상품 관리">
+                <li><a href="javascript:void(0);" class="depth02">후불 요금제 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">선불 요금제 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">부가서비스 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">승인 관리</a>
+              <ul class="subMenu" aria-label="승인 관리">
+                <li><a href="javascript:void(0);" class="depth02">승인 요청 요약</a></li>
+                <li><a href="javascript:void(0);" class="depth02">사업자 정보 승인</a></li>
+                <li><a href="javascript:void(0);" class="depth02">약관 승인</a></li>
+                <li><a href="javascript:void(0);" class="depth02">요금제 승인</a></li>
+                <li><a href="javascript:void(0);" class="depth02">부가서비스 승인</a></li>
+                <li><a href="javascript:void(0);" class="depth02">이벤트 승인</a></li>
+                <li><a href="javascript:void(0);" class="depth02">가족결합 승인</a></li>
+                <!-- [운영] KMVNO-3792 20230905 -->
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">이벤트 관리</a>
+              <ul class="subMenu" aria-label="이벤트 관리">
+                <li><a href="javascript:void(0);" class="depth02">이벤트 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">당첨자 발표</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">상담 관리</a>
+              <ul class="subMenu" aria-label="상담 관리">
+                <li><a href="javascript:void(0);" class="depth02">1:1 문의 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">후기 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">고객 알림 내역</a></li>
+              </ul>
+            </li>
+            <!-- [운영] KMVNO-3924 20230904 -->
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">쿠폰 관리</a>
+              <ul class="subMenu" aria-label="쿠폰">
+                <li><a href="javascript:void(0);" class="depth02">발행 쿠폰 관리</a></li>
+              </ul>
+            </li>
+            <!-- //[운영] KMVNO-3924 20230904 -->
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">유심 개통 관리</a>
+              <ul class="subMenu" aria-label="유심 개통 관리">
+                <li><a href="javascript:void(0);" class="depth02">셀프개통 신청현황</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">문자수신관리</a>
+              <ul class="subMenu" aria-label="문자수신">
+                <li><a href="javascript:void(0);" class="depth02"></a></li>
+              </ul>
+            </li>
+            <!-- <li>
+        <a href="javascript:void(0);" class="menuBtn depth01">권한 관리</a>
+        <ul class="subMenu" aria-label="권한 관리">
+          <li><a href="javascript:void(0);" class="depth02">권한 그룹별 사용자 관리</a></li>
+          <li><a href="javascript:void(0);" class="depth02">사용자별 메뉴 권한 관리</a></li>
+        </ul>
+      </li> -->
+            <!-- <li>
+        <a href="javascript:void(0);" class="menuBtn depth01">통계</a>
+        <ul class="subMenu" aria-label="통계">
+          <li><a href="javascript:void(0);" class="depth02">셀프개통 대시보드</a></li>
+        </ul>
+      </li> -->
+          </ul>
+        </nav>
+      </div>
+      <!-- //END lnbWrapper -->
+      <!-- 본문 시작 -->
+      <div class="contentWrapper" id="contentWrapper">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <h1 class="title">
+                <!-- <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a> -->
+                <span>사업자 정보 관리</span>
+              </h1>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                <div class="breadcrumb">
+                  <a href="javascript:void(0);" class="breadcrumbTitle"><span>기본정보</span></a>
+                </div>
+                <div class="breadcrumb">
+                  <a href="javascript:void(0);" class="breadcrumbTitle"><span>사업자 정보 관리</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+        <div class="contentArea">
+          <!-- 상세 -->
+          <div class="detailContainer boderEditText">
+            <div class="tabList" role="tablist">
+              <button type="button" id="tabAnchor05" class="tabButton" aria-controls="tabCon05" role="tab" aria-selected="true"><span>현재 정보</span></button>
+              <button type="button" id="tabAnchor06" class="tabButton" aria-controls="tabCon06" role="tab" aria-selected="false"><span>승인 대기</span></button>
+            </div>
+            <div class="tabContainer">
+              <div id="tabCon05" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor05">
+                <div class="contentTop">
+                  <div class="topRight">
+                    <div class="buttonArea">
+                      <button type="button" class="btn"><span>정보 변경</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topLeft">
+                      <h2 class="topTitle">사업자 기본 정보</h2>
+                    </div>
+                    <!-- <div class="topRight"></div> -->
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer">
+                      <table>
+                        <caption>
+                          사업자 기본 정보 표
+                        </caption>
+                        <colgroup>
+                          <col style="width: 148px" />
+                          <col />
+                          <col style="width: 148px" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">브랜드 로고</th>
+                            <td colspan="3">
+                              <div class="brandLogo">
+                                <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="브랜드 로고 이미지" />
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">사업자 상호</th>
+                            <td>(주)케이티엠모바일</td>
+                            <th scope="row">브랜드명</th>
+                            <td>KT엠모바일</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">사업자 등록번호</th>
+                            <td colspan="3">123-45-67892</td>
+                            <!-- [2차BO] 삭제 -->
+                          </tr>
+                          <tr>
+                            <th scope="row">대표자</th>
+                            <td>홍길동</td>
+                            <th scope="row">법인등록번호</th>
+                            <td>123456-123456</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">주소</th>
+                            <td colspan="3">서울시 강남구 도산대로 1-1, 4층</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">대표번호</th>
+                            <td>070-1234-1234</td>
+                            <th scope="row">홈페이지</th>
+                            <td>
+                              <a href="http://ktmmobile.com">http://ktmmobile.com</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">소개글</th>
+                            <td colspan="3">
+                              <div class="highTextArea">
+                                안녕하세요. KT엠모바일입니다! 안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- // 사업자 기본 정보 -->
+                <!-- [2차BO] 추가 -->
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topLeft">
+                      <h2 class="topTitle">사업자 서비스 정보</h2>
+                    </div>
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer">
+                      <table>
+                        <caption>
+                          사업자 서비스 정보 목록
+                        </caption>
+                        <colgroup>
+                          <col style="width: 148px" />
+                          <col />
+                          <col style="width: 148px" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">요금제</th>
+                            <td>선불, 후불</td>
+                            <th scope="row">셀프개통</th>
+                            <td>서비스 제공</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">데이터쉐어링</th>
+                            <td>서비스 제공</td>
+                            <th scope="row">데이터주고받기</th>
+                            <td>서비스 제공</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">대리점코드</th>
+                            <td>VKI1058</td>
+                            <th scope="row">접점코드</th>
+                            <td>V000019621</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">특별판매번호</th>
+                            <td>G0839</td>
+                            <th scope="row">eSIM 전용 <br />특별판매번호</th>
+                            <td>G2982</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- // 사업자 서비스 정보 -->
+                <!-- //[2차BO] 추가 -->
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topLeft">
+                      <h2 class="topTitle">고객센터 정보</h2>
+                    </div>
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer">
+                      <table>
+                        <caption>
+                          고객센터 정보 목록
+                        </caption>
+                        <colgroup>
+                          <col style="width: 148px" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">고객센터 번호</th>
+                            <td>1899-5000</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">운영시간</th>
+                            <td>평일 09:00 ~ 18:00</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">연중무휴 ARS</th>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">고객센터 URL</th>
+                            <td>-</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- // 고객센터 정보 -->
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topLeft">
+                      <h2 class="topTitle">관리자 승인</h2>
+                    </div>
+                    <!-- <div class="topRight"></div> -->
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer">
+                      <table>
+                        <caption>
+                          관리자 승인 표
+                        </caption>
+                        <colgroup>
+                          <col style="width: 148px" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">승인/거절 일시</th>
+                            <td>승인(2022-01-01 12:52)</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- // 관리자 승인 -->
+              </div>
+              <div id="tabCon06" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor06">
+                <div class="contentTop">
+                  <div class="topRight">
+                    <div class="buttonArea">
+                      <button type="button" class="btn"><span>승인 요청</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topLeft">
+                      <h2 class="topTitle">사업자 기본 정보</h2>
+                    </div>
+                    <!-- <div class="topRight"></div> -->
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer">
+                      <table>
+                        <caption>
+                          사업자 기본 정보 표
+                        </caption>
+                        <colgroup>
+                          <col style="width: 148px" />
+                          <col />
+                          <col style="width: 148px" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">브랜드 로고</th>
+                            <td colspan="3">
+                              <div class="fieldUpload">
+                                <div class="brandLogoWrap">
+                                  <div class="brandLogo">
+                                    <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="브랜드 로고" />
+                                  </div>
+                                  <button type="button" class="btnLogoDelete"><span>이미지 삭제</span></button>
+                                </div>
+                                <div class="fieldForm">
+                                  <div class="file">
+                                    <input type="file" id="fileUpload" title="브랜드 로고 업로드" />
+                                  </div>
+                                  <div class="buttonArea">
+                                    <button type="button" class="btn"><span>업로드</span></button>
+                                  </div>
+                                </div>
+                                <p class="addExplain"><strong class="required"></strong>권장 : 가로:세로 16:9, 640x360px, jpg,png</p>
+                                <!-- [2차BO] 수정 -->
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">사업자 상호</th>
+                            <td>
+                              <div class="fieldInput">
+                                <div class="input">
+                                  <input type="text" value="(주)케이티엠모바일" title="사업자 상호" />
+                                </div>
+                              </div>
+                            </td>
+                            <th scope="row">브랜드명</th>
+                            <td>
+                              <div class="fieldInput">
+                                <div class="input">
+                                  <input type="text" value="KT엠모바일" title="브랜드명" />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">사업자 등록번호</th>
+                            <td colspan="3">
+                              <div class="fieldInput">
+                                <div class="input">
+                                  <input type="text" value="123-45-67890" title="사업자 등록번호" />
+                                </div>
+                              </div>
+                            </td>
+                            <!-- [2차BO] 삭제 -->
+                          </tr>
+                          <tr>
+                            <th scope="row">대표자</th>
+                            <td>
+                              <div class="fieldInput">
+                                <div class="input">
+                                  <input type="text" value="홍길동" title="대표자" />
+                                </div>
+                              </div>
+                            </td>
+                            <th scope="row">법인등록번호</th>
+                            <td>
+                              <div class="fieldInput">
+                                <div class="input">
+                                  <input type="text" value="123456-123456" title="법인등록번호" />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">주소</th>
+                            <td colspan="3">
+                              <div class="fieldForm">
+                                <div class="fieldInput">
+                                  <div class="input">
+                                    <input type="text" value="서울시 강남구 도산대로 1-1, 4층" title="주소" />
+                                  </div>
+                                </div>
+                                <div class="buttonArea">
+                                  <button type="button" class="btn">찾기</button>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">대표번호</th>
+                            <td>
+                              <div class="fieldInput">
+                                <div class="input">
+                                  <input type="text" value="070-1234-1234" title="대표번호" />
+                                </div>
+                              </div>
+                            </td>
+                            <th scope="row">홈페이지</th>
+                            <td>
+                              <div class="fieldInput">
+                                <div class="input">
+                                  <input type="text" value="http://ktmmobile.com" title="홈페이지" />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">소개글</th>
+                            <td colspan="3">
+                              <div class="highTextArea noScroll" tabindex="0">
+                                안녕하세요. KT엠모바일입니다! 안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                                안녕하세요. KT엠모바일입니다!<br />
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- // 사업자 기본 정보 -->
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topLeft">
+                      <h2 class="topTitle">고객센터 정보</h2>
+                    </div>
+                    <!-- <div class="topRight"></div> -->
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer">
+                      <table>
+                        <caption>
+                          고객센터 정보 표
+                        </caption>
+                        <colgroup>
+                          <col style="width: 148px" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">고객센터 번호</th>
+                            <td>
+                              <div class="fieldInput">
+                                <div class="input">
+                                  <input type="text" value="1899-5000" title="고객센터 번호" />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">운영시간</th>
+                            <td>
+                              <div class="fieldForm">
+                                <div class="select">
+                                  <select>
+                                    <option value="">매일</option>
+                                    <option value="">평일</option>
+                                    <option value="">토요일</option>
+                                    <option value="">일요일</option>
+                                    <option value="">공휴일</option>
+                                    <option value="">국경일</option>
+                                  </select>
+                                </div>
+                                <div class="input">
+                                  <input type="text" id="" placeholder="09:00 ~ 18:00" title="운영가능시간" />
+                                </div>
+                                <div class="buttonArea">
+                                  <button type="button" class="btn"><span>추가</span></button>
+                                  <button type="button" class="btn"><span>삭제</span></button>
+                                </div>
+                              </div>
+                              <div class="fieldForm">
+                                <div class="select">
+                                  <select>
+                                    <option value="">매일</option>
+                                    <option value="">평일</option>
+                                    <option value="">토요일</option>
+                                    <option value="">일요일</option>
+                                    <option value="">공휴일</option>
+                                    <option value="">국경일</option>
+                                  </select>
+                                </div>
+                                <div class="input">
+                                  <input type="text" id="" placeholder="10:00 ~ 15:00" title="운영가능시간" />
+                                </div>
+                                <div class="buttonArea">
+                                  <button type="button" class="btn"><span>추가</span></button>
+                                  <button type="button" class="btn"><span>삭제</span></button>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">연중무휴 ARS</th>
+                            <td>
+                              <div class="fieldForm">
+                                <div class="fieldInput">
+                                  <div class="input">
+                                    <input type="text" value="070-1234-1234" title="운영시간" />
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">고객센터 URL</th>
+                            <td>
+                              <div class="fieldInput">
+                                <div class="input">
+                                  <input type="text" value="-" title="고객센터 URL" />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- [2차BO] 추가 -->
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topLeft">
+                      <h2 class="topTitle">사업자 서비스 정보</h2>
+                    </div>
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer">
+                      <table>
+                        <caption>
+                          사업자 서비스 정보 목록
+                        </caption>
+                        <colgroup>
+                          <col style="width: 148px" />
+                          <col />
+                          <col style="width: 148px" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">요금제</th>
+                            <td colspan="3">
+                              <div class="fieldForm">
+                                <div class="checkbox">
+                                  <input type="checkbox" id="radio01" />
+                                  <label for="radio01" class="checkboxLabel">
+                                    <span class="checkIcon"></span>
+                                    <span>선불</span>
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <input type="checkbox" id="radio02" />
+                                  <label for="radio02" class="checkboxLabel">
+                                    <span class="checkIcon"></span>
+                                    <span>후불</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">데이터쉐어링</th>
+                            <td>
+                              <div class="fieldForm">
+                                <div class="radio">
+                                  <input type="radio" id="radio0201" name="radio02" aria-required="true" required="" />
+                                  <label for="radio0201" class="radioLabel">
+                                    <span>서비스 미제공</span>
+                                  </label>
+                                </div>
+                                <div class="radio">
+                                  <input type="radio" id="radio0202" name="radio02" aria-required="true" required="" />
+                                  <label for="radio0202" class="radioLabel">
+                                    <span>서비스 제공</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </td>
+                            <th scope="row">데이터주고받기</th>
+                            <td>
+                              <div class="fieldForm">
+                                <div class="radio">
+                                  <input type="radio" id="radio0301" name="radio03" aria-required="true" required="" />
+                                  <label for="radio0301" class="radioLabel">
+                                    <span>서비스 미제공</span>
+                                  </label>
+                                </div>
+                                <div class="radio">
+                                  <input type="radio" id="radio0302" name="radio03" aria-required="true" required="" />
+                                  <label for="radio0302" class="radioLabel">
+                                    <span>서비스 제공</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- // 사업자 서비스 정보 -->
+                <!-- //[2차BO] 추가 -->
+                <!-- // 고객센터 정보 -->
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topLeft">
+                      <h2 class="topTitle">관리자 승인</h2>
+                    </div>
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer">
+                      <table>
+                        <caption>
+                          관리자 승인 표
+                        </caption>
+                        <colgroup>
+                          <col style="width: 148px" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">승인/거절 일시</th>
+                            <td>승인(2022-01-01 12:52)</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- // 관리자 승인 -->
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topLeft">
+                      <h2 class="topTitle">변경 전/후 코멘트</h2>
+                      <p class="addExplain">
+                        <strong class="required"><span>필수입력</span></strong>변경 전/후 내용은 간략하게 입력해주세요.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer">
+                      <table>
+                        <caption>
+                          변경 전/변경 후 코멘트
+                        </caption>
+                        <colgroup>
+                          <col style="width: 148px" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">변경 전</th>
+                            <td>
+                              <div class="fieldTextarea">
+                                <div class="textarea">
+                                  <textarea name="" id="" cols="30" rows="10" title="변경 전 코멘트" placeholder="내용을 입력해주세요."></textarea>
+                                  <!-- [2차BO] 수정 -->
+                                  <p class="textCounter"><strong>0</strong> / 4000자</p>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">변경 후</th>
+                            <td>
+                              <div class="fieldTextarea">
+                                <div class="textarea">
+                                  <textarea name="" id="" cols="30" rows="10" title="변경 후 코멘트" placeholder="내용을 입력해주세요."></textarea>
+                                  <!-- [2차BO] 수정 -->
+                                  <p class="textCounter"><strong>0</strong> / 4000자</p>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END detailContainer -->
+        </div>
+        <!-- //END contentArea -->
+      </div>
+      <!-- //END contentWrapper -->
+    </main>
+    <!-- //END contentContainer -->
+  </div>
+  <!-- //END wrap -->
+  <!-- Start Script -->
+  <script>
+    $(document).ready(function() {});
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- KT guide -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+  <meta name="Author-Date(Date)" content="" />
+  <meta name="Description" content="" />
+  <meta name="Keyword" content="" />
+  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+  <!-- <link rel="apple-touch-icon-precomposed" href="/icon-normal.png"> -->
+  <link rel="shortcut icon" href="https://www.kt.com/favicon.ico" />
+  <!-- //KT guide -->
+  <title>업무 알림 | 통합채널 관리자</title>
+  <!-- Add style -->
+  <link rel="stylesheet" href="../../assets/default/font.css" />
+  <link rel="stylesheet" href="../../assets/default/reset.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <!-- Script -->
+  <script type="text/javascript" src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery-ui.js"></script>
+  <!-- //[2차] 순서변경 JS 추가(bootstrap-datepicker.js 보다 위에 위치하여야 합니다.) -->
+  <script type="text/javascript" src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="../../assets/js/locales/bootstrap-datepicker.ko.js"></script>
+  <script type="text/javascript" src="../../assets/js/bundle.js"></script>
+</head>
+
+<body>
+  <!-- <div id="loading">
+      <div class="iconLoading"></div>
+      <p>잠시만 기다려주세요.</p>
+    </div> -->
+  <div class="skip">
+    <a href="#contentWrapper ">본문 바로가기</a>
+    <a href="#lnbContainer">주메뉴 바로 가기</a>
+  </div>
+  <!-- //skip -->
+  <div class="wrap">
+    <div class="headerContainer">
+      <header class="header superAdminHeader">
+        <a href="javascript:void(0);" class="logo">
+          <img src="../../assets/images/common/logo_color.svg" alt="마이알뜰폰" />
+        </a>
+        <!-- [운영] DR-2023-37171 20230804 -->
+        <nav class="headerGnbContainer">
+          <!-- [운영] DR-2023-37171 20230807 -->
+          <div class="headerGnbTitle">
+            <strong>즐겨찾는 메뉴</strong>
+          </div>
+          <!-- //[운영] DR-2023-37171 20230807 -->
+          <div class="headerGnbArea">
+            <div class="topMenuContainer">
+              <a href="javascript:void(0);" class="btn-menu"><span>이벤트관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>메인베너관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>공지사항관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>1:1 문의관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>셀프개통 대시보드</span></a>
+            </div>
+            <button type="button" class="linkUnderline"><span>메뉴 편집</span></button>
+          </div>
+        </nav>
+        <!-- //[운영] DR-2023-37171 20230804 -->
+        <div class="userMenuContainer">
+          <!-- [운영] DR-2023-25744 20230510 -->
+          <div class="loginManualBox">
+            <a href="../../assets/file/KT_MYR_BIZ(BO)_manual.html" target="_blank" class="btnManual">
+              <strong>사업자 매뉴얼<span>(MVNO 사업자용)</span></strong>
+            </a>
+            <a href="../../assets/file/KT_MYR_ADMIN(BO)_manual.html" target="_blank" class="btnManual">
+              <strong>관리자 매뉴얼<span>(KT 사업부서용)</span></strong>
+            </a>
+          </div>
+          <!-- //[운영] DR-2023-25744 20230510 -->
+          <a href="javascript:void(0);" class="btnUser"><strong class="companyName">고*</strong><span>운영1팀</span></a>
+          <a href="javascript:void(0);" class="btnLogout colorPrimary"><span>로그아웃</span></a>
+          <!-- [운영] DR-2023-45930 20230822 -->
+          <a href="javascript:void(0);" class="btnNotice new">
+            <!-- 새로운 알림이 있을 경우 클래스 추가 : new -->
+            <strong class="iconBgNew"><span>New</span></strong>
+            <span>업무 알림</span>
+          </a>
+          <a href="javascript:void(0);" class="btnSystemNotice new">
+            <!-- 새로운 알림이 있을 경우 클래스 추가 : new -->
+            <strong class="iconBgNew"><span>New</span></strong>
+            <span>시스템 공지</span>
+          </a>
+          <!-- //[운영] DR-2023-45930 20230822 -->
+        </div>
+      </header>
+    </div>
+    <!-- //END headerContainer -->
+    <main class="contentContainer">
+      <!-- 본문 시작 -->
+      <div class="contentWrapper" id="contentWrapper">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <h2 class="title">
+                <span>업무 알림</span>
+              </h2>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                <div class="breadcrumb">
+                  <a href="javascript:void(0);" class="breadcrumbTitle"><span>업무 알림</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+        <div class="workBoardContainer">
+          <div class="timeLineUnit">
+            <div class="unitTop">
+              <h3>오늘</h3>
+            </div>
+            <div class="unitMiddle">
+              <ul class="workList">
+                <li>
+                  <div class="iconBgBell active">
+                    <!-- 새로운 알림 활성화 클래스 active -->
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[상담관리] 1:1 문의가 등록되었습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell active">
+                    <!-- 링크 이동시 active 제거 -->
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[상담관리] 후기가 등록되었습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_요금제 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_요금제 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_요금제 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_요금제 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_요금제 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_요금제 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_요금제 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_요금제 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- [2차BO] 20220826 더보기 추가 -->
+            <div class="unitBottom">
+              <button type="button" class="btnMoreUnit"><span>더보기</span></button>
+            </div>
+            <!-- //[2차BO] 20220826 더보기 추가 -->
+          </div>
+          <div class="timeLineUnit">
+            <div class="unitTop">
+              <h3>2022년 08월 07일</h3>
+            </div>
+            <div class="unitMiddle">
+              <ul class="workList">
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_사업자 정보 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_부가서비스 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="iconBgBell">
+                    <span class="iconBgNew"><span>New</span></span>
+                  </div>
+                  <div class="workContent">
+                    <a href="#" class="title">[승인관리] 브랜드명_이벤트 승인 요청이 왔습니다.</a>
+                    <span class="date">오전 10시 31분</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //END contentWrapper -->
+    </main>
+    <!-- //END contentContainer -->
+  </div>
+  <!-- //END wrap -->
+  <!-- Start Script -->
+  <script>
+    $(document).ready(function() {
+      // 더보기 버튼 클릭시 버튼에 hide 클래스 추가하여 숨김처리
+      $('.btnMoreUnit').on('click', function() {
+        $(this).addClass('hide');
+      });
+    });
+  </script>
+</body>
+
+</html>

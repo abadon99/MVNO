@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NZ4CRZ8');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+  <meta name="Author-Date(Date)" content="" />
+  <meta name="naver-site-verification" content="70a0cae19ae057fea7e4a95c12081024a872f5d3" />
+  <meta name="Keywords" content="kt, 케이티, ktmyr.com, ktmyr닷컴, 마이알뜰폰닷컴, 마이알뜰폰, 알뜰폰, 알뜰폰 가입" />
+  <meta name="Description" content="[kt] 마이알뜰폰 메인입니다. 알뜰폰 상품 정보 확인부터 가입, 개통, 변경까지 한번에 가능한 KT 알뜰폰 전용 서비스입니다. /" />
+  <!-- <meta name="Keywords" content="kt, 케이티, ktmyr.com, ktmyr닷컴, 마이알뜰폰닷컴, 마이알뜰폰, 이벤트, 진행 중인 이벤트, 알뜰폰 이벤트">
+  <meta name="Description" content="[마이알뜰폰] 이벤트 - 마이알뜰폰에서 진행하고 있는 이벤트를 확인해 보세요."> -->
+  <meta property="og:title" content="Case3. 휴대폰 번호 입력(50개) | KT 마이알뜰폰" />
+  <meta property="og:description" content="알뜰폰 상품 정보 확인부터 가입, 개통, 변경까지 한번에 가능한 KT 알뜰폰 전용 서비스" />
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:url" content="https://www.ktmyr.com/" /> -->
+  <meta property="og:image" content="../../assets/images/common/myr_ci.png" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="210" />
+  <title>Case3. 휴대폰 번호 입력(50개) | KT 마이알뜰폰</title>
+  <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
+  <!-- [운영] DR-2023-28511 -->
+  <!-- Add style -->
+  <link rel="stylesheet" href="../../assets/default/font.css" />
+  <link rel="stylesheet" href="../../assets/default/reset.css" />
+  <link rel="stylesheet" href="../../assets/default/swiper.min.css" />
+  <!-- swiper CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <!-- Script -->
+  <script type="text/javascript" src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="../../assets/js/locales/bootstrap-datepicker.ko.js"></script>
+  <script type="text/javascript" src="../../assets/js/swiper.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/masonry.pkgd.min.js"></script>
+  <!-- masonry JS -->
+  <script type="text/javascript" src="../../assets/js/bundle.js"></script>
+</head>
+
+<body>
+  <div class="buttonArea">
+    <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>부가서비스 가입 신청</span></button>
+  </div>
+  <div class="popup popupBottomFixed show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+    <div class="dim"></div>
+    <div class="popupContainer">
+      <div class="popupTop">
+        <strong class="popupTitle" id="popupTitle-01">부가서비스 가입 신청</strong>
+        <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+          <span>Close</span>
+        </button>
+      </div>
+      <div class="popupMiddle">
+        <div class="applyCaseContainer">
+          <div class="applyInfoArea">
+            <div class="infoTitle">회선 정보</div>
+            <div class="infoContent">
+              <div class="typePhoneLine">
+                <div class="innerLogo">
+                  <div class="fieldBox">
+                    <div class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" /></div>
+                    <div class="lineBox">
+                      <div class="lineLabel">
+                        <span class="product">모두다 맘껏 11GB+</span>
+                      </div>
+                      <div class="lineMyPhone">
+                        <strong class="phone">010-81**-*319</strong>
+                        <span class="colorLabel">대표번호</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //회선 정보 -->
+          <div class="applyInfoArea">
+            <!-- [VOS2차] 결함ID 1122978 클래스 infoTitle 클래스/태그 한줄 삭제 -->
+            <div class="infoContent">
+              <div class="tableContainer normalBgTable captionShow">
+                <!-- [VOS2차] 결함ID 1122978 클래스 추가 captionShow -->
+                <div class="tableArea">
+                  <table>
+                    <caption>
+                      부가서비스
+                      <span class="ir">- 부가서비스 명, 이용요금(VAT)포함</span>
+                      <!-- [VOS2차] 결함ID 1122978 ir로 수정 -->
+                    </caption>
+                    <!-- [VOS2차] 결함ID 1123039 일괄 수정 -->
+                    <colgroup>
+                      <col />
+                      <col />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="alignCenter">부가서비스 명</th>
+                        <th scope="col" class="alignCenter">이용요금(VAT)포함</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="alignCenter">불법TM 수신차단</td>
+                        <td class="alignCenter">무료</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="dotList marginBtmReset">
+                  <li class="beforeDot">등록된 번호에 대해 음성통화, 문자메시지, 음성사서함이 전부 차단됩니다.</li>
+                  <li class="beforeDot">8자리 이상의 번호를 입력했을 때에만 등록되며, 등록한 번호에 대해서만 차단됩니다.</li>
+                </ul>
+                <div class="tableArea">
+                  <table>
+                    <caption>
+                      수신차단 - 전화번호 01, 전화번호 02, 전화번호 03, 전화번호 04, 전화번호 05, 전화번호 06, 전화번호 07, 전화번호 08, 전화번호 19, 전화번호 10, 전화번호 11, 전화번호 12, 전화번호 13, 전화번호 14, 전화번호 15, 전화번호 16, 전화번호 17
+                    </caption>
+                    <!-- [VOS2차] 결함ID 1123039 일괄 수정 : th의 전화번호 01 부터 타이틀이 전부 출력 되어야 합니다. -->
+                    <colgroup>
+                      <col style="width: 30%; max-width: 85px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <!-- [VOS2차] 결함 ID 1122785 수정 -->
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 01</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 01 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 02</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 02 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 03</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 03 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 04</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 04 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 05</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 05 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 06</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 06 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 07</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 07 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 08</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 08 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 09</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 09 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 10</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 10 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 11</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 11 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 12</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 12 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 13</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 13 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 14</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 14 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 15</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 15 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 16</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 16 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="alignCenter">전화번호 17</th>
+                        <td>
+                          <div class="groupContainer">
+                            <div class="fieldGroup">
+                              <div class="input">
+                                <input type="text" title="전화번호 17 입력" />
+                              </div>
+                              <button type="button" class="btnRowDelete"><span>삭제</span></button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <!-- //[VOS2차] 결함 ID 1122785 수정 -->
+                      <!-- 전화번호 50 까지 -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //부가서비스 -->
+        </div>
+        <!-- //applyCaseContainer -->
+      </div>
+      <!-- //popupMiddle -->
+      <div class="popupBottom">
+        <div class="buttonArea">
+          <button type="button" class="btn btnSecondary"><span>취소</span></button>
+          <button type="button" class="btn btnPrimary"><span>가입 신청하기</span></button>
+        </div>
+      </div>
+      <!-- //popupBottom -->
+    </div>
+  </div>
+  <!-- //popup End -->
+  <!-- Start Script -->
+</body>
+
+</html>

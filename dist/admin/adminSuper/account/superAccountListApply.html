@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- KT guide -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+  <meta name="Author-Date(Date)" content="" />
+  <meta name="Description" content="" />
+  <meta name="Keyword" content="" />
+  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+  <!-- <link rel="apple-touch-icon-precomposed" href="/icon-normal.png"> -->
+  <link rel="shortcut icon" href="https://www.kt.com/favicon.ico" />
+  <!-- //KT guide -->
+  <title>관리자 계정 신청 관리 | 계정 관리 | 통합채널 관리자</title>
+  <!-- Add style -->
+  <link rel="stylesheet" href="../../assets/default/font.css" />
+  <link rel="stylesheet" href="../../assets/default/reset.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <!-- Script -->
+  <script type="text/javascript" src="../../assets/js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery-ui.js"></script>
+  <!-- //[2차] 순서변경 JS 추가(bootstrap-datepicker.js 보다 위에 위치하여야 합니다.) -->
+  <script type="text/javascript" src="../../assets/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="../../assets/js/locales/bootstrap-datepicker.ko.js"></script>
+  <script type="text/javascript" src="../../assets/js/bundle.js"></script>
+</head>
+
+<body>
+  <div class="skip">
+    <a href="#contentWrapper ">본문 바로가기</a>
+    <a href="#lnbContainer">주메뉴 바로 가기</a>
+  </div>
+  <!-- //skip -->
+  <div class="wrap superAccountListApply">
+    <!-- 페이지 고유 클래스 : superAccountListApply -->
+    <div class="headerContainer">
+      <header class="header superAdminHeader">
+        <a href="javascript:void(0);" class="logo">
+          <img src="../../assets/images/common/logo_color.svg" alt="마이알뜰폰" />
+        </a>
+        <!-- [운영] DR-2023-37171 20230804 -->
+        <nav class="headerGnbContainer">
+          <!-- [운영] DR-2023-37171 20230807 -->
+          <div class="headerGnbTitle">
+            <strong>즐겨찾는 메뉴</strong>
+          </div>
+          <!-- //[운영] DR-2023-37171 20230807 -->
+          <div class="headerGnbArea">
+            <div class="topMenuContainer">
+              <a href="javascript:void(0);" class="btn-menu"><span>이벤트관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>메인베너관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>공지사항관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>1:1 문의관리</span></a>
+              <a href="javascript:void(0);" class="btn-menu"><span>셀프개통 대시보드</span></a>
+            </div>
+            <button type="button" class="linkUnderline"><span>메뉴 편집</span></button>
+          </div>
+        </nav>
+        <!-- //[운영] DR-2023-37171 20230804 -->
+        <div class="userMenuContainer">
+          <!-- [운영] DR-2023-25744 20230510 -->
+          <div class="loginManualBox">
+            <a href="../../assets/file/KT_MYR_BIZ(BO)_manual.html" target="_blank" class="btnManual">
+              <strong>사업자 매뉴얼<span>(MVNO 사업자용)</span></strong>
+            </a>
+            <a href="../../assets/file/KT_MYR_ADMIN(BO)_manual.html" target="_blank" class="btnManual">
+              <strong>관리자 매뉴얼<span>(KT 사업부서용)</span></strong>
+            </a>
+          </div>
+          <!-- //[운영] DR-2023-25744 20230510 -->
+          <a href="javascript:void(0);" class="btnUser"><strong class="companyName">고*</strong><span>운영1팀</span></a>
+          <a href="javascript:void(0);" class="btnLogout colorPrimary"><span>로그아웃</span></a>
+          <!-- [운영] DR-2023-45930 20230822 -->
+          <a href="javascript:void(0);" class="btnNotice new">
+            <!-- 새로운 알림이 있을 경우 클래스 추가 : new -->
+            <strong class="iconBgNew"><span>New</span></strong>
+            <span>업무 알림</span>
+          </a>
+          <a href="javascript:void(0);" class="btnSystemNotice new">
+            <!-- 새로운 알림이 있을 경우 클래스 추가 : new -->
+            <strong class="iconBgNew"><span>New</span></strong>
+            <span>시스템 공지</span>
+          </a>
+          <!-- //[운영] DR-2023-45930 20230822 -->
+        </div>
+      </header>
+    </div>
+    <!-- //END headerContainer -->
+    <main class="contentContainer">
+      <div class="lnbWrapper">
+        <nav class="lnbContainer">
+          <!-- [운영] DR-2023-37171 20230807 -->
+          <div class="navTopArea">
+            <button type="button" class="btnMenuAll"><span>전체메뉴 펼치기</span></button>
+            <!-- <button type="button" class="btnMenuAll active"><span>전체메뉴 닫기</span></button> -->
+          </div>
+          <!-- //[운영] DR-2023-37171 20230807 -->
+          <ul class="navList" aria-label="메뉴">
+            <li class="active">
+              <a href="javascript:void(0);" class="menuBtn depth01">계정 관리</a>
+              <ul class="subMenu" aria-label="계정 관리">
+                <li><a href="javascript:void(0);" class="depth02 active">관리자 계정 신청 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">사업자 계정 신청 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">관리자 계정 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">사업자 관리</a>
+              <ul class="subMenu" aria-label="사업자 관리">
+                <li><a href="javascript:void(0);" class="depth02">사업자 정보 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">회원 관리</a>
+              <ul class="subMenu" aria-label="회원 관리">
+                <li><a href="javascript:void(0);" class="depth02">관리자 회원</a></li>
+                <li><a href="javascript:void(0);" class="depth02">사업자 회원</a></li>
+                <li><a href="javascript:void(0);" class="depth02">고객 회원</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">권한 관리</a>
+              <ul class="subMenu" aria-label="권한 관리">
+                <li><a href="javascript:void(0);" class="depth02">권한 그룹 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">권한 그룹별 사용자 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">사용자별 메뉴 권한 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">승인 관리</a>
+              <ul class="subMenu" aria-label="승인 관리">
+                <li><a href="javascript:void(0);" class="depth02">승인 요청 요약</a></li>
+                <li><a href="javascript:void(0);" class="depth02">사업자 정보 승인</a></li>
+                <li><a href="javascript:void(0);" class="depth02">약관 승인</a></li>
+                <li><a href="javascript:void(0);" class="depth02">요금제 승인</a></li>
+                <li><a href="javascript:void(0);" class="depth02">부가서비스 승인</a></li>
+                <li><a href="javascript:void(0);" class="depth02">이벤트 승인</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">상품 관리</a>
+              <ul class="subMenu" aria-label="상품 관리">
+                <li><a href="javascript:void(0);" class="depth02">인기 요금제 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">인기 부가서비스 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">인기 검색어 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">공통 부가서비스 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">서비스 관리</a>
+              <ul class="subMenu" aria-label="서비스 관리">
+                <li><a href="javascript:void(0);" class="depth02">메인 베너 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">탑 베너 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">고객 공지사항 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">시스템 공지 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">FAQ 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">사업자 약관 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">마이알뜰폰 약관 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">공통 메시지 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">문자메시지 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">공통코드 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">이벤트 관리</a>
+              <ul class="subMenu" aria-label="이벤트 관리">
+                <li><a href="javascript:void(0);" class="depth02">이벤트 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">당첨자 발표</a></li>
+                <li><a href="javascript:void(0);" class="depth02">제휴카드 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">상담 관리</a>
+              <ul class="subMenu" aria-label="상담 관리">
+                <li><a href="javascript:void(0);" class="depth02">1:1 문의 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">후기 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">고객 알림 내역</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">유심 판매/개통 관리</a>
+              <!-- [운영] DR-2023-25738 20230502 -->
+              <ul class="subMenu" aria-label="유심 판매/개통 관리">
+                <li><a href="javascript:void(0);" class="depth02">바로배송유심 주문현황</a></li>
+                <li><a href="javascript:void(0);" class="depth02">셀프개통 신청 내역</a></li>
+                <li><a href="javascript:void(0);" class="depth02">셀프개통 현황</a></li>
+              </ul>
+              <!-- //[운영] DR-2023-25738 20230502 -->
+            </li>
+            <!-- [운영] KMVNO-3924 20230904 -->
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">쿠폰 관리</a>
+              <ul class="subMenu" aria-label="쿠폰">
+                <li><a href="javascript:void(0);" class="depth02">발행 쿠폰 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">쿠폰 대상 요금제 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">월별 쿠폰 발송 조회</a></li>
+                <li><a href="javascript:void(0);" class="depth02">제휴 쿠폰 관리</a></li>
+              </ul>
+            </li>
+            <!-- //[운영] KMVNO-3924 20230904 -->
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">통계</a>
+              <ul class="subMenu" aria-label="통계">
+                <li><a href="javascript:void(0);" class="depth02">바로배송유심 대시보드</a></li>
+                <li><a href="javascript:void(0);" class="depth02">셀프개통 대시보드</a></li>
+                <li><a href="javascript:void(0);" class="depth02">이용자 대시보드</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">푸터 관리</a>
+              <ul class="subMenu" aria-label="푸터">
+                <li><a href="javascript:void(0);" class="depth02">개인정보처리방침 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">서비스이용약관 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">법적고지 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">앱 관리</a>
+              <ul class="subMenu" aria-label="앱 관리">
+                <li><a href="javascript:void(0);" class="depth02">앱 FAQ 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">앱 푸시 발송 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">앱 스플래시 화면 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">앱 업데이트 관리</a></li>
+                <li><a href="javascript:void(0);" class="depth02">앱 종료 배너 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);" class="menuBtn depth01">문자수신관리</a>
+              <ul class="subMenu" aria-label="문자수신">
+                <li><a href="javascript:void(0);" class="depth02"></a></li>
+              </ul>
+            </li>
+            <!-- <li>
+        <a href="javascript:void(0);" class="menuBtn depth01">메뉴 및 화면 관리</a>
+        <ul class="subMenu" aria-label="메뉴 및 화면 관리">
+          <li><a href="javascript:void(0);" class="depth02">화면 관리</a></li>
+          <li><a href="javascript:void(0);" class="depth02">메뉴 관리</a></li>
+        </ul>
+      </li> -->
+          </ul>
+        </nav>
+      </div>
+      <!-- //END lnbWrapper -->
+      <!-- 본문 시작 -->
+      <div class="contentWrapper" id="contentWrapper">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <h1 class="title">
+                <!-- <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a> -->
+                <span>관리자 계정 신청 관리</span>
+              </h1>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                <div class="breadcrumb">
+                  <a href="javascript:void(0);" class="breadcrumbTitle"><span>계정 관리</span></a>
+                </div>
+                <div class="breadcrumb">
+                  <a href="javascript:void(0);" class="breadcrumbTitle"><span>관리자 계정 신청 관리</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+        <div class="contentArea">
+          <!-- 검색 영역 -->
+          <div class="filterContainer">
+            <div class="filterMiddle">
+              <div class="tableContainer">
+                <table>
+                  <caption>
+                    기간, 구분 표
+                  </caption>
+                  <colgroup>
+                    <col style="width: 110px" />
+                    <col />
+                    <col style="width: 110px" />
+                    <col />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th scope="row">기간</th>
+                      <td>
+                        <div class="periodWrap">
+                          <div class="field fieldDatepicker" id="datepicker-start-date">
+                            <label class="ir" for="input-start-date">시작 날짜 선택 : 2022년 03월 09일</label>
+                            <div class="fieldForm datePickerArea">
+                              <input type="text" id="input-start-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                            </div>
+                          </div>
+                          <div class="space"></div>
+                          <div class="field fieldDatepicker" id="datepicker-end-date">
+                            <label class="ir" for="input-end-date">끝 날짜 선택 : 2022년 03월 16일</label>
+                            <div class="fieldForm datePickerArea">
+                              <input type="text" id="input-end-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <th scope="row">구분</th>
+                      <td>
+                        <div class="fieldForm">
+                          <div class="select">
+                            <select title="구분">
+                              <option value="">소속회사</option>
+                              <option value="">소속회사</option>
+                              <option value="">소속회사</option>
+                              <option value="">소속회사</option>
+                            </select>
+                          </div>
+                          <div class="input">
+                            <input type="text" id="" placeholder="입력값을 입력해주세요." />
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="filterBottom">
+              <div class="buttonArea">
+                <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                <button type="button" class="btn btnPrimary"><span>조회</span></button>
+              </div>
+            </div>
+          </div>
+          <!-- //END filterContainer -->
+          <!-- 목록 -->
+          <div class="resultContainer">
+            <div class="tabList" role="tablist">
+              <button type="button" id="tabAnchor01" class="tabButton" aria-controls="tabCon01" role="tab" aria-selected="true"><span>신청 10</span></button>
+              <button type="button" id="tabAnchor02" class="tabButton" aria-controls="tabCon02" role="tab" aria-selected="false"><span>처리 완료 9</span></button>
+            </div>
+            <div class="tabContainer">
+              <div id="tabCon01" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor01">
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topRight">
+                      <div class="buttonArea">
+                        <button type="button" class="btn btnLineGray"><span>반려</span></button>
+                        <button type="button" class="btn"><span>승인</span></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer">
+                      <table>
+                        <caption>
+                          신청 목록
+                        </caption>
+                        <colgroup>
+                          <col style="width: 62px" />
+                          <col style="width: 56px" />
+                          <col style="width: 148px" />
+                          <col style="width: 115px" />
+                          <col style="width: 62px" />
+                          <col style="width: 202px" />
+                          <col style="width: 202px" />
+                          <col style="width: 148px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col">
+                              <div class="checkbox">
+                                <input type="checkbox" id="input-id-all" />
+                                <label for="input-id-all" class="checkboxLabel">
+                                  <span class="ir">전체 선택</span>
+                                  <span class="checkIcon"></span>
+                                </label>
+                              </div>
+                            </th>
+                            <th scope="col">소속회사</th>
+                            <th scope="col">소속 부서</th>
+                            <th scope="col">아이디</th>
+                            <th scope="col">이름</th>
+                            <th scope="col">이메일</th>
+                            <th scope="col">휴대폰 번호</th>
+                            <th scope="col">신청날짜</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <input type="checkbox" id="input-id-chk1" />
+                                <label for="input-id-chk1" class="checkboxLabel">
+                                  <span class="ir">선택</span>
+                                  <span class="checkIcon"></span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>12345</td>
+                            <td>MVNO 사업개발팀</td>
+                            <td>lim1234</td>
+                            <td>임*일</td>
+                            <td>lim1234@kt***********</td>
+                            <td>010-12**-*234</td>
+                            <td>2022-01-09</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <input type="checkbox" id="input-id-chk2" />
+                                <label for="input-id-chk2" class="checkboxLabel">
+                                  <span class="ir">선택</span>
+                                  <span class="checkIcon"></span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>12345</td>
+                            <td>MVNO 사업개발팀</td>
+                            <td>lim1234</td>
+                            <td>임*일</td>
+                            <td>lim1234@kt***********</td>
+                            <td>010-12**-*234</td>
+                            <td>2022-01-09</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="tabCon02" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor02">
+                <div class="contents">
+                  <div class="contentTop">
+                    <div class="topRight">
+                      <div class="buttonArea">
+                        <button type="button" class="btn btnLineGray" disabled><span>반려</span></button>
+                        <button type="button" class="btn" disabled><span>승인</span></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contentMiddle">
+                    <div class="tableContainer" tabindex="0">
+                      <table>
+                        <caption>
+                          처리 완료 목록
+                        </caption>
+                        <colgroup>
+                          <col style="width: 62px" />
+                          <col style="width: 56px" />
+                          <col style="width: 148px" />
+                          <col style="width: 115px" />
+                          <col style="width: 62px" />
+                          <col style="width: 202px" />
+                          <col style="width: 202px" />
+                          <col style="width: 148px" />
+                          <col style="width: 148px" />
+                          <col style="width: 148px" />
+                          <col style="width: 148px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">소속회사</th>
+                            <th scope="col">소속부서</th>
+                            <th scope="col">아이디(사번)</th>
+                            <th scope="col">이름</th>
+                            <th scope="col">이메일</th>
+                            <th scope="col">휴대폰 번호</th>
+                            <th scope="col">신청날짜</th>
+                            <th scope="col">승인여부</th>
+                            <th scope="col">처리날짜</th>
+                            <th scope="col">처리자</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>KT</td>
+                            <td>MVNO 사업개발팀</td>
+                            <td>12345678</td>
+                            <td>임*일</td>
+                            <td>lim****@kt*********</td>
+                            <td>010-12**-*234</td>
+                            <td>2022-01-09</td>
+                            <td>
+                              <div class="buttonArea">
+                                <button type="button" class="btnUnderLine"><span>승인</span></button>
+                                <!-- <button type="button" class="btnUnderLine colorRed"><span>반려</span></button> -->
+                              </div>
+                            </td>
+                            <td>2022-01-09</td>
+                            <td>이*환(12345678)</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>KT</td>
+                            <td>MVNO 사업개발팀</td>
+                            <td>12345678</td>
+                            <td>임*일</td>
+                            <td>lim****@kt*********</td>
+                            <td>010-12**-*234</td>
+                            <td>2022-01-09</td>
+                            <td>
+                              <div class="buttonArea">
+                                <button type="button" class="btnUnderLine"><span>승인</span></button>
+                                <!-- <button type="button" class="btnUnderLine colorRed"><span>반려</span></button> -->
+                              </div>
+                            </td>
+                            <td>2022-01-09</td>
+                            <td>이*환(12345678)</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>KT</td>
+                            <td>MVNO 사업개발팀</td>
+                            <td>12345678</td>
+                            <td>임*일</td>
+                            <td>lim****@kt*********</td>
+                            <td>010-12**-*234</td>
+                            <td>2022-01-09</td>
+                            <td>
+                              <div class="buttonArea">
+                                <!-- <button type="button" class="btnUnderLine"><span>승인</span></button> -->
+                                <button type="button" class="btnUnderLine colorRed"><span>반려</span></button>
+                              </div>
+                            </td>
+                            <td>2022-01-09</td>
+                            <td>이*환(12345678)</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>KT</td>
+                            <td>MVNO 사업개발팀</td>
+                            <td>12345678</td>
+                            <td>임*일</td>
+                            <td>lim****@kt*********</td>
+                            <td>010-12**-*234</td>
+                            <td>2022-01-09</td>
+                            <td>
+                              <div class="buttonArea">
+                                <button type="button" class="btnUnderLine"><span>승인</span></button>
+                                <!-- <button type="button" class="btnUnderLine colorRed"><span>반려</span></button> -->
+                              </div>
+                            </td>
+                            <td>2022-01-09</td>
+                            <td>이*환(12345678)</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END resultContainer -->
+        </div>
+        <!-- //END contentArea -->
+      </div>
+      <!-- //END contentWrapper -->
+    </main>
+    <!-- //END contentContainer -->
+  </div>
+  <!-- //END wrap -->
+  <div class="popup alertPopup hide" id="popup-wrong-start-date" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+    <div class="dim"></div>
+    <div class="popupContainer">
+      <div class="popupTop">
+        <button type="button" class="btnClose" onclick="togglePopup('datepicker-start-data', 'popup-wrong-start-date')"><span>Close</span></button>
+      </div>
+      <div class="popupMiddle">
+        <div class="popupContent">
+          <p>시작일은 종료일 보다 이전 날짜를 입력해야 합니다.</p>
+        </div>
+      </div>
+      <div class="popupBottom">
+        <div class="buttonArea">
+          <button type="button" class="btn btnPrimary" onclick="togglePopup('datepicker-start-data', 'popup-wrong-start-date')"><span>확인</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup alertPopup hide" id="popup-wrong-end-date" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+    <div class="dim"></div>
+    <div class="popupContainer">
+      <div class="popupTop">
+        <button type="button" class="btnClose" onclick="togglePopup('datepicker-end-data', 'popup-wrong-end-date')"><span>Close</span></button>
+      </div>
+      <div class="popupMiddle">
+        <div class="popupContent">
+          <p>종료일은 시작일 보다 이후 날짜를 입력해야 합니다.</p>
+        </div>
+      </div>
+      <div class="popupBottom">
+        <div class="buttonArea">
+          <button type="button" class="btn btnPrimary" onclick="togglePopup('datepicker-end-data', 'popup-wrong-end-date')"><span>확인</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Start Script -->
+  <script>
+    $(document).ready(function() {
+      if ($('#datepicker-start-date').length > 0 && $('#datepicker-end-date').length > 0) {
+        getMultiDatePicker('start', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+        getMultiDatePicker('end', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+      }
+    });
+  </script>
+</body>
+
+</html>
