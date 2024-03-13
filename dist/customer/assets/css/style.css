@@ -29206,6 +29206,56 @@ table caption {
   flex: 1;
 }
 
+/* 4419: 번호이동 프로세스 개선 */
+.teleComInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -0.5rem -0.5rem 2.5rem;
+}
+.teleComInfo .field {
+  width: calc(50% - 1rem);
+  margin: 0.5rem;
+}
+.teleComInfo + .dataTitleArea {
+  justify-content: end;
+  border: none;
+  padding-bottom: 0;
+  margin-bottom: 2.5rem;
+}
+.agencyTelecomPopContainer .fieldRadio {
+  margin:1.3rem -0.5rem 3rem;
+  overflow: hidden;
+  overflow-x: auto;
+}
+.agencyTelecomPopContainer .fieldRadio.btnStyle .radio {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0.5rem;
+}
+.agencyTelecomPopContainer .fieldRadio.btnStyle .radio .radioLabel {
+  height: 3.3rem;
+  font-size: 1.2rem;
+}
+.agencyTelecomPopContainer .searchNoResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
 /* 셀프개통 신청 메인 */
 [class*=accordionIsland].active .btnOpenIsland {
   background-image: url("../../assets/images/common/arrow_line_up.svg");

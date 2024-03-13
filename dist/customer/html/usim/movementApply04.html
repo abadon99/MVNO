@@ -928,37 +928,105 @@
           <!-- //[2차] 20220830 단계 추가 -->
           <div class="formContainer">
             <div class="formItemArea">
+              <!-- 4419: 번호이동 프로세스 개선 -->
               <div class="dataInner">
                 <div class="dataTitleArea">
                   <strong class="dataTitle">번호이동 할 전화번호</strong>
                   <button type="button" class="linkUnderline colorPrimary">번호이동 사전동의 안내</button>
-                  <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
                 </div>
-                <!-- [2차] 20221004 수정 -->
-                <div class="fieldPhoneInfo">
-                  <button type="button" class="btn iconFindAgency"><span>이전 통신사</span></button>
-                  <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
-                  <div class="field fieldInput">
-                    <label for="input-id-01" class="fieldLabel">휴대폰번호</label>
-                    <div class="fieldForm">
-                      <div class="input">
-                        <input type="text" id="input-id-05" />
-                      </div>
+                <div class="field fieldInput">
+                  <label for="npTlphNo" class="fieldLabel">휴대폰번호</label>
+                  <div class="fieldForm">
+                    <div class="input">
+                      <input type="text" id="npTlphNo" class="onlyNum" maxlength="11">
+                      <!-- 통신사 조회된 휴대폰번호 -->
+                      <input type="text" id="npTlphNo" class="onlyNum" maxlength="11" readonly value="010-1234-1234">
+                    </div>
+                    <div class="buttonArea" id="">
+                      <button type="button" class="btn btnSizeMiddle" id=""><span>통신사 조회</span></button>
                     </div>
                   </div>
                 </div>
-                <!-- //[2차] 20221004 수정 -->
+              </div>
+
+              <div class="dataInner">
+                <div class="dataTitleArea">
+                  <strong class="dataTitle">사용중인 통신사</strong>
+                </div>
+                <div class="checkboxLineFlex">
+                  <div class="checkboxLine">
+                    <input type="radio" id="selfTelecom01" name="selfTelecom" value="1">
+                    <label for="selfTelecom01" class="checkboxLabel">
+                      <span>SK텔레콤</span>
+                      <span class="checkIcon"></span>
+                    </label>
+                  </div>
+                  <div class="checkboxLine">
+                    <input type="radio" id="selfTelecom02" name="selfTelecom" value="2">
+                    <label for="selfTelecom02" class="checkboxLabel">
+                      <span>LG유플러스</span>
+                      <span class="checkIcon"></span>
+                    </label>
+                  </div>
+                  <div class="checkboxLine">
+                    <input type="radio" id="selfTelecom03" name="selfTelecom" value="3">
+                    <label for="selfTelecom03" class="checkboxLabel">
+                      <span>KT</span>
+                      <span class="checkIcon"></span>
+                    </label>
+                  </div>
+                  <!-- 통신사 조회 자동체크 -->
+                  <div class="checkboxLine">
+                    <input type="radio" id="selfTelecom04" name="selfTelecom" value="4">
+                    <label for="selfTelecom04" class="checkboxLabel">
+                      <span>알뜰폰</span>
+                      <span class="checkIcon"></span>
+                    </label>
+                  </div>
+                  <!-- 통신사 조회 불가 -->
+                  <div class="checkboxLine">
+                    <input type="radio" id="selfTelecom04" name="selfTelecom" value="4">
+                    <label for="selfTelecom04" class="checkboxLabel">
+                      <span>알뜰폰</span>
+                      <span class="checkIcon"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="selfTelecom04" style="display: none;">
+                  <div class="teleComInfo">
+                    <div class="field fieldInput">
+                      <label for="affordableAgency" class="fieldLabel">알뜰폰 통신사</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="affordableAgency" class="" readonly value="LGU+알뜰폰">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field fieldInput">
+                      <label for="affordableProvider" class="fieldLabel">알뜰폰 사업자</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="affordableProvider" class="" readonly value="토스모바일LG">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 알뜰폰 통신사 선택 팝업 -->
+                  <div class="dataTitleArea">
+                    <button type="button" class="linkUnderline colorPrimary" id="" dynamicparamattr1="알뜰폰 통신사 재선택">알뜰폰 통신사 재선택</button>
+                  </div>
+                </div>
                 <div class="typeCaution">
                   <ul class="fieldArea marginBtmReset">
                     <li class="fieldValue">통신사를 모르실 경우 현재 사용중인 휴대폰에서 114로 확인바랍니다.</li>
-                    <li class="fieldValue">번호이동을 위해서는 현재 사용중인 통신사에서의 인증 절차가 필요합니다.</li>
-                    <li class="fieldValue">인증유형 입력 후 “번호이동 사전 동의 요청”을 선택하여 인증(문자 또는 ARS)을 부탁드립니다.</li>
-                    <li class="fieldValue">현재 KT, LGU+망 사용 고객께서는 ARS로 전화하셔서 인증 절차 진행 부탁드립니다.</li>
                     <li class="fieldValue">타사 신규개통/명의변경/번호이동 후 3개월 이내 고객은 셀프개통으로 번호이동이 불가합니다.</li>
+                    <li class="fieldValue">번호이동을 위해서는 현재 사용중인 통신사에서의 인증 절차가 필요합니다.</li>
                     <li class="fieldValue">번호이동 사전동의는 일 7회로 제한합니다.</li>
                   </ul>
                 </div>
               </div>
+              <!-- 4419: //번호이동 프로세스 개선 -->
+              <!-- 번호이동 인증유형 - 번호이동 프로세스 개선시 삭제 -->
               <div class="dataInner">
                 <div class="dataTitleArea">
                   <strong class="dataTitle">번호이동 인증유형</strong>
@@ -1073,6 +1141,7 @@
                 </div>
                 <!-- //지로 -->
               </div>
+              <!-- //번호이동 인증유형 - 번호이동 프로세스 개선시 삭제 -->
             </div>
           </div>
         </div>
@@ -1208,6 +1277,22 @@
   <script>
     $(document).ready(function() {
       commonEvent();
+
+      // 4419: 번호이동 프로세스 개선 - 화면 확인용
+      $(":radio[name='selfTelecom']").on("click", function() {
+        var selfTelecomVal = $(this).val();
+        $("div[class^='selfTelecom']").hide();
+
+        if("1" == selfTelecomVal) {
+          $("div.selfTelecom01").show();
+        } else if("2" == selfTelecomVal) {
+          $("div.selfTelecom02").show();
+        } else if("3" == selfTelecomVal) {
+          $("div.selfTelecom03").show();
+        } else if("4" == selfTelecomVal) {
+          $("div.selfTelecom04").show();
+        }
+      });
     });
   </script>
 </body>
