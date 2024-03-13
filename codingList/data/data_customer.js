@@ -2000,6 +2000,13 @@ const dataCustomer = {
               complete: true,
               progressText: '2차',
             },
+            {
+              content: '번호이동 프로세스 개선 팝업',
+              link: 'usim',
+              fileName: 'popupMovementTeleCom',
+              complete: true,
+              progressText: '',
+            },
           ],
         },
         {
