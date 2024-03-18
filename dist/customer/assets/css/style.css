@@ -26813,8 +26813,24 @@ table caption {
   margin: 0 -1rem;
 }
 .usimGuideContent .usimGuideBottom .guideInfo {
-  width: calc(50% - 2rem);
-  padding: 5.8rem 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 4.4rem 8rem;
   margin: 0 1rem;
   background-color: #eff1f3;
   border-radius: 1.2rem;
@@ -26824,7 +26840,7 @@ table caption {
   line-height: 1.4;
 }
 .usimGuideContent .usimGuideBottom .guideInfo.bgImg01 {
-  background: url("../../assets/images/service/bg_usim_01.svg") no-repeat bottom right 1.6rem #eff1f3;
+  background: url("../../assets/images/service/bg_usim_01.svg") no-repeat 94% 100% #eff1f3;
 }
 .usimGuideContent .usimGuideBottom .guideInfo.bgImg01 .infoTitle {
   margin-bottom: 4rem;
@@ -26835,10 +26851,10 @@ table caption {
   flex: 1;
   max-width: 56.2rem;
   padding-right: 12.9%;
-  background: url("../../assets/images/service/bg_usim_02.svg") no-repeat bottom right #eff1f3;
+  background: url("../../assets/images/service/bg_usim_02.svg") no-repeat 92% 100% #eff1f3;
 }
 .usimGuideContent .usimGuideBottom .guideInfo.bgImg02 .infoTitle {
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 .usimGuideContent .usimGuideBottom .infoConBox {
   margin-right: 2rem;
@@ -27228,6 +27244,9 @@ table caption {
     margin-bottom: 0;
   }
   .usimGuideContent .usimGuideBottom .guideInfo.bgImg01 .infoTitle {
+    margin-bottom: 1rem;
+  }
+  .usimGuideContent .usimGuideBottom .guideInfo.bgImg02 .infoTitle {
     margin-bottom: 1rem;
   }
   .usimGuideContent .usimGuideBottom .guideInfo.bgImg02 {
