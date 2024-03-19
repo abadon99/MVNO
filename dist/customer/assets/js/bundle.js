@@ -1,5 +1,5 @@
 /* **************** *
-  || version : 2차 || 
+  || version : 2차 ||
  * **************** */
 var $document = $(document);
 
@@ -16,7 +16,7 @@ function checkMobile() {
   } else {
       //아이폰, 안드로이드 외
       return "other";
-  } 
+  }
 }
 
 var tabbable = "button:not([disabled]), input:not([type='hidden']):not([disabled]):not([readonly]), select:not([disabled]), iframe:not([disabled]), textarea:not([disabled]):not([readonly]), [href]:not([disabled]), [tabindex]:not([tabindex='-1']):not([disabled])";
@@ -35,7 +35,7 @@ $(document).ready(function () {
           var $player = $(this);
           var thisWidth = $player.outerWidth();
           var command = 'pauseVideo'; // play = playVideo, pause = pauseVideo, stop = stopVideo
-          
+
           $player[0].contentWindow.postMessage('{"event":"command","func":"' + command + '","args":""}', '*');
 
           if($player.closest('.mainVisual').length > 0) {
@@ -70,7 +70,7 @@ $(document).ready(function () {
       if(contentContainer && footerContainer)  {
         var contentFocusable = contentContainer.querySelectorAll(tabbable);
         var footerFocusable = footerContainer.querySelectorAll(tabbable);
-        
+
         for(contentElement of contentFocusable) {
           // focus 이벤트 리스너 //
 
@@ -83,13 +83,13 @@ $(document).ready(function () {
             var windowWidth = screen.width;
             var windowHeight = screen.height;
             var destination = (windowHeight / 2) - 150;
-            
+
             if((windowWidth > 1024 && top < headerTrigger) || (windowWidth <= 1024 && top < 44)) {
               // window.scroll(0, thisCoord.top - destination);
             }
           });
         }
-  
+
         for(footerElement of footerFocusable) {
           footerElement.addEventListener('focus', function(e) {
             var target = e.target;
@@ -213,7 +213,7 @@ $(document).ready(function () {
   $document.off("click", ".subMenu .openDepth03");
   $document.off("click", ".btnMenuOpen");
   $document.off("click", ".btnMenuClose");
-  
+
   // Depth 1 Menu MouseEnter //
   $document.on("mouseenter", ".gnb > li > .depth01", function (e) {
     //$header 대상이 없었다면 다시 가져오기 //
@@ -244,7 +244,7 @@ $(document).ready(function () {
     if($header.length == 0) {
       $header = $document.find(".wrap").find(".headerContainer");
     }
-    
+
     if(!$header.hasClass("mobile")) {
       $header.addClass("focus");
     }
@@ -262,7 +262,7 @@ $(document).ready(function () {
       $header.removeClass("focus");
     }
   });
-  
+
   $document.on('focusout', ".gnbBtmMenuTitle .iconBgSetting", function () {
     //$header 대상이 없었다면 다시 가져오기 //
     if($header.length == 0) {
@@ -288,7 +288,7 @@ $(document).ready(function () {
       return false;
     }
   });
-  
+
   $document.on("click", ".subMenu .openDepth03", function () {
     var $depth = $(this).parent("li");
 
@@ -333,7 +333,7 @@ $(document).ready(function () {
       else {
         $mobileContainer.find('.myInfoSummary').find('.subTitleRight').find(tabbable).first().focus();
       }
-      
+
     }, 0);
 
     if ($wrap.hasClass(".moMenuOpen")) {
@@ -364,7 +364,7 @@ $(document).ready(function () {
     var $popupContainer = $(this).closest('.popupContainer');
     var $popupInnerTabList = $popupContainer.find('.tabList');
 
-    $popupContainer.find('*').scrollTop(0);//스크롤 top으로 올리기 
+    $popupContainer.find('*').scrollTop(0);//스크롤 top으로 올리기
 
     $popupInnerTabList.each(function(){
       var $popupInnerButton = $(this).find('.tabButton').eq(0);//첫번째 탭
@@ -424,13 +424,13 @@ function tabControl(button) {
   var $btn = $document.find(button);
   var $contentArea = $document.find(button).parents('.contentArea');
   var selectedText = null;
-  
+
   // 기본 노출 탭내용 초기 값
   var initBtn = $(button + '[aria-selected="true"]').attr('aria-controls');
   $('#'+initBtn).addClass('show');
 
   $btn.on('click', function(){
-    
+
     var tabCon = $(this).attr('aria-controls');
 
     // 초기화
@@ -441,9 +441,9 @@ function tabControl(button) {
     $(this).attr('aria-selected', 'true');
     $document.find('#' + tabCon).addClass('show');
     // return false;
-  
+
     if( $contentArea.find('.summaryContent').length > 0) {
-      
+
       reloadMasonry('.summaryContent', '.summaryArea');
     }
 
@@ -464,16 +464,16 @@ function accordionControl(button, content, wrap, openText, closeText, masonryCon
   var $contentArea = $document.find(button).parents('.contentArea');
 
   if( $contentArea.find(masonryCon).length > 0) {
-    
+
     reloadMasonry(masonryCon, masonryItem);
   }
   // 상태에 대한 초기 셋팅
   if( $btn.attr("aria-expanded") == 'false' ) {
     $btn.find('span').text(openText);
-    
+
   } else if ( $btn.attr("aria-expanded") == 'true' ) {
     $btn.find('span').text(closeText);
-    
+
   }
   $(document).off("click", button);
   $(document).on("click", button, function(){
@@ -554,14 +554,14 @@ function breadcrumbDrop(button) {
       $container.addClass("active");
       $button.attr("aria-expanded", "true");
     }
-    
+
     // out
     $list.eq(listLength - 1).find('a').on('focusout', function(){
-      
+
       breadcrumbDropReset();
     });
     $('.breadcrumbDropList').on("mouseleave", function(){
-      
+
       breadcrumbDropReset();
     });
   });
@@ -582,25 +582,25 @@ function dropdownControl(button) {
   // if ($wrap.hasClass("disabled")) {
   //   return false;
   // }
- 
+
   // 드롭다운 내부에 회선 설정 버튼이 있는 경우 keydown 이벤트를 부여합니다. //
   $wrap.find('.dropSetting').off("keydown", dropSettingControl);
   if($wrap.find('.dropSetting').length > 0) {
     $wrap.find('.dropSetting').on('keydown', dropSettingControl);
- 
+
     function dropSettingControl(e) {
       var $this = $(this);
       var $wrap = $this.parents(".dropdownArea"); // Dropdown 최상위 Wrapper
       var $option = $wrap.find(".dropdownList"); // Dropdown Option List
       if (!e.shiftKey && e.keyCode == "9") {
-       
+
         $wrap.removeClass("active");
         $option.slideUp(100);
         $this.attr("aria-expanded", "false");//20230316
       }
     }
   }
- 
+
   /*
   Dropdown 내의 button prameter 로 지정된 버튼 click 이벤트 입니다.
   클릭 시 옵션 리스트가 오픈됩니다.
@@ -608,11 +608,11 @@ function dropdownControl(button) {
   $(document).off("click", button, dropdownAreaClick);
   $(document).off("keydown", button, dropdownAreaKeydown);
   $(document).on("click", button, dropdownAreaClick).on("keydown", button, dropdownAreaKeydown);
- 
+
   function dropdownAreaClick(e) {
     var $wrap = $(this).parents(".dropdownArea"); // Dropdown 최상위 Wrapper
     var $content = $wrap.find(".dropdownList"); // Dropdown Option List
- 
+
     // Dropdown이 활성화 상태인 경우 비활성화 시킵니다. //
     if ($wrap.hasClass("active")) {
       // 옵션에 부여된 이벤트를 off 시킵니다. //
@@ -630,7 +630,7 @@ function dropdownControl(button) {
         $(document).find('.dropdownArea').removeClass('active');
         $(document).find('.dropdownArea').find('.dropdownBtn').attr("aria-expanded", "false");
       });
- 
+
       // 선택한 드롭다운 활성화 //
       $(this).attr("aria-expanded", "true");
       $content.removeAttr('tabindex');
@@ -638,11 +638,11 @@ function dropdownControl(button) {
         $wrap.addClass("active");
       });
       // $content.find("li").find('button[aria-selected="true"]').focus();
- 
+
       // 옵션에 부여된 이벤트를 on 시킵니다. //
       dropdownOptionControl($content, true);
     }
-    
+
     // 이벤트 전파를 막습니다. //
     e.preventDefault();
     // e.stopImmediatePropagation();
@@ -651,14 +651,14 @@ function dropdownControl(button) {
   function dropdownAreaKeydown(e) {
     var $wrap = $(this).parents(".dropdownArea"); // Dropdown 최상위 Wrapper
     var $content = $wrap.find(".dropdownList"); // Dropdown Option List
- 
+
     // KeyDown - ESC //
     if (e.code == 'Escape' || e.code == 'Esc' || e.keyCode == 27) {
       e.preventDefault();
       e.stopImmediatePropagation();
- 
+
       $wrap.removeClass("active");
- 
+
       // 옵션에 부여된 이벤트를 off 시킵니다. //
       dropdownOptionControl($content, false);
       $content.slideUp(100);
@@ -667,20 +667,20 @@ function dropdownControl(button) {
     // KeyDown - Space bar or Enter //
 
     else if (e.code =='Enter' || e.keyCode == "13" || e.code == 'Space' || e.keyCode == "32") {
-     
+
     }
     else if(e.code == 'ArrowDown' || e.keyCode == '40') {
       $content.find('li').eq(0).find('button').focus();
- 
+
       e.preventDefault();
       e.stopImmediatePropagation();
     }
     else if(e.code == 'Tab' || e.keyCode == '9') {
       if(!e.shiftKey) {
-       
+
         if($wrap.hasClass('active')) {
           $content.find('li').eq(0).find('button').focus();
- 
+
           e.preventDefault();
           e.stopImmediatePropagation();
         }
@@ -692,13 +692,13 @@ function dropdownControl(button) {
       }
     }
   }
- 
+
   $(document).off("click", "html", dropdownHtmlControl);
   $(document).on("click", "html", dropdownHtmlControl);
   function dropdownHtmlControl(e) {
     let target = e.target;
     let parent = target.closest(thisClassName);
-  
+
     if(!parent || parent.length > 0) {
       dropdownOptionControl($wrap.find(".dropdownList"), false);
       $wrap.find(".dropdownList").slideUp(100, function() {
@@ -707,38 +707,38 @@ function dropdownControl(button) {
     }
   }
 }
-  
+
 // Dropdown option에 이벤트를 부여하는 함수 입니다. //
 function dropdownOptionControl(option, state) {
   var $option = option;
-  
+
   if (!state) {
     $option.find('li').find('button').off("click", dropdownOptionClick);
     $option.find('li').find('button').off("keydown", dropdownOptionKeydown);
-  
+
     return false;
   }
-  
+
   // Option의 각 버튼에 이벤트를 부여합니다. //
   $option.find("li").find("button").on("click", dropdownOptionClick).on("keydown", dropdownOptionKeydown);
-  
+
   function dropdownOptionClick(e) {
     var $this = $(this);
     var $wrap = $this.parents(".dropdownArea"); // Dropdown 최상위 Wrapper
     var $option = $wrap.find(".dropdownList"); // Dropdown Option List
     var $btn = $wrap.find('.dropdownBtn');
     var text = $this.text();
- 
+
     if($option.find('.phoneLine').length >= 1) {
       var img = $this.find('.imgWrap').find('img').attr('src');
       var product = $this.find('.labelGroup').find('.product').text();
       var phone = $this.find('.labelGroup').find('.phone').text();
       var colorLabel = $this.find('.colorLabel');
- 
+
       $wrap.find(".titleLabel").find('.imgWrap').find('img').attr('src', img);
       $wrap.find(".titleLabel").find('.product').text(product);
       $wrap.find(".titleLabel").find('.phone').text(phone);
- 
+
       // 대표 번호 라벨 리셋
       $wrap.find(".titleLabel").find('.colorLabel').remove();
       // 대표번호 라벨 있는 옵션 선택 시 추가
@@ -750,13 +750,13 @@ function dropdownOptionControl(option, state) {
       // 선택한 옵션 값을 드롭다운에 출력합니다.
       $wrap.find('.titleLabel').find('span').text(text);
     }
-  
+
     $option.find("li").find('button[title="선택됨"]').removeAttr("title");
     $this.attr("title", '선택됨');
-    
+
     // 현재 초점 요소를 초점 선택 해제함 //
     document.activeElement.blur();
-  
+
     $option.slideUp(100, function() {
       $btn.attr('aria-expanded', false);
       $wrap.removeClass("active");
@@ -773,14 +773,14 @@ function dropdownOptionControl(option, state) {
     var index = $option.find("li").index($list); // 선택한 옵션의 index
     var listLength = $option.find("li").length; // 옵션 리스트의 length
     var text = $this.text();
-  
+
     // KeyDown - ESC //
     if (e.keyCode == "27") {
       $option.slideUp(100, function() {
         $wrap.find(".dropdownBtn").focus();
         $wrap.removeClass("active");
       });
-  
+
       e.stopImmediatePropagation();
     }
     // KeyDown - Space bar or Enter //
@@ -789,14 +789,14 @@ function dropdownOptionControl(option, state) {
     // KeyDown - Home //
     else if (e.code =='Home' || e.keyCode == "36") {
       $option.find("li").first().find("button").focus();
-  
+
       e.preventDefault();
       e.stopImmediatePropagation();
     }
     // KeyDown - End //
     else if (e.code =='End' || e.keyCode == "35") {
       $option.find("li").last().find("button").focus();
-      
+
       e.preventDefault();
       e.stopImmediatePropagation();
     }
@@ -812,7 +812,7 @@ function dropdownOptionControl(option, state) {
           $wrap.find('.dropdownBtn').focus();
         }
       }
-  
+
       e.preventDefault();
       e.stopImmediatePropagation();
     }
@@ -827,7 +827,7 @@ function dropdownOptionControl(option, state) {
           $wrap.find('.dropSetting').focus();
         }
       }
-  
+
       e.preventDefault();
       e.stopImmediatePropagation();
     }
@@ -877,7 +877,7 @@ function togglePopup(toggler, id) {
   else {
     // $this.attr('aria-expanded', true); [VOS2차] 결함 ID 1122072 삭제
     $popup.addClass("show");
-    
+
     // [VOS2차] 결함 ID 1122420 수정 - 시작 //
     if($popup.hasClass('periodContainer')) {
       $this.attr('aria-expanded', true);
@@ -886,7 +886,7 @@ function togglePopup(toggler, id) {
     // 팝업 내에 탭으로 이동할 수 있는 요소가 있는지 확인 합니다. //
     if ($tabbable.length > 0) {
       // 탭으로 이동할 요소가 있다면 첫 번째 요소를 포커스 적용 합니다. //
-      
+
       setTimeout(function() {
         firstTab.focus();
       }, 50);
@@ -993,7 +993,7 @@ function enabledShowingFocus(swiper) {
     // [VOS2차] 결함 ID 1122394 수정 : bullet 형식 pagination 활성화 버튼에 title="선택됨" 속성 추가 - 시작 //
     var swiperParams = swiper.params;
     var pagination = swiper.pagination;
-    
+
     // 페이지네이션 존재함 //
     if(pagination && pagination.el) {
       // Pagination이 bullet 형식인지 확인함 //
@@ -1040,7 +1040,7 @@ function focusLink(closeButtonID, btnID) {
 // 간편/일반 로그인
 function loginTabControl(button) {
   var $btn = $document.find(button);
-  
+
   // 기본 노출 탭내용 초기 값
   var initBtn = $(button + '[aria-selected="true"]').attr('aria-controls');
   $('#'+initBtn).addClass('show');
@@ -1083,13 +1083,15 @@ function catchTheFocus() {
       });
       blankFocus.focus();
       activeElement = document.activeElement;
-      
+
 
       if(activeElement != body) {
         blankFocus.focus();
       }
     }
   }
+
+  youtubeChk(os);
 }
 
 function getCoords(element) {
@@ -1142,7 +1144,7 @@ $(document).ready(function() {
     getDatepicker('#datepicker-usage-data-large', 'month');
   }
 
-  // Month를 선택하는 Datepicker의 값이 바뀌면 선택한 값을 버튼 내부 텍스트에 입력합니다. // 
+  // Month를 선택하는 Datepicker의 값이 바뀌면 선택한 값을 버튼 내부 텍스트에 입력합니다. //
 
 
   // =============== Date를 선택하는 Datepicker =============== //
@@ -1150,7 +1152,7 @@ $(document).ready(function() {
   if($document.find('#datepicker-select-date').length > 0) {
     getDatepicker('#datepicker-select-date', 'calendar');
   }
-  
+
   if($document.find('#datepicker-select-date-large').length > 0) {
     getDatepicker('#datepicker-select-date-large', 'calendar');
   }
@@ -1159,7 +1161,7 @@ $(document).ready(function() {
 
   // 기간 선택 팝업 출력 버튼의 초기 값을 현재 달로 설정합니다. //
   $document.find('.btnOpenPeriod').each(function() {
-    
+
     var $this = $(this);
     var month = 1;
     var getDate = getPeriod(month, false);
@@ -1174,7 +1176,7 @@ $(document).ready(function() {
   if($document.find('#datepicker-select-period-large').length > 0) {
     getDatepicker('#datepicker-select-period-large', 'period');
   }
-  
+
   /*
   Datepicker가 적용된 input 필드의 다음에 배치된 버튼을 클릭하면
   해당 input 필드가 포커스 됩니다.
@@ -1215,7 +1217,7 @@ function fommattedtDate(rawDate, separator, first, range, time) {
   else {
     var currentMonth = date.getMonth();
   }
-  
+
   var currentDay = date.getDate();         // // 선택한 날짜에 대한 년도 (1 to 31)
   var getDate;
 
@@ -1228,7 +1230,7 @@ function fommattedtDate(rawDate, separator, first, range, time) {
   else {
     getDate = new Date(currentYear, currentMonth, currentDay);
   }
-  
+
   var getYear = getDate.getFullYear();
   var getMonth = getDate.getMonth() + 1 < 10 ? '0' + (getDate.getMonth() + 1) : getDate.getMonth() + 1;
   var getDay = getDate.getDate() < 10 ? '0' + getDate.getDate() : getDate.getDate();
@@ -1313,18 +1315,18 @@ function getDatepicker(id, type, customize, defaultPeriod) {
 
     // 버튼으로 Datepicker를 오픈 할 경우 //
     if($document.find(id).find('.singleDatePicker').next('.btnOpen').length > 0) {
-  
+
       // $document.find(id).find('.singleDatePicker').next('.btnOpen').off('click');
       $btnOpen.on('click', function() {
         var $this = $(this);
-        
+
         if(type == 'month' || type == 'monthSimple') {
           $this.attr('aria-expanded', true);
           $document.find(id).find('.singleDatePicker').datepicker('show');
         }
         else if(type == 'calendar' || type == 'period') {
           $this.attr('aria-expanded', true);
-          $this.prev('.singleDatePicker').focus();    
+          $this.prev('.singleDatePicker').focus();
         }
       });
     }
@@ -1368,7 +1370,7 @@ function getDatepicker(id, type, customize, defaultPeriod) {
         // 현재 선택한 날짜. 날짜가 한 자리 수일 경우 날짜 앞에 0을 추가해줍니다. //
         var currentMonth = e.date.getMonth() + 1 < 10 ? '0' + (e.date.getMonth() + 1) : e.date.getMonth() + 1;
         // 현재 선택한 날짜. 날짜가 한 자리 수일 경우 날짜 앞에 0을 추가해줍니다. //
-        var currentDay = e.date.getDate() < 10 ? '0' + e.date.getDate() : e.date.getDate();          
+        var currentDay = e.date.getDate() < 10 ? '0' + e.date.getDate() : e.date.getDate();
 
         // 버튼 내부에 선택한 달의 첫 날과 마지막 날을 조합하여 입력합니다. //
         formattedDate = e.format(0, 'yyyy.mm.dd');
@@ -1395,7 +1397,7 @@ function getDatepicker(id, type, customize, defaultPeriod) {
       }
     });
 
-    // 버튼에 입력할 날짜를 현재 달로 설정합니다 // 
+    // 버튼에 입력할 날짜를 현재 달로 설정합니다 //
     $(id).find('.singleDatePicker').datepicker('setDate', new Date());
   }
   // 타입이 period 일 경우 // [dev 수정]
@@ -1407,7 +1409,7 @@ function getDatepicker(id, type, customize, defaultPeriod) {
       var $parent = $btnPeriod.closest('.datePickerArea');
       var month = $btnPeriod.eq(defaultPeriod - 1).attr('month');
       var monthUsed = $btnPeriod.eq(defaultPeriod - 1).attr('monthUsed');
-  
+
       if(type == 'period') {
         var getDate = getPeriod(month, false);
       } else {
@@ -1416,7 +1418,7 @@ function getDatepicker(id, type, customize, defaultPeriod) {
 
       $document.find(id).find('.periodContainer').find('.btnPeriod').removeAttr('title');
       $btnPeriod.eq(defaultPeriod - 1).attr('title', '선택됨');
-  
+
       $parent.find('.btnOpenPeriod').text(getDate);
       $parent.find('.btnOpenPeriodUsed').text(monthUsed);
       $parent.find('.btnOpenPeriod').attr('aria-expanded', false);
@@ -1435,7 +1437,7 @@ function getDatepicker(id, type, customize, defaultPeriod) {
       var $parent = $this.closest('.datePickerArea');
       var month = $this.attr('month');
       var monthUsed = $this.attr('monthUsed');
-  
+
       if(type == 'period') {
         var getDate = getPeriod(month, false);
       } else {
@@ -1444,14 +1446,14 @@ function getDatepicker(id, type, customize, defaultPeriod) {
 
       $document.find(id).find('.periodContainer').find('.btnPeriod').removeAttr('title');
       $this.attr('title', '선택됨');
-  
+
       $parent.find('.btnOpenPeriod').text(getDate);
       $parent.find('.btnOpenPeriodUsed').text(monthUsed);
       $parent.find('.btnOpenPeriod').attr('aria-expanded', false);
 
       $this.parents('.periodContainer').removeClass('show').siblings('.btnOpen').focus();
     });
-    
+
     $document.find(id).find('.periodContainer').on('keydown', function(e) {
       var $this = $(this);
       var $option = $this.find('.btnPeriod:focus');
@@ -1541,7 +1543,7 @@ function getMultiDatePicker(type, start_id, end_id, format) {
       $this.prev('.singleDatePicker').focus();
     });
   }
-  
+
   // $document.find(id).find('.singleDatePicker').datepicker().off('changeDate').off('show').off('hide');
   $document.find(id).find('.singleDatePicker').datepicker().on('changeDate', function(e) {
     var currentDate = $(this).val();
@@ -1557,12 +1559,12 @@ function getMultiDatePicker(type, start_id, end_id, format) {
     if(currentDate && relatedDate) {
       if(type == 'start' && currentDate > relatedDate) {
         // togglePopup(id.replace('#', ''), 'popup-wrong-start-date')
-        
+
         // $(this).datepicker('setDate', null);
       }
       else if(type == 'end' && currentDate < relatedDate) {
         // togglePopup(id.replace('#', ''), 'popup-wrong-end-date')
-        
+
         // $(this).datepicker('setDate', null);
       }
       else {
@@ -1615,7 +1617,7 @@ $(document).ready(function() {
   var firstMenuIdx = null;  // 현재 페이지의 Depth 1 활성화 메뉴 Index
   var secondMenuIdx = null;  // 현재 페이지의 Depth 2 활성화 메뉴 Index
   var thirdMenuIdx = null;  // 현재 페이지의 Depth 3 활성화 메뉴 Index
-  var hasThirdMenu = false; // 현재 페이지가 Depth 3 메뉴 소유 여부 
+  var hasThirdMenu = false; // 현재 페이지가 Depth 3 메뉴 소유 여부
 
   var $menuList = $('.mobileNav').find('.menuList');
   var $mobileMenu = $('.mobileMenu');
@@ -1647,7 +1649,7 @@ $(document).ready(function() {
       if($mobileMenu.hasClass('active')) {
         $mobileMenu.removeClass('active');
       }
-      
+
       if(!$mobileMenu.hasClass('mobileNavActive')) {
         $wrap.addClass("mobileNavActive");
       }
@@ -1699,7 +1701,7 @@ $(document).ready(function() {
     // 초기 값
     var initBtn = $('.menuList .menu' + '[aria-selected="true"]').attr('aria-controls');
     $('#' + initBtn).addClass('show');
-    
+
     // 메뉴가 적을 경우 토글버튼 비활성화
     var wrpperWith = $('.mobileSubMenuList').width();
     // var itemWidth = $('#' + initBtn).find('.mobileSubMenu').width();
@@ -1711,7 +1713,7 @@ $(document).ready(function() {
       // 초기 값
       var $this = $(this);
       var $parent = $this.closest('li');
-      
+
       var thisIndex = $menuList.children('li').index($parent) + 1;
       $('.menuList .menu').removeClass('active').attr("aria-selected", "false");
       $('.mobileSubMenuArea').removeClass('show');
@@ -1744,7 +1746,7 @@ $(document).ready(function() {
 
       activeFisrstMenuIdx = thisIndex;
     });
-    
+
     $wrap = $document.find(".wrap");
     $header = $wrap.find(".headerContainer");
     $footer = $wrap.find(".footerContainer");
@@ -1769,7 +1771,7 @@ $(document).ready(function() {
       $secondMemuArea.find('li').eq(0).find('a').attr('title', '선택됨');
     }
 
-    // Second //  
+    // Second //
     $secondMenu = $secondMemuArea.find('a.active');
     secondMenuIdx = $secondMenu.closest('li').index() + 1;
     $thirdMemuArea = $document.find('.mobileNav').find('.mobileThirdMenuList').find('#thirdMenu_' + firstMenuIdx + '_' + secondMenuIdx);
@@ -1791,7 +1793,7 @@ $(document).ready(function() {
     }
     // [VOS2차] 결함 ID 1122233 수정 - 끝 //
 
-    // Third //  
+    // Third //
     $thirdMenu = null;
     thirdMenuIdx = null;
 
@@ -1811,7 +1813,7 @@ $(document).ready(function() {
     $document.find('.mobileMenu').find('.currentPageTitle').find('.menuTitle').text(currentTitle); //[VOS2차] 결함ID 1122632 클래스로 변경
 
     alignActiveMenu();
-  
+
     expandedControl(hasThirdMenu);
 
     // ===== 두 번째 메뉴 클릭 이벤트 리스너 ===== //
@@ -1820,7 +1822,7 @@ $(document).ready(function() {
     $(document).on("click", '.mobileSubMenuList .mobileSubMenu a', function() {
       var $this = $(this);
       var $parent = $this.closest('.mobileSubMenuArea');
-      
+
       // 두 번째 메뉴가 세 번째 메뉴를 갖고 있지 않은 경우 a 태그에 연결된 경로로 이동 //
       if(!$this.hasClass('hasThirdMenu')) {
         return true;
@@ -1841,7 +1843,7 @@ $(document).ready(function() {
           $document.find('.mobileThirdMenuList').find('#thirdMenu_' + parentIdx + '_' + myIdx).addClass('show');
           activeSecondMenuIdx = myIdx;
         }
-        
+
         return false;
       }
     });
@@ -1907,7 +1909,7 @@ $(document).ready(function() {
 
         // Depth 3 메뉴가 있음 //
         if(has3rdMenu) {
-          if($wrap.hasClass('mobileNavActive')) {            
+          if($wrap.hasClass('mobileNavActive')) {
             // 두 번째 메뉴 리스트 hide(), 세 번째 메뉴 리스트 show() //
             $secondMenuList.hide();
             $thirdMenuList.show();
@@ -2030,7 +2032,7 @@ function TopBannerSwiper() {
         resize: function(e) {
           enabledShowingFocus(topBannerSwiper);
         }
-      }       
+      }
     }
   }
 
@@ -2073,7 +2075,7 @@ function loginBgScroll(homeLogin) {
       state = 'mobile';
       $loginWrapper.addClass('mobile');
 
-      
+
 
       $loginContainer.css({
         'position': 'relative',
@@ -2128,7 +2130,7 @@ $(document).ready(function () {
         //PC
         $("#gnbContainer").removeAttr("id").removeAttr("tabindex"); //id reset attr
         $skip.find("a").removeAttr("style"); //skip mobile - gnb,footer none Reset
-        
+
         // ID 체크
         if ($(".gnbContainer").find(".gnb").attr("id") && $(".gnbContainer").find(".gnb").attr("id") != "") {
           // id가 있는 경우
@@ -2154,24 +2156,24 @@ $(document).ready(function () {
           //Mobile
           skipSync($(".homeSearchResult").find(".contentArea"), 0);
         }
-      } 
+      }
       else if ($(".headerArea").find("> .myInfoSummary").length > 0) {
         // ====== 메인 ====== //
         skipSync($(".headerArea > .myInfoSummary"), 0);
       }
-      // <!-- [K-WAX] 20221117 숨김 --> 
+      // <!-- [K-WAX] 20221117 숨김 -->
       // else if ($(".wrap").find(".contentContainer .subTitleContainer").length > 0) {
       //   // ====== 마이알뜰폰 회선 정보 영역 ====== // 회선영역이 없는 경우 detail 조건과 etc 조건
       //   skipSync($(".contentContainer .subTitleContainer"), 0);
-      // } 
+      // }
       // else if ($(".wrap").find(".eventSwiper").length > 0) {
       //   // ====== 이벤트 목록 - 슬라이드 ====== //
       //   skipSync($(".eventSwiper"), 0);
-      // } 
+      // }
       // else if ($(".wrap").find(".contentContainer .searchContainer").length > 0) {
       //   // ====== 검색바 영역 - FAQ, 공지사항, 종료된 이벤트 ====== //
       //   skipSync($(".contentContainer .searchContainer"));
-      // } 
+      // }
       // else if ($(".wrap").hasClass("detail")) {
       //   // ====== 상세 페이지 ====== //
       //   if ($(".wrap").find(".contentArea").length > 0) {
@@ -2179,11 +2181,11 @@ $(document).ready(function () {
       //   } else {
       //     $("main").attr("id", "contentContainer").attr("tabindex", "-1"); //add attr
       //   }
-      // } 
+      // }
       // else if ($(".wrap").hasClass("serviceFriends")) {
       //   // ====== 마이알뜰폰 프렌즈 ====== //
       //   skipSync($(".serviceFriends").find(".contentInner"), 0);
-      // } 
+      // }
       // <!-- //[K-WAX] 20221117 숨김 -->
       else {
         // ====== ETC ====== //
@@ -2195,7 +2197,7 @@ $(document).ready(function () {
         }
       }
     }).resize();
-    
+
     /*
     바로가기 버튼과 바로가기 ID의 동기화를 위한 함수
     parameter
@@ -2232,3 +2234,25 @@ $(function () {
   });
 });
 // [VOS2차] 결함ID 1122882 끝
+
+// [운영] Youtube
+function youtubeChk (os) {
+  console.log ('OS : ', os)
+  if(os == 'other' || os == 'android') {
+    if($('.videoBox').find('.youtube').length > 0) {
+      $('.videoContainer').show();
+      $('.videoBox').find('.youtube').each(function() {
+        var $this = $(this);
+        var thisWidth = $this.outerWidth();
+
+        if($this.closest('.mainVisual').length > 0) {
+          var thisHeight = thisWidth * 0.44;
+        }
+        else {
+          var thisHeight = (thisWidth * 9) / 16;
+        }
+        $this.css({ 'height' : thisHeight });
+      });
+    }
+  }
+}

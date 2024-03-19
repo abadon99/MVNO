@@ -25935,6 +25935,7 @@ table caption {
 }
 
 .videoContainer {
+  display: none;
   background-color: #f7f8fa;
 }
 .videoContainer + .introduceContainer {
