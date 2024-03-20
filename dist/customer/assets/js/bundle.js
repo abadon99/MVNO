@@ -2237,7 +2237,6 @@ $(function () {
 
 // [운영] Youtube
 function youtubeChk (os) {
-  console.log ('OS : ', os)
   if(os == 'other' || os == 'android') {
     if($('.videoBox').find('.youtube').length > 0) {
       $('.videoContainer').show();
