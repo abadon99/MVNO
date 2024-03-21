@@ -2235,7 +2235,7 @@ $(function () {
 });
 // [VOS2차] 결함ID 1122882 끝
 
-// [운영] Youtube
+// DR-2024-17698
 function youtubeChk (os) {
   if(os == 'other' || os == 'android') {
     if($('.videoBox').find('.youtube').length > 0) {
