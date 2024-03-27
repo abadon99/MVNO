@@ -1130,6 +1130,35 @@
                   <span class="icon"></span>
                   <span class="label" id="cardLabel">신용카드 인증</span>
                 </button>
+                <!-- 인증 완료 후 disabled 및 텍스트 워딩 변경 관련 '***아래 추가' 추가
+                  /web/kmvno/js/mypage/cont/accountESIM.change.view.js
+                  function passReturn() {
+                    // 카드는 코드를 넘기고 PASS는 성공시에만 호출이 됨.
+                    cetifyCheck = true;
+                    $('#btnCertifyPass, #btnCertifyCard').attr('disabled', 'disabled'); //인증 수단 disable
+                    ***아래 추가
+                    $('#btnCertifyPass').closest('.typeCertification').addClass('disabled');
+                    $('#btnCertifyPass').closest('.typeCertification').find('button').attr("aria-disabled",true);
+                    $('#btnCertifyPass').closest('.typeCertification').find('button').attr('disabled',true);
+                    $('#btnCertifyPass .label').text("PASS 인증 완료");
+                    // 사전 체크 활성화 체크
+                  }
+
+                  function cardCertReturn(resultInfo) {
+                    var errorCode = resultInfo.RSLT_CD;
+                    console.log("errorCode =>" + errorCode);
+                    if(errorCode == 'T000') {
+                      alert("인증이 완료되었습니다.");
+                      cetifyCheck = true;
+                      $('#btnCertifyPass, #btnCertifyCard').attr('disabled', 'disabled'); //인증 수단 disable
+                      ***아래 추가
+                      $('#btnCertifyCard').closest('.typeCertification').addClass('disabled');
+                      $('#btnCertifyCard').closest('.typeCertification').find('button').attr("aria-disabled",true);
+                      $('#btnCertifyCard').closest('.typeCertification').find('button').attr('disabled',true);
+                      $('#btnCertifyCard .label').text("신용카드 인증 완료");
+                      // 사전 체크 활성화 체크
+                  }
+                -->
               </div>
               <!-- //본인인증 완료 후 예시 -->
               <!-- //[운영] DR-2024-16171 -->
